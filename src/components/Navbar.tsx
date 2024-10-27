@@ -1,35 +1,13 @@
-import {
-  FaFacebook,
-  FaInstagram,
-  FaTelegram,
-  FaVk,
-  FaYoutube,
-} from "react-icons/fa";
+import { Social } from "./Social";
 
 export const Navbar = () => {
   return (
-    <nav className="flex items-center lg:justify-between justify-center py-6">
-      <div className="flex flex-shrink-0 items-center">
-        {/* <a href="/personal-site" aria-label="Home">
-          <span className="text-2xl font-semibold mx-2">LEYLA ROMANOVA</span>
-        </a> */}
+    <nav className="flex items-center justify-between py-8">
+      <div className="mr-8 flex items-center justify-center gap-4 text-4xl tracking-wide font-bold">
+        LR
       </div>
-      <div className="m-8 flex items-center justify-center gap-4 text-2xl">
-        <a>
-          <FaInstagram />
-        </a>
-        <a>
-          <FaTelegram />
-        </a>
-        <a>
-          <FaFacebook />
-        </a>
-        <a>
-          <FaYoutube />
-        </a>
-        <a>
-          <FaVk />
-        </a>
+      <div className="ml-8 flex items-center justify-center gap-4 text-2xl">
+        <Social />
       </div>
     </nav>
   );
