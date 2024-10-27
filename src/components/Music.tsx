@@ -3,7 +3,7 @@ import Image from "next/image";
 import { MusicLinks } from "./MusicLinks";
 
 export const Music = () => {
-  const groups = MUSIC.groups;
+  //const groups = MUSIC.groups;
   const releaze = MUSIC.releaze;
   return (
     <>

@@ -1,20 +1,8 @@
 import Link from "next/link";
-import { FaAmazon, FaYandex } from "react-icons/fa";
-import {
-  SiAmazonmusic,
-  SiApplemusic,
-  SiSpotify,
-  SiYoutubemusic,
-  SiVk,
-  SiAmazon,
-} from "react-icons/si";
-import { AmazonMusic } from "./AmazonMusic";
-import { TbBrandAmazon, TbBrandYandex } from "react-icons/tb";
-import { BsAmazon } from "react-icons/bs";
-import { ImAmazon } from "react-icons/im";
-import { PiAmazonLogo } from "react-icons/pi";
-import { GrAmazon } from "react-icons/gr";
-import { AiFillAmazonCircle, AiFillAmazonSquare } from "react-icons/ai";
+import { SiApplemusic, SiSpotify, SiYoutubemusic, SiVk } from "react-icons/si";
+
+import { TbBrandYandex } from "react-icons/tb";
+import { AiFillAmazonCircle } from "react-icons/ai";
 
 interface IMusicLinksProps {
   youtube?: string;
@@ -59,11 +47,11 @@ export const MusicLinks = ({
       </Link>
 
       <Link href={amazon || ""} target="_blank" className={linkClass}>
-        <AiFillAmazonCircle/>
+        <AiFillAmazonCircle />
       </Link>
 
       <Link href={yandex || ""} className={linkClass}>
-        <TbBrandYandex/>
+        <TbBrandYandex />
       </Link>
     </div>
   );
