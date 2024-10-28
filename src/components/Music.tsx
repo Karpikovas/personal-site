@@ -52,7 +52,7 @@ export const Music = () => {
       </div>
 
       {albums.map((album) => (
-        <div className="flex flex-col lg:flex-row lg:gap-8 pb-4 lg:mb-32">
+        <div key={album.name} className="flex flex-col lg:flex-row lg:gap-8 pb-4 lg:mb-32">
           <div className="mx-auto w-full lg:w-1/3 pb-2 text-2xl tracking-tight lg:text-5xl font-semibold text-wrap">
             {/* <div className="text-2xl font-semibold mb-1">
               {album.group.toUpperCase()}
@@ -70,7 +70,7 @@ export const Music = () => {
           <div className="w-full lg:w-2/3 lg:text-xl lg:block">
             <ul className="mt-3">
               {album.items.map((item, index) => (
-                <li className="flex justify-between mb-2 font-semibold">
+                <li key={item.name} className="flex justify-between mb-2 font-semibold">
                   {index + 1}. {item.name}
                   <span>
                     <MusicLinks {...item} />
@@ -93,7 +93,7 @@ export const Music = () => {
       <div className="grid grid-cols-2 lg:grid-cols-5 gap-8 lg:mb-32 mb-8 font-semibold">
         {groups.map((group) =>
           group.items.map((item) => (
-            <div>
+            <div key={item.name}>
               <div className="mb-1">{group.name.toUpperCase()}</div>
               <Image
                 className="border border-stone-900 rounded-xl mb-2"
