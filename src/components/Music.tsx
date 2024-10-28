@@ -1,7 +1,6 @@
 import { MUSIC } from "@/constants/music";
 import Image from "next/image";
 import { MusicLinks } from "./MusicLinks";
-import { group } from "console";
 
 export const Music = () => {
   const albums = MUSIC.albums;
