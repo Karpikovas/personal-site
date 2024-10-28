@@ -52,7 +52,7 @@ export const MUSIC = {
         },
         {
           name: 'Back to Life',
-          image: 'Back to Life.jpg',
+          image: 'Back to life.jpg',
           youtube: 'https://www.youtube.com/watch?v=mBEcXxA9LsE',
           spotify: "https://open.spotify.com/track/5O9u6PK8oUIpRcaq0xs2Jl?si=1744ba9fdf5b4c80",
           apple: "https://music.apple.com/ru/album/back-to-life-feat-elnar%C9%99-x%C9%99lilova/1697207806?i=1697207807",
