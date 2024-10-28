@@ -40,15 +40,15 @@ export const Hero = () => {
         </div>
         <div className="w-full lg:w-1/2">
           <div className="flex flex-col items-center lg:items-start mt-10">
-            <h2 className="pb-2 text-3xl tracking-tight lg:text-7xl font-semibold text-wrap">
+            <h2 className="pb-2 text-3xl tracking-tight lg:text-7xl font-medium text-wrap">
               Leyla <br className="hidden lg:inline-block" />
               Romanova
             </h2>
-            <h3 className="pb-2 text-xl tracking-tight lg:text-4xl font-medium">
+            <h3 className="pb-2 text-xl tracking-tight lg:text-4xl font-normal">
               (born 14 September 1989)
             </h3>
 
-            <h3 className="mt-5 lg:mt-10 pb-2 text-xl tracking-tight lg:text-4xl font-medium">
+            <h3 className="mt-5 lg:mt-10 pb-2 text-xl tracking-tight lg:text-4xl font-normal">
               has two different career tracks:
             </h3>
           </div>
@@ -57,7 +57,7 @@ export const Hero = () => {
       <div className="flex flex-wrap">
         <div className="w-full lg:w-1/2 lg:pr-8">
           <div className="flex flex-col lg:items-start mt-10">
-            <h4 className="pb-2 text-xl tracking-tight lg:text-2xl font-bold text-wrap">
+            <h4 className="pb-2 text-xl tracking-tight lg:text-2xl font-semibold text-wrap">
               1. Financier & Tech startup consultant
             </h4>
             <h5 className="pb-3 text-l tracking-tight lg:text-2xl text-stone-300 font-medium">
@@ -74,7 +74,7 @@ export const Hero = () => {
 
         <div className="w-full lg:w-1/2">
           <div className="flex flex-col lg:items-start mt-10">
-            <h4 className="pb-2 text-xl tracking-tight lg:text-2xl font-bold text-wrap">
+            <h4 className="pb-2 text-xl tracking-tight lg:text-2xl font-semibold text-wrap">
               2. Composer
             </h4>
             <h5 className="pb-3 text-l tracking-tight lg:text-2xl text-stone-300 font-medium">

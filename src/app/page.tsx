@@ -6,7 +6,7 @@ import { Navbar } from "@/components/Navbar";
 
 // export default function Home() {
 //   return (
-//     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-mohave)]">
+//     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-default)]">
 //       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
 //         <Image
 //           className="dark:invert"
@@ -16,7 +16,7 @@ import { Navbar } from "@/components/Navbar";
 //           height={38}
 //           priority
 //         />
-//         <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-mohave)]">
+//         <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-default)]">
 //           <li className="mb-2">
 //             Get started by editing{" "}
 //             <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
@@ -106,7 +106,7 @@ import { Navbar } from "@/components/Navbar";
 
 export default function Home() {
   return (
-    <div className="overflow-x-hidden text-stone-300 font-[family-name:var(--font-mohave)]">
+    <div className="overflow-x-hidden text-stone-300 font-[family-name:var(--font-default)]">
       <div className="fixed inset-0 -z-10">
         <div className="relative h-full w-full bg-black">
           <div className="absolute left-0 right-0 top-[-10%] h-[1000px] w-[1000px] rounded-full bg-[radial-gradient(circle_400px_at_50%_300px,#fbfbfb36,#000)]"></div>

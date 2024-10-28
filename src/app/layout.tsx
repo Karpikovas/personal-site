@@ -1,12 +1,17 @@
 import type { Metadata } from "next";
-import { Mohave } from "next/font/google"
+import { Oswald } from "next/font/google"
 
 import "./globals.css";
 
-const mohave = Mohave({
-  variable: "--font-mohave",
-  subsets: ['latin', 'latin-ext'],
-  // weight: ["400", "700"]
+// const font = Mohave({
+//   variable: "--font-default",
+//   subsets: ['latin', 'latin-ext'],
+//   // weight: ["400", "700"]
+// })
+
+const font  = Oswald({
+  variable: "--font-default",
+  subsets: ['cyrillic', 'cyrillic-ext', 'latin', 'latin-ext']
 })
 
 export const metadata: Metadata = {
@@ -22,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${mohave.variable} antialiased`}
+        className={`${font.variable} antialiased`}
       >
         {children}
       </body>
