@@ -1,3 +1,4 @@
+import { Contacts } from "@/components/Contacts";
 import { Hero } from "@/components/Hero";
 import { Music } from "@/components/Music";
 import { Navbar } from "@/components/Navbar";
@@ -117,6 +118,7 @@ export default function Home() {
         <Navbar/>
         <Hero/>
         <Music/>
+        <Contacts/>
       </div>
     </div>
   );

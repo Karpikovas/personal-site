@@ -42,17 +42,23 @@ export const MusicLinks = ({
         </Link>
       )}
 
-      <Link href={vk || ""} className={linkClass}>
-        <SiVk />
-      </Link>
+      {vk && (
+        <Link href={vk} className={linkClass}>
+          <SiVk />
+        </Link>
+      )}
 
-      <Link href={amazon || ""} target="_blank" className={linkClass}>
-        <AiFillAmazonCircle />
-      </Link>
+      {amazon && (
+        <Link href={amazon} target="_blank" className={linkClass}>
+          <AiFillAmazonCircle />
+        </Link>
+      )}
 
-      <Link href={yandex || ""} className={linkClass}>
-        <TbBrandYandex />
-      </Link>
+      {yandex && (
+        <Link href={yandex} className={linkClass}>
+          <TbBrandYandex />
+        </Link>
+      )}
     </div>
   );
 };
