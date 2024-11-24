@@ -8,9 +8,11 @@ import { MusicLinks } from "./MusicLinks";
 export const Group = ({
   name,
   items,
+  type = 'single'
 }: {
-  name: string;
-  items: BaseMusicItem[];
+  name: string
+  items: BaseMusicItem[]
+  type?: 'single' | 'album'
 }) => {
   const [emblaRef, emblaApi] = useEmblaCarousel();
   const {
@@ -21,13 +23,13 @@ export const Group = ({
   } = usePrevNextButtons(emblaApi);
 
   return (
-    <>
-      <div className="flex flex-row lg:gap-8 items-baseline mb-4">
-        <h2 className="w-2/3 lg:w-1/3 pb-2  tracking-tight lg:text-5xl font-semibold text-wrap">
+    <div className="mb-10 lg:mb-16">
+      <div className="flex flex-row lg:gap-8 items-baseline mb-4 lg:mb-8">
+        <h2 className="w-1/4 lg:w-2/6 pb-2 tracking-tight lg:text-4xl font-semibold text-wrap">
           {name.toString().toUpperCase()}
         </h2>
 
-        <hr className="w-2/3" />
+        <hr className="w-4/6" />
       </div>
 
       <div className="embla">
@@ -35,32 +37,49 @@ export const Group = ({
           <div className="embla__container">
             {items.map((item, index) => (
               <div key={item.name} className="embla__slide ">
-                <div className="relative group">
+                <div className="relative group inline-block">
                   <Image
                     className="border border-stone-900 rounded-xl mb-2"
                     src={"/personal-site/covers/" + item.image}
                     alt={item.name}
-                    width={350}
-                    height={350}
+                    width={1200}
+                    height={1200}
+                    sizes="100vw"
+                    style={{ width: "1200px", height: "auto" }} // optional
                   />
-                  <div className="hidden group-hover:flex flex-col justify-center align-center gap-8 absolute px-10 py-12 text-center border border-stone-900 rounded-xl bottom-0 left-0 top-0 right-0 transition ease-in duration-300 bg-black/[.8]">
+
+                  <div className="hidden group-hover:flex flex-col justify-center align-center absolute px-10 py-12 text-center border border-stone-900 rounded-xl bottom-0 left-0 top-0 right-0 transition ease-in duration-300 bg-black/[.85]">
                     <div className="text-2xl">{item.name}</div>
-                    <div className="text-3xl">
+                    <ul>
+                    {type === 'album' && item.items && item.items.map((item, index) => (
+                      <li
+                        key={item.name}
+                        className="flex justify-between mb-1 font-normal"
+                      >
+                        <span>
+                          <span className="inline-flex font-medium w-6">{index + 1}.</span>
+                          {item.name}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                    <div className="text-3xl mt-4">
                       <MusicLinks {...item} />
                     </div>
 
-                    <div className="sm:mb-8 sm:flex sm:justify-center">
+                    <div className="sm:mb-8 sm:flex sm:justify-center mt-4 absolute bottom-0 right-4">
                       <div className="relative rounded-full px-3 py-1 text-xl border border-gray-600 hover:border-gray-400">
                         <a href="#" className="font-semibold">
                           <span
                             className="absolute inset-0"
                             aria-hidden="true"
                           ></span>
-                          More
+                          More →
                         </a>
                       </div>
                     </div>
                   </div>
+
                 </div>
 
                 {/* <div className="text-xl">{item.name.toUpperCase()}</div> */}
@@ -69,19 +88,21 @@ export const Group = ({
           </div>
         </div>
 
-        <div className="embla__controls">
-          <div className="embla__buttons">
-            <PrevButton
-              onClick={onPrevButtonClick}
-              disabled={prevBtnDisabled}
-            />
-            <NextButton
-              onClick={onNextButtonClick}
-              disabled={nextBtnDisabled}
-            />
+        {items.length > 3 && (
+          <div className="embla__controls">
+            <div className="embla__buttons">
+              <PrevButton
+                onClick={onPrevButtonClick}
+                disabled={prevBtnDisabled}
+              />
+              <NextButton
+                onClick={onNextButtonClick}
+                disabled={nextBtnDisabled}
+              />
+            </div>
           </div>
-        </div>
+        )}
       </div>
-    </>
+    </div>
   );
 };

@@ -1,14 +1,17 @@
-import { getGroups } from "@/constants/data";
+import { getAlbums, getGroups } from "@/constants/data";
 import { Group } from "./Group";
 
 export const Music = () => {
   const groups = getGroups();
+  const albums = getAlbums();
 
   return (
     <>
       {Object.keys(groups).map((key) => (
-        <Group name={key} items={groups[key].items}/>
+        <Group name={key} items={groups[key].items} type="single" />
       ))}
+
+      <Group name={"OTHER MUSIC"} items={albums} type="album" />
 
       {/* <div className="grid grid-cols-2 lg:grid-cols-5 gap-8 lg:mb-32 mb-8 font-semibold">
         {groups.map((group) =>
