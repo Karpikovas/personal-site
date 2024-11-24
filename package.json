@@ -9,6 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@nextui-org/navbar": "^2.0.37",
+    "@nextui-org/react": "^2.4.8",
+    "@nextui-org/system": "^2.2.6",
+    "@nextui-org/theme": "^2.2.11",
+    "embla-carousel": "^8.5.1",
+    "embla-carousel-react": "^8.5.1",
+    "framer-motion": "^11.11.17",
     "next": "15.0.1",
     "react": "19.0.0-rc-69d4b800-20241021",
     "react-dom": "19.0.0-rc-69d4b800-20241021",

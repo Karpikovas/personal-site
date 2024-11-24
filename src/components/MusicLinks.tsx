@@ -23,7 +23,7 @@ export const MusicLinks = ({
   const linkClass = "text-white hover:text-stone-400 cursor-pointer";
   //const linkClassCustom = 'bg-white hover:bg-stone-400 p-2 rounded-xl text-black flex items-center justify-center';
   return (
-    <div className="flex flex-row gap-2">
+    <div className="flex flex-row justify-center gap-2">
       {youtube && (
         <Link href={youtube} target="_blank" className={linkClass}>
           <SiYoutubemusic />

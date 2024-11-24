@@ -1,13 +1,8 @@
 import type { Metadata } from "next";
 import { Oswald } from "next/font/google"
-
 import "./globals.css";
+import { Navbar } from "@/components/Navbar";
 
-// const font = Mohave({
-//   variable: "--font-default",
-//   subsets: ['latin', 'latin-ext'],
-//   // weight: ["400", "700"]
-// })
 
 const font  = Oswald({
   variable: "--font-default",
@@ -29,6 +24,7 @@ export default function RootLayout({
       <body
         className={`${font.variable} antialiased`}
       >
+        <Navbar/>
         {children}
       </body>
     </html>
