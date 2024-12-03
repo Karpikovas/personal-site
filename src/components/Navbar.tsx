@@ -1,4 +1,5 @@
 "use client";
+import { PUBLIC_PAGES } from "@/config/pages-url.config";
 import { Social } from "./Social";
 
 import { useState } from "react";
@@ -9,9 +10,9 @@ export const Navbar = () => {
   return (
     <header>
       <div className="flex items-center justify-between bg-black py-4 lg:py-6 px-8 lg:px-12 shadow-xl">
-        <div className="text-center text-l md:text-xl lg:text-2xl tracking-[.3em] font-light">
+        <a href={PUBLIC_PAGES.HOME} className="text-center text-l md:text-xl lg:text-2xl tracking-[.3em] font-light">
           LEYLA ROMANOVA
-        </div>
+        </a>
         <nav>
           <section className="MOBILE-MENU flex lg:hidden">
             <div
@@ -43,13 +44,13 @@ export const Navbar = () => {
               </div>
               <ul className="flex flex-col items-center justify-between min-h-[250px]">
                 <li className="border-b border-gray-400 my-8 uppercase">
-                  <a href="/press">Press</a>
+                  <a href={PUBLIC_PAGES.PRESS}>Press</a>
                 </li>
                 <li className="border-b border-gray-400 my-8 uppercase">
-                  <a href="/photo">Photo</a>
+                  <a href={PUBLIC_PAGES.PHOTO}>Photo</a>
                 </li>
                 <li className="border-b border-gray-400 my-8 uppercase">
-                  <a href="/contact">Contact</a>
+                  <a href={PUBLIC_PAGES.CONTACTS}>Contacts</a>
                 </li>
                 <li className="flex items-center justify-end my-8 gap-3 text-2xl">
                   <Social />
@@ -60,13 +61,13 @@ export const Navbar = () => {
 
           <ul className="DESKTOP-MENU hidden space-x-8 lg:flex">
             <li>
-              <a href="/about">Press</a>
+              <a href={PUBLIC_PAGES.PRESS}>Press</a>
             </li>
             <li>
-              <a href="/photo">Photo</a>
+              <a href={PUBLIC_PAGES.PHOTO}>Photo</a>
             </li>
             <li>
-              <a href="/contact">Contact</a>
+              <a href={PUBLIC_PAGES.CONTACTS}>Contacts</a>
             </li>
             <li className="flex items-center justify-end ml-2 gap-3 text-xl">
               <Social />

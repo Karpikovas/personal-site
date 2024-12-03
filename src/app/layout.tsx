@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Contacts } from "@/components/Contacts";
 import { Open_Sans } from "next/font/google"
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
@@ -26,6 +27,10 @@ export default function RootLayout({
       >
         <Navbar/>
         {children}
+
+        <div className="container mt-16 mb-8 mx-auto px-8 xl:px-48">
+          <Contacts />
+        </div>
       </body>
     </html>
   );
