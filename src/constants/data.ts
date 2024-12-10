@@ -5,6 +5,7 @@ const MUSIC: BaseMusicItem[] = [
     type: 'single',
     group: 'Cinematic',
     name: 'CYBERSYMPHONY (dedicated to Christopher Nolan)',
+    href: 'cybersymphony',
     image: 'Cybersymphony.jpg',
     youtube: 'https://youtu.be/xN-X9HNMK88',
     spotify: 'https://open.spotify.com/album/4ZQUY1aGHiJQHYKkIGsPI9',
@@ -15,12 +16,14 @@ const MUSIC: BaseMusicItem[] = [
   {
     type: 'single',
     group: 'Cinematic',
+    href: 'fairy-tale',
     name: 'Fairy Tale',
     image: 'Cybersymphony.jpg',
   },
   // Electronic
   {
     type: 'single',
+    href: 'are-you-waiting-for-me',
     group: 'Electronic',
     name: 'Are You Waiting For Me?',
     image: 'Are you waiting for me.jpg',
@@ -28,6 +31,7 @@ const MUSIC: BaseMusicItem[] = [
   {
     type: 'single',
     group: 'Electronic',
+    href: 'diptych',
     name: 'Diptych',
     image: 'Diptych.jpg',
     spotify: 'https://open.spotify.com/album/2FilJmUXcBZ42RbAGv7BUH',
@@ -39,6 +43,7 @@ const MUSIC: BaseMusicItem[] = [
   {
     type: 'single',
     group: 'Electronic',
+    href: 'back-to-life',
     name: 'Back to Life',
     image: 'Back to life.jpg',
     spotify: 'https://open.spotify.com/album/7C9yHilQmy4M34naKsDcXz',
@@ -51,6 +56,7 @@ const MUSIC: BaseMusicItem[] = [
   {
     type: 'single',
     group: 'Electronic',
+    href: 'diptych-copy',
     name: 'Diptych (copy)',
     image: 'Diptych.jpg',
     spotify: 'https://open.spotify.com/album/2FilJmUXcBZ42RbAGv7BUH',
@@ -63,6 +69,7 @@ const MUSIC: BaseMusicItem[] = [
     type: 'album',
     group: 'Songs (rock | alternative)',
     name: 'LR album',
+    href: 'lr-album',
     image: 'LR альбом.jpg',
     spotify: 'https://open.spotify.com/album/5ovsKLRsWiiqEwg4nYykN3',
     apple: 'https://music.apple.com/ru/album/lr/1761763816',
@@ -87,6 +94,7 @@ const MUSIC: BaseMusicItem[] = [
   {
     type: 'album',
     group: 'Piano',
+    href: 'ep',
     name: 'EP',
     image: 'Piano.png',
     items: [
@@ -100,12 +108,14 @@ const MUSIC: BaseMusicItem[] = [
   {
     type: 'single',
     group: 'Orchestral (live)',
+    href: 'reverie',
     name: 'Reverie',
     image: 'Reverie.png',
     youtube: 'https://youtu.be/j2RQo0AcVO0?si=JCoMi3i3QmhuggVK'
   },
   {
     type: 'single',
+    href: 'dedication',
     group: 'Orchestral (live)',
     name: 'Dedication',
     image: 'Reverie.png',
@@ -113,6 +123,7 @@ const MUSIC: BaseMusicItem[] = [
   // Chamber
   {
     type: 'single',
+    href: 'dreams-of-paris',
     group: 'Chamber',
     name: 'Dreams of Paris',
     image: 'Dreams of Paris.png',
@@ -135,7 +146,8 @@ export type BaseMusicItem = {
   apple?: string
   vk?: string
   yandex?: string
-  items?: any[]
+  items?: any[],
+  href: string
 }
 
 export function getGroups() {
@@ -163,4 +175,9 @@ export function getAlbums() {
   })
 
   return albums
+}
+
+export function getByHref(href: string) {
+  const music = MUSIC.find(item => item.href === href)
+  return music
 }

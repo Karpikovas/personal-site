@@ -69,7 +69,7 @@ export const Group = ({
 
                     <div className="sm:mb-8 sm:flex sm:justify-center mt-4 absolute bottom-0 right-4">
                       <div className="relative rounded-full px-3 py-1 text-xl border border-gray-600 hover:border-gray-400">
-                        <a href="#" className="font-semibold">
+                        <a href={'personal-site/music/' + item.href} className="font-semibold">
                           <span
                             className="absolute inset-0"
                             aria-hidden="true"

@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true, // Disable default image optimization
   },
-  output: "export", 
+  output: "standalone", 
   reactStrictMode: true,
   eslint: {
     ignoreDuringBuilds: true,
