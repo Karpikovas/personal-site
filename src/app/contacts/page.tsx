@@ -1,4 +1,6 @@
 import { TbMailFilled } from "react-icons/tb";
+import Link from "next/link";
+import { Social } from "@/components/Social";
 
 export default function ContactsPage() {
   return (
@@ -11,31 +13,29 @@ export default function ContactsPage() {
         </div>
 
         <div className="container mt-16 mb-8 mx-auto px-8 xl:px-28">
-          <div className="mb-8">
-          <h1 className="text-4xl mb-8">Contacts</h1>
-          <div >
-            <h2 className="text-3xl">
-              Leyla Romanova
-            </h2>
-
-            <div className="text-2xl">
-            <TbMailFilled />
-            </div>
-          </div>
-          </div>
-          
-
-          <hr className="w-2/3 mt-4 mb-4"/>
-          <h1 className="text-4xl mb-8">Socials</h1>
-          <div >
-            <h2 className="text-3xl">
-              Leyla Romanova
-            </h2>
-            
+          <div className="mb-10">
+            <h1 className="text-4xl mb-10">Contacts</h1>
             <div>
+              <h2 className="text-3xl">Leyla Romanova</h2>
 
+              <div className="flex flex-col text-2xl mt-2">
+                <Link
+                  href="mailto:vip@leylaromanova.com"
+                  className="inline-flex items-center gap-2 text-2xl"
+                >
+                  <TbMailFilled /> vip@leylaromanova.com
+                </Link>
+              </div>
             </div>
           </div>
+
+          <hr className="w-3/5 mt-4 mb-4" />
+          {/* <h1 className="text-4xl mb-8">Socials</h1>
+          <div>
+            <Social/>
+
+            <div></div>
+          </div> */}
         </div>
       </div>
     </div>

@@ -24,12 +24,12 @@ export const Group = ({
 
   return (
     <div className="mb-10 lg:mb-16">
-      <div className="flex flex-row lg:gap-8 items-baseline mb-4 lg:mb-8">
-        <h2 className="w-1/4 lg:w-2/6 pb-2 tracking-tight lg:text-4xl font-semibold text-wrap">
+      <div className="flex flex-row gap-2 lg:gap-8 items-baseline mb-4 lg:mb-8">
+        <h2 className="w-2/5 md:w-2/6 pb-2 tracking-tight lg:text-4xl font-semibold text-wrap">
           {name.toString().toUpperCase()}
         </h2>
 
-        <hr className="w-4/6" />
+        <hr className="w-3/5 md:w-4/6" />
       </div>
 
       <div className="embla">
@@ -89,8 +89,8 @@ export const Group = ({
         </div>
 
         {items.length > 3 && (
-          <div className="embla__controls">
-            <div className="embla__buttons">
+          <div className="flex justify-center mt-2">
+            <div className="flex flex-row">
               <PrevButton
                 onClick={onPrevButtonClick}
                 disabled={prevBtnDisabled}

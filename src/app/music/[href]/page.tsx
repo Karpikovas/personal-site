@@ -16,8 +16,26 @@ export default async function PageMusic({
   }
 
   return (
-    <div className="flex flex-col-reverse xl:flex-row gap-16 container mt-16 mb-8 px-8 xl:px-48">
-      <div className="xl:basis-1/2">
+    <div className="flex flex-col-reverse md:flex-row gap-16 container mt-16 mb-8 px-8 xl:px-48">
+      <ul className="md:hidden block">
+          {item.type === "album" &&
+            item.items &&
+            item.items.map((item, index) => (
+              <li
+                key={item.name}
+                className="text-xl flex justify-between mb-1 font-normal"
+              >
+                <span>
+                  <span className="inline-flex font-medium w-6">
+                    {index + 1}.
+                  </span>
+                  {item.name}
+                </span>
+                <MusicLinks {...item}/>
+              </li>
+            ))}
+        </ul>
+      <div className="md:basis-1/2">
         <Image
           className="border border-stone-900 rounded-xl mb-2"
           src={"/personal-site/covers/" + item.image}
@@ -31,7 +49,7 @@ export default async function PageMusic({
           <MusicLinks {...item} />
         </div>
       </div>
-      <div className="xl:basis-1/2">
+      <div className="md:basis-1/2">
         <h2 className="pb-6 tracking-tight lg:text-3xl font-semibold text-wrap">
           {item.name}
         </h2>
@@ -40,9 +58,26 @@ export default async function PageMusic({
           {item.group.toUpperCase()}
         </h3>
 
-        <hr className="my-7"/>
+        <hr className="my-7" />
 
-
+        <ul className="hidden md:block">
+          {item.type === "album" &&
+            item.items &&
+            item.items.map((item, index) => (
+              <li
+                key={item.name}
+                className="text-xl flex justify-between mb-1 font-normal"
+              >
+                <span>
+                  <span className="inline-flex font-medium w-6">
+                    {index + 1}.
+                  </span>
+                  {item.name}
+                </span>
+                <MusicLinks {...item}/>
+              </li>
+            ))}
+        </ul>
       </div>
     </div>
   );

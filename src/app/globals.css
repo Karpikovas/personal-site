@@ -108,6 +108,17 @@ body {
   animation: fadeInAnimation ease 3s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+  min-height: 100vh;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
 }
 
 @keyframes fadeInAnimation {
@@ -118,6 +129,12 @@ body {
   100% {
     opacity: 1;
   }
+}
+
+.fadeIn1 {
+  animation: fadeInAnimation ease 5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 .contacts__layout {
