@@ -24,7 +24,7 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
-jjobs:
+jobs:
   build:
     runs-on: ubuntu-latest
 
