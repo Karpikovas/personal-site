@@ -35,7 +35,7 @@ export const Group = ({
       <div className="embla">
         <div className="embla__viewport" ref={emblaRef}>
           <div className="embla__container">
-            {items.map((item, index) => (
+            {items.map((item) => (
               <div key={item.name} className="embla__slide ">
                 <div className="relative group inline-block">
                   <Image

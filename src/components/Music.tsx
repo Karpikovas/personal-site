@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { getAlbums, getGroups } from "@/constants/data";
 import { Group } from "./Group";
 

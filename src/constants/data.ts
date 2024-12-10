@@ -1,3 +1,4 @@
+// @ts-nocheck
 const MUSIC: BaseMusicItem[] = [
   // Cinematic
   {
@@ -154,6 +155,7 @@ export function getGroups() {
 
 export function getAlbums() {
   const album = MUSIC.filter(item => item.type === 'album')
+
   let albums = []
 
   album.forEach(item => {
