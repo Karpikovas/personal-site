@@ -43,6 +43,7 @@ export default async function PageMusic({
           width={1200}
           height={1200}
           sizes="100vw"
+          priority
           style={{ width: "1200px", height: "auto" }} // optional
         />
         <div className="text-4xl mt-5">

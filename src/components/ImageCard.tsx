@@ -11,6 +11,7 @@ const ImageCard = ({ url }) => {
         alt="Leyla Romanova"
         width={520}
         height={700}
+        priority
       />
     </div>
   );

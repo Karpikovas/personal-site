@@ -14,7 +14,7 @@ export default function ContactsPage() {
 
         <div className="container mt-16 mb-8 mx-auto px-8 xl:px-28">
           <div className="mb-10">
-            <h1 className="text-4xl mb-10">Contacts</h1>
+            <h1 className="text-4xl font-bold mb-10">Contacts</h1>
             <div>
               <h2 className="text-3xl">Leyla Romanova</h2>
 

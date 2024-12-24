@@ -4,6 +4,13 @@ const MUSIC: BaseMusicItem[] = [
   {
     type: 'single',
     group: 'Cinematic',
+    href: 'fairy-tale',
+    name: 'Fairy Tale',
+    image: 'Fairy Tale.jpg',
+  },
+  {
+    type: 'single',
+    group: 'Cinematic',
     name: 'CYBERSYMPHONY (dedicated to Christopher Nolan)',
     href: 'cybersymphony',
     image: 'Cybersymphony.jpg',
@@ -13,13 +20,7 @@ const MUSIC: BaseMusicItem[] = [
     vk: 'https://vk.com/music/album/-2000569517_20569517_9e5f4a23b3024b1ac5',
     yandex: 'https://music.yandex.ru/album/30705190'
   },
-  {
-    type: 'single',
-    group: 'Cinematic',
-    href: 'fairy-tale',
-    name: 'Fairy Tale',
-    image: 'Cybersymphony.jpg',
-  },
+
   // Electronic
   {
     type: 'single',

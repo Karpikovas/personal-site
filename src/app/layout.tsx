@@ -33,7 +33,7 @@ export default function RootLayout({
           <Navbar />
           {children}
 
-          <div className="container mt-16 mb-8 mx-auto px-8 xl:px-48"></div>
+          <div className="container mt-16 mb-8 mx-auto px-8 xl:px-38"></div>
         </main>
 
         <Contacts />
