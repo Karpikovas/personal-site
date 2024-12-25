@@ -18,7 +18,8 @@ const MUSIC: BaseMusicItem[] = [
     spotify: 'https://open.spotify.com/album/4ZQUY1aGHiJQHYKkIGsPI9',
     apple: 'https://music.apple.com/ru/album/cybersymphony-dedicated-to-christopher-nolan-single/1740963781',
     vk: 'https://vk.com/music/album/-2000569517_20569517_9e5f4a23b3024b1ac5',
-    yandex: 'https://music.yandex.ru/album/30705190'
+    yandex: 'https://music.yandex.ru/album/30705190',
+    zvuk: 'https://zvuk.com/release/33476413'
   },
 
   // Electronic
@@ -28,6 +29,12 @@ const MUSIC: BaseMusicItem[] = [
     group: 'Electronic',
     name: 'Are You Waiting For Me?',
     image: 'Are you waiting for me.jpg',
+    spotify: 'https://open.spotify.com/album/7BKyak549ykUYt98L3dW2N?si=E0Av7fr0Qu6OJslFTJ0Dyg',
+    apple: 'https://music.apple.com/ru/album/are-you-waiting-for-me-single/1773385941',
+    vk: 'https://vk.com/music/album/-2000186406_22186406_01f86d5fe0e4f6533c',
+    yandex: 'https://music.yandex.ru/album/33639358/track/132015319',
+    youtube: 'https://youtu.be/XCmTDfohHuM',
+    zvuk: 'https://zvuk.com/release/35611118'
   },
   {
     type: 'single',
@@ -39,7 +46,8 @@ const MUSIC: BaseMusicItem[] = [
     apple: 'https://music.apple.com/ru/album/diptych/1703612185?i=1703612186',
     vk: 'https://vk.com/music/album/-2000714094_18714094_957737b64b38673c8d',
     yandex: 'https://music.yandex.ru/album/27061554',
-    youtube: 'https://www.youtube.com/watch?v=a0a6gzY6Qrw'
+    youtube: 'https://www.youtube.com/watch?v=a0a6gzY6Qrw',
+    zvuk: 'https://zvuk.com/release/30973158'
   },
   {
     type: 'single',
@@ -51,20 +59,8 @@ const MUSIC: BaseMusicItem[] = [
     apple: 'https://music.apple.com/ru/album/back-to-life-feat-elnarə-xəlilova/1697207806?i=1697207807',
     vk: 'https://vk.com/music/album/-2000418125_18418125_e7a30053d59c84479c',
     yandex: 'https://music.yandex.ru/album/26601339',
-    youtube: 'https://www.youtube.com/watch?v=mBEcXxA9LsE'
-  },
-
-  {
-    type: 'single',
-    group: 'Electronic',
-    href: 'diptych-copy',
-    name: 'Diptych (copy)',
-    image: 'Diptych.jpg',
-    spotify: 'https://open.spotify.com/album/2FilJmUXcBZ42RbAGv7BUH',
-    apple: 'https://music.apple.com/ru/album/diptych/1703612185?i=1703612186',
-    vk: 'https://vk.com/music/album/-2000714094_18714094_957737b64b38673c8d',
-    yandex: 'https://music.yandex.ru/album/27061554',
-    youtube: 'https://www.youtube.com/watch?v=a0a6gzY6Qrw'
+    youtube: 'https://www.youtube.com/watch?v=mBEcXxA9LsE',
+    zvuk: 'https://zvuk.com/track/132960202'
   },
   {
     type: 'album',
@@ -77,13 +73,15 @@ const MUSIC: BaseMusicItem[] = [
     vk: 'https://vk.com/music/album/-2000887854_17887854_9d4b6e697241660587',
     yandex: 'https://music.yandex.ru/album/25675223',
     youtube: 'https://www.youtube.com/watch?v=DaGAILITo4Q&list=OLAK5uy_ki1nGaSoxmNYMxgg3_5VackJ2wuQ9FLPE',
+    zvuk: 'https://zvuk.com/release/29518203',
     items: [
       {
         name: "Вернусь",
+        youtube: ''
       },
       { name: "Embrace me " },
-      { name: "Город" },
-      { name: "Сбежим?" },
+      { name: "Город", youtube: 'https://www.youtube.com/watch?v=SiucGr6kcTA' },
+      { name: "Сбежим?", youtube: 'https://www.youtube.com/watch?v=ASEf-eSoL1M' },
       { name: "Lonely night", youtube: "https://music.youtube.com/watch?v=SfmN-pGZaZY", spotify: "https://open.spotify.com/track/3K2YdJrstzuUb28OfAuua0?si=9a88eed764af4a3b", apple: "https://music.apple.com/ru/album/lonely-night/1684942408?i=1684942414", amazon: "https://amazon.com/music/player/tracks/B0C3MMVR56?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_PJCoJADGxMuRTMAkkwelIEYfg" },
       { name: "Влюбленные" },
       { name: "Ночь" },
@@ -95,20 +93,24 @@ const MUSIC: BaseMusicItem[] = [
   {
     type: 'album',
     group: 'Piano',
-    href: 'ep',
-    name: 'EP',
+    href: 'maxi-single',
+    name: 'Maxi-single',
     image: 'Piano.png',
+    spotify: 'https://open.spotify.com/album/1YWrNBqBZomePAtcBgamJM?si=v0toeBkISAyLQab3VZUMFg',
+    apple: 'https://music.apple.com/ru/album/neopiano-single/1779315945',
+    vk: 'https://music.vk.com/link/PYe3a',
+    yandex: 'https://music.yandex.ru/album/33995506',
+    youtube: 'https://youtu.be/HaN8WLoCkKY?si=vVcxMCgJUmlhEglh',
+    zvuk: 'https://zvuk.com/release/36121300',
     items: [
-      { name: 'Fantasia' },
-      { name: 'Capriccio' },
-      { name: 'Melody (A. Petrov)' },
-      { name: 'Caravan' }
+      { name: 'Fantasia', youtube: 'https://www.youtube.com/watch?v=9cUQ8ac_Pdw' },
+      { name: 'Capriccio', youtube: 'https://www.youtube.com/watch?v=HaN8WLoCkKY' },
     ]
   },
   // Live video
   {
     type: 'single',
-    group: 'Orchestral (live)',
+    group: 'Orchestral (live) & Chamber',
     href: 'reverie',
     name: 'Reverie',
     image: 'Reverie.png',
@@ -117,7 +119,7 @@ const MUSIC: BaseMusicItem[] = [
   {
     type: 'single',
     href: 'dedication',
-    group: 'Orchestral (live)',
+    group: 'Orchestral (live) & Chamber',
     name: 'Dedication',
     image: 'Reverie.png',
   },
@@ -125,12 +127,12 @@ const MUSIC: BaseMusicItem[] = [
   {
     type: 'single',
     href: 'dreams-of-paris',
-    group: 'Chamber',
+    group: 'Orchestral (live) & Chamber',
     name: 'Dreams of Paris',
     image: 'Dreams of Paris.png',
     spotify: 'https://open.spotify.com/album/164XXOs8lERD7QBJei7VOn',
     apple: 'https://music.apple.com/ru/album/dreams-of-paris-single/1537459971',
-    vk: 'https://vk.com/music/album/-2000205076_9205076_ccad3981b65f286e54',
+    //vk: 'https://vk.com/music/album/-2000205076_9205076_ccad3981b65f286e54',
     yandex: 'https://music.yandex.ru/album/12582186',
     youtube: 'https://www.youtube.com/watch?v=hpnklUgaUW0'
   },
@@ -142,13 +144,17 @@ export type BaseMusicItem = {
   group: string
   name: string
   image?: string
+  items?: any[],
+  href: string,
+  // links
   youtube?: string
+  youtube_music?: string
   spotify?: string
   apple?: string
   vk?: string
   yandex?: string
-  items?: any[],
-  href: string
+  zvuk?: string
+  amazon?: string
 }
 
 export function getGroups() {
