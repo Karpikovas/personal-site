@@ -9,8 +9,11 @@ export const Navbar = () => {
 
   return (
     <header>
-      <div className="flex items-center relative justify-between bg-neutral-950 py-4 lg:py-6 px-8 lg:px-12 shadow-[0_8px_8px_-8px_rgba(255,255,255,0.2)] z-10">
-        <a href={PUBLIC_PAGES.HOME} className="ml-20 text-center text-l md:text-xl lg:text-2xl tracking-[.3em] font-light">
+      <div className="flex items-center relative justify-between bg-neutral-950 py-4 lg:py-6 px-8 lg:px-12 shadow-[inset_0_4px_4px_-4px_rgba(255,255,255,0.2),0_8px_8px_-8px_rgba(255,255,255,0.2)] z-10">
+        <a
+          href={PUBLIC_PAGES.HOME}
+          className="ml-20 text-center text-l md:text-xl lg:text-2xl tracking-[.3em] font-light"
+        >
           LEYLA ROMANOVA
         </a>
         <nav>
