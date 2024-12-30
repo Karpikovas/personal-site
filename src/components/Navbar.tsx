@@ -15,7 +15,7 @@ export const Navbar = () => {
         </div>
         <a
           href={PUBLIC_PAGES.HOME}
-          className="text-center text-xl md:text-xl lg:text-2xl tracking-[.2em] font-medium"
+          className="text-center text-xl md:text-xl lg:text-2xl tracking-[.2em] font-medium !text-stone-300"
         >
           LEYLA ROMANOVA
         </a>
