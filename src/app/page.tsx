@@ -9,6 +9,7 @@ export default function Home() {
     vk: "https://vk.com/music/album/-2000205076_9205076_ccad3981b65f286e54",
     yandex: "https://music.yandex.ru/album/12582186",
     youtube: "https://www.youtube.com/watch?v=hpnklUgaUW0",
+    zvuk: 'https://zvuk.com/artist/210264255'
   };
   return (
     <div className="fadeIn">
