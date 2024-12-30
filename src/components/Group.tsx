@@ -4,6 +4,8 @@ import { NextButton, PrevButton, usePrevNextButtons } from "./Btns";
 import { BaseMusicItem } from "@/constants/data";
 import Image from "next/image";
 import { MusicLinks } from "./MusicLinks";
+import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 export const Group = ({
   name,
@@ -22,6 +24,21 @@ export const Group = ({
     onNextButtonClick,
   } = usePrevNextButtons(emblaApi);
 
+  const [width, setWidth] = useState(window.innerWidth);
+  const router = useRouter()
+
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const onItemClick = (item: any) => {
+    if (width < 1024) {
+      router.push('personal-site/music/' + item.href)
+    }
+  }
+
   return (
     <div className="mb-10 lg:mb-16">
       <div className="flex flex-row gap-2 lg:gap-8 items-baseline mb-4 lg:mb-8">
@@ -37,7 +54,7 @@ export const Group = ({
           <div className="embla__container">
             {items.map((item) => (
               <div key={item.name} className="embla__slide ">
-                <div className="relative group inline-block">
+                <div className="relative group inline-block" onClick={() => onItemClick(item)}>
                   <Image
                     className="border border-stone-900 rounded-xl mb-2"
                     src={"/personal-site/covers/" + item.image}
@@ -49,7 +66,7 @@ export const Group = ({
                     style={{ width: "1200px", height: "auto" }} // optional
                   />
 
-                  <div className="hidden group-hover:flex flex-col justify-center align-center absolute px-10 py-12 text-center border border-stone-900 rounded-xl bottom-0 left-0 top-0 right-0 transition ease-in duration-300 bg-black/[.85]">
+                  <div className="hidden lg:group-hover:flex flex-col justify-center align-center absolute px-10 py-12 text-center border border-stone-900 rounded-xl bottom-0 left-0 top-0 right-0 transition ease-in duration-300 bg-black/[.85]">
                     <div className="text-2xl">{item.name}</div>
                     <ul>
                     {type === 'album' && item.items && item.items.map((item, index) => (

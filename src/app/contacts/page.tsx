@@ -20,12 +20,12 @@ export default function ContactsPage() {
           <div className="mb-10">
             <h1 className="text-4xl font-bold mb-10">Contacts</h1>
             <div>
-              <h2 className="text-3xl">Leyla Romanova</h2>
+              <h2 className="text-xl xl:text-3xl">Leyla Romanova</h2>
 
-              <div className="flex flex-col text-2xl mt-2">
+              <div className="flex flex-col text-l xl:text-2xl mt-2">
                 <Link
                   href="mailto:contact@leylaromanova.com"
-                  className="inline-flex items-center gap-2 text-2xl"
+                  className="inline-flex items-center gap-2 text-l xl:text-2xl"
                 >
                   <TbMailFilled /> contact@leylaromanova.com
                 </Link>
@@ -33,7 +33,7 @@ export default function ContactsPage() {
             </div>
           </div>
 
-          <hr className="w-3/5 mt-4 mb-4" />
+          {/* <hr className="xl:w-3/5 mt-4 mb-4" /> */}
           {/* <h1 className="text-4xl mb-8">Socials</h1>
           <div>
             <Social/>
