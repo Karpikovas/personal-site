@@ -8,7 +8,7 @@ export const Photo = () => {
     <div style={{
       minHeight: '150px',
       height: '40vh',
-      backgroundImage: 'url(/personal-site/cover.jpg)',
+      backgroundImage: 'url(/cover.jpg)',
       backgroundAttachment: 'scroll',
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',

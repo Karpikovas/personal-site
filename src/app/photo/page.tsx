@@ -7,16 +7,16 @@ export const metadata: Metadata = {
 
 export default function PhotoPage() {
   const images = [
-    "/personal-site/photo/093A3055.jpg",
-    "/personal-site/photo/093A3177.jpg",
+    "/photo/093A3055.jpg",
+    "/photo/093A3177.jpg",
 
-    "/personal-site/photo/IMG_6741.JPG",
-    "/personal-site/photo/093A3663.jpg",
+    "/photo/IMG_6741.JPG",
+    "/photo/093A3663.jpg",
 
-    "/personal-site/photo/093A3519.jpg",
+    "/photo/093A3519.jpg",
 
-    "/personal-site/photo/IMG_6738.jpg",
-    "/personal-site/photo/093A4182.jpg",
+    "/photo/IMG_6738.jpg",
+    "/photo/093A4182.jpg",
   ];
   return (
     <div className="container mt-16 mb-8 mx-auto px-8 xl:px-28 items-center" >

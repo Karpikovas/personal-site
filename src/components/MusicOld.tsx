@@ -20,7 +20,7 @@ export const Music = () => {
         <div className="mx-auto w-full lg:w-1/3 pb-2 text-2xl tracking-tight lg:text-5xl font-semibold text-wrap">
           <Image
             className="border border-stone-900 rounded-xl"
-            src={"/personal-site/covers/" + releaze.image}
+            src={"/covers/" + releaze.image}
             alt={releaze.name}
             width={350}
             height={350}
@@ -61,7 +61,7 @@ export const Music = () => {
             </div> */}
             <Image
               className="border border-stone-900 rounded-xl"
-              src={"/personal-site/covers/" + album.image}
+              src={"/covers/" + album.image}
               alt={album.name}
               width={350}
               height={350}
@@ -106,7 +106,7 @@ export const Music = () => {
               <div className="mb-1">{group.name.toUpperCase()}</div>
               <Image
                 className="border border-stone-900 rounded-xl mb-2"
-                src={"/personal-site/covers/" + item.image}
+                src={"/covers/" + item.image}
                 alt={item.name}
                 width={350}
                 height={350}

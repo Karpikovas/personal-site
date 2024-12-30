@@ -7,6 +7,18 @@ import { MusicLinks } from "./MusicLinks";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 
+const useWidth = () => {
+  const [width, setWidth] = useState(0)
+  const handleResize = () => setWidth(window.innerWidth)
+  useEffect(() => {
+      handleResize()
+      window.addEventListener('resize', handleResize)
+      return () => window.removeEventListener('resize', handleResize)
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+  return width
+}
+
 export const Group = ({
   name,
   items,
@@ -24,18 +36,12 @@ export const Group = ({
     onNextButtonClick,
   } = usePrevNextButtons(emblaApi);
 
-  const [width, setWidth] = useState(window.innerWidth);
+  const width = useWidth()
   const router = useRouter()
-
-  useEffect(() => {
-    const handleResize = () => setWidth(window.innerWidth);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   const onItemClick = (item: any) => {
     if (width < 1024) {
-      router.push('personal-site/music/' + item.href)
+      router.push('music/' + item.href)
     }
   }
 
@@ -57,7 +63,7 @@ export const Group = ({
                 <div className="relative group inline-block" onClick={() => onItemClick(item)}>
                   <Image
                     className="border border-stone-900 rounded-xl mb-2"
-                    src={"/personal-site/covers/" + item.image}
+                    src={"/covers/" + item.image}
                     alt={item.name}
                     width={1200}
                     height={1200}
@@ -87,7 +93,7 @@ export const Group = ({
 
                     <div className="sm:mb-8 sm:flex sm:justify-center mt-4 absolute bottom-0 right-4">
                       <div className="relative rounded-full px-3 py-1 text-xl border border-gray-600 hover:border-gray-400">
-                        <a href={'personal-site/music/' + item.href} className="font-semibold">
+                        <a href={'music/' + item.href} className="font-semibold">
                           <span
                             className="absolute inset-0"
                             aria-hidden="true"

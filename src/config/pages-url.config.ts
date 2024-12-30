@@ -1,5 +1,5 @@
 class PUBLIC {
-	private root = '/personal-site'
+	private root = ''
 
 	HOME = `${this.root}/`
 	CONTACTS = `${this.root}/contacts`

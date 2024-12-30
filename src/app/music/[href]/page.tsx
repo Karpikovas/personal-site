@@ -4,6 +4,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 
 // or Dynamic metadata
+// @ts-ignore
 export async function generateMetadata({ params }) {
   const { href } = await params;
   const item = getByHref(href);
@@ -48,7 +49,7 @@ export default async function PageMusic({
       <div className="md:basis-1/2">
         <Image
           className="border border-stone-900 rounded-xl mb-2"
-          src={"/personal-site/covers/" + item.image}
+          src={"/covers/" + item.image}
           alt={item.name}
           width={1200}
           height={1200}

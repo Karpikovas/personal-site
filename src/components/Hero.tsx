@@ -30,7 +30,7 @@ export const Hero = () => {
           <div className="flex">      
             <Image
               className="border border-stone-900 rounded-xl"
-              src="/personal-site/leyla.jpeg"
+              src="/leyla.jpeg"
               alt="Leyla Romanova"
               width={650}
               height={975}
