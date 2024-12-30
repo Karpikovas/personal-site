@@ -3,6 +3,16 @@ import { getByHref } from "@/constants/data";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
+// or Dynamic metadata
+export async function generateMetadata({ params }) {
+  const { href } = await params;
+  const item = getByHref(href);
+
+  return {
+    title: item?.name,
+  }
+}
+
 export default async function PageMusic({
   params,
 }: {

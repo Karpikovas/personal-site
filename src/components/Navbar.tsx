@@ -49,9 +49,9 @@ export const Navbar = () => {
                 </svg>
               </div>
               <ul className="flex flex-col items-center justify-between min-h-[250px]">
-                <li className="border-b border-gray-400 my-8 uppercase">
+                {/* <li className="border-b border-gray-400 my-8 uppercase">
                   <a href={PUBLIC_PAGES.PRESS}>Press</a>
-                </li>
+                </li> */}
                 <li className="border-b border-gray-400 my-8 uppercase">
                   <a href={PUBLIC_PAGES.PHOTO}>Photo</a>
                 </li>
@@ -66,9 +66,9 @@ export const Navbar = () => {
           </section>
 
           <ul className="DESKTOP-MENU hidden space-x-8 lg:flex">
-            <li>
+            {/* <li>
               <a href={PUBLIC_PAGES.PRESS}>Press</a>
-            </li>
+            </li> */}
             <li>
               <a href={PUBLIC_PAGES.PHOTO}>Photo</a>
             </li>
