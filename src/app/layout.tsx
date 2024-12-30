@@ -9,9 +9,13 @@ const font = Open_Sans({
   subsets: ["cyrillic", "cyrillic-ext", "latin", "latin-ext"],
 });
 
+const SITE_NAME = 'Leyla Romanova'
 export const metadata: Metadata = {
-  title: "LEYLA ROMANOVA",
-  description: "Description",
+  title: {
+    template: `%s | ${SITE_NAME}`,
+    default: SITE_NAME ,
+  },
+  description: 'Leyla Romanova is a composer who creates music of different genres — from orchestral and neoclassical piano music to techno',
 };
 
 export default function RootLayout({

@@ -1,4 +1,9 @@
 import ImageCard from "@/components/ImageCard";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: 'Photo',
+}
 
 export default function PhotoPage() {
   const images = [

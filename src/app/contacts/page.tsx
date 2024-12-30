@@ -1,6 +1,10 @@
 import { TbMailFilled } from "react-icons/tb";
 import Link from "next/link";
-import { Social } from "@/components/Social";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: 'Contacts',
+}
 
 export default function ContactsPage() {
   return (

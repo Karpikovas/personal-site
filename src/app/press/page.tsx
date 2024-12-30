@@ -1,3 +1,8 @@
+import type { Metadata } from "next";
+export const metadata: Metadata = {
+	title: 'Press',
+}
+
 export default function PressPage() {
   return (
     <div className="flex flex-col gap-8 container mt-16 mb-8 px-8 xl:px-48">
