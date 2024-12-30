@@ -48,7 +48,7 @@ export const Group = ({
   return (
     <div className="mb-10 lg:mb-16">
       <div className="flex flex-row gap-2 lg:gap-8 items-baseline mb-4 lg:mb-8">
-        <h2 className="w-2/5 md:w-2/6 pb-2 tracking-tight lg:text-4xl font-semibold text-wrap">
+        <h2 className="w-2/5 md:w-2/6 pb-2 tracking-tight lg:text-4xl font-semibold text-wrap !text-stone-300">
           {name.toString().toUpperCase()}
         </h2>
 
@@ -87,7 +87,7 @@ export const Group = ({
                       </li>
                     ))}
                   </ul>
-                    <div className="text-3xl mt-4">
+                    <div className="text-3xl mt-4 !text-stone-300">
                       <MusicLinks {...item} />
                     </div>
 

@@ -17,19 +17,19 @@ export const Social = () => {
   }
   return (
     <>
-      <a className="hover:text-stone-400 cursor-pointer" target="_blank" href={socials.instagram}>
+      <a className="hover:text-stone-400 cursor-pointer !text-stone-300" target="_blank" href={socials.instagram}>
         <FaInstagram />
       </a>
-      <a className="hover:text-stone-400 cursor-pointer" target="_blank" href={socials.telegram}>
+      <a className="hover:text-stone-400 cursor-pointer !text-stone-300" target="_blank" href={socials.telegram}>
         <FaTelegram />
       </a>
-      <a className="hover:text-stone-400 cursor-pointer" target="_blank" href={socials.facebook}>
+      <a className="hover:text-stone-400 cursor-pointer !text-stone-300" target="_blank" href={socials.facebook}>
         <FaFacebook />
       </a>
-      <a className="hover:text-stone-400 cursor-pointer" target="_blank" href={socials.youtube}>
+      <a className="hover:text-stone-400 cursor-pointer !text-stone-300" target="_blank" href={socials.youtube}>
         <FaYoutube />
       </a>
-      <a className="hover:text-stone-400 cursor-pointer" target="_blank" href={socials.vk}>
+      <a className="hover:text-stone-400 cursor-pointer !text-stone-300" target="_blank" href={socials.vk}>
         <FaVk />
       </a>
     </>

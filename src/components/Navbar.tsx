@@ -52,13 +52,13 @@ export const Navbar = () => {
                 {/* <li className="border-b border-gray-400 my-8 uppercase">
                   <a href={PUBLIC_PAGES.PRESS}>Press</a>
                 </li> */}
-                <li className="border-b border-gray-400 my-8 uppercase">
+                <li className="border-b border-gray-400 my-8 uppercase !text-stone-300">
                   <a href={PUBLIC_PAGES.PHOTO}>Photo</a>
                 </li>
-                <li className="border-b border-gray-400 my-8 uppercase">
+                <li className="border-b border-gray-400 my-8 uppercase !text-stone-300">
                   <a href={PUBLIC_PAGES.CONTACTS}>Contacts</a>
                 </li>
-                <li className="flex items-center justify-end my-8 gap-3 text-2xl">
+                <li className="flex items-center justify-end my-8 gap-3 text-2xl !text-stone-300">
                   <Social />
                 </li>
               </ul>
