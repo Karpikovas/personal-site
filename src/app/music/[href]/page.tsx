@@ -16,25 +16,25 @@ export default async function PageMusic({
   }
 
   return (
-    <div className="flex flex-col-reverse md:flex-row gap-16 container mt-16 mb-8 px-8 xl:px-48">
+    <div className="flex flex-col-reverse md:flex-row gap-16 mt-16 mb-8 px-8 xl:px-48">
       <ul className="md:hidden block">
-          {item.type === "album" &&
-            item.items &&
-            item.items.map((item, index) => (
-              <li
-                key={item.name}
-                className="text-xl flex justify-between mb-1 font-normal"
-              >
-                <span>
-                  <span className="inline-flex font-medium w-6">
-                    {index + 1}.
-                  </span>
-                  {item.name}
+        {item.type === "album" &&
+          item.items &&
+          item.items.map((item, index) => (
+            <li
+              key={item.name}
+              className="text-xl flex justify-between mb-1 font-normal"
+            >
+              <span>
+                <span className="inline-flex font-medium w-6">
+                  {index + 1}.
                 </span>
-                <MusicLinks {...item}/>
-              </li>
-            ))}
-        </ul>
+                {item.name}
+              </span>
+              <MusicLinks {...item} />
+            </li>
+          ))}
+      </ul>
       <div className="md:basis-1/2">
         <Image
           className="border border-stone-900 rounded-xl mb-2"
@@ -60,6 +60,11 @@ export default async function PageMusic({
         </h3>
 
         <hr className="my-7" />
+        {item.description && (
+          <div className="pb-2 tracking-tight lg:text-l text-wrap">
+            {item.description}
+          </div>
+        )}
 
         <ul className="hidden md:block">
           {item.type === "album" &&
@@ -75,7 +80,7 @@ export default async function PageMusic({
                   </span>
                   {item.name}
                 </span>
-                <MusicLinks {...item}/>
+                <MusicLinks {...item} />
               </li>
             ))}
         </ul>

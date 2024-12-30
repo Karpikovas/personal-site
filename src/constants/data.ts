@@ -14,12 +14,13 @@ const MUSIC: BaseMusicItem[] = [
     name: 'CYBERSYMPHONY (dedicated to Christopher Nolan)',
     href: 'cybersymphony',
     image: 'Cybersymphony.jpg',
+    description: 'CYBERSYMPHONY is my debut in the cinematic style. The track combines elements of classical orchestral music, chorale, techno-trance — I tried to make it integral but at the same time multi-layered, encompassing different moods and colors so that it could seem like a concentrated soundtrack to a real film. While working on this track, I pictured in my head the story of a superhero who goes through various life trials, fights in fierce battles with dangerous enemies, finds himself one step away from death, but wins, showing remarkable willpower, and sometimes gives himself up to simple human weaknesses, hanging out at hard techno raves, missing his beloved and indulging in dreams. I dedicated this soundtrack to my favorite director, Christopher Nolan, whose films always inspire and give new meanings.',
     youtube: 'https://youtu.be/xN-X9HNMK88',
     spotify: 'https://open.spotify.com/album/4ZQUY1aGHiJQHYKkIGsPI9',
     apple: 'https://music.apple.com/ru/album/cybersymphony-dedicated-to-christopher-nolan-single/1740963781',
     vk: 'https://vk.com/music/album/-2000569517_20569517_9e5f4a23b3024b1ac5',
     yandex: 'https://music.yandex.ru/album/30705190',
-    zvuk: 'https://zvuk.com/release/33476413'
+    zvuk: 'https://zvuk.com/release/33476413',
   },
 
   // Electronic
@@ -144,6 +145,7 @@ export type BaseMusicItem = {
   group: string
   name: string
   image?: string
+  description?: string
   items?: any[],
   href: string,
   // links

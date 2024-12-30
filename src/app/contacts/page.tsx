@@ -20,10 +20,10 @@ export default function ContactsPage() {
 
               <div className="flex flex-col text-2xl mt-2">
                 <Link
-                  href="mailto:vip@leylaromanova.com"
+                  href="mailto:contact@leylaromanova.com"
                   className="inline-flex items-center gap-2 text-2xl"
                 >
-                  <TbMailFilled /> vip@leylaromanova.com
+                  <TbMailFilled /> contact@leylaromanova.com
                 </Link>
               </div>
             </div>
