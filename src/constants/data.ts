@@ -7,6 +7,12 @@ const MUSIC: BaseMusicItem[] = [
     href: 'fairy-tale',
     name: 'Fairy Tale',
     image: 'Fairy Tale.jpg',
+    spotify: 'https://open.spotify.com/album/6e5FurpsJah1T6yNxkc4w6',
+    youtube: 'https://youtu.be/wVQa67AJ_78?si=Cx24zjV6cJN-bTjy',
+    apple: 'https://music.apple.com/ru/album/fairy-tale-single/1784537366',
+    vk: 'https://vk.com/music/album/-2000726824_22726824',
+    yandex: 'https://music.yandex.ru/album/34423278/track/133960379',
+    zvuk: 'https://zvuk.com/release/36512200'
   },
   {
     type: 'single',
@@ -80,16 +86,16 @@ const MUSIC: BaseMusicItem[] = [
         name: "Вернусь",
         youtube: ''
       },
-      { name: "Embrace me " },
-      { name: "Город", youtube: 'https://www.youtube.com/watch?v=SiucGr6kcTA' },
-      { name: "Сбежим?", youtube: 'https://www.youtube.com/watch?v=ASEf-eSoL1M' },
-      { name: "Lonely night", youtube: "https://music.youtube.com/watch?v=SfmN-pGZaZY", spotify: "https://open.spotify.com/track/3K2YdJrstzuUb28OfAuua0?si=9a88eed764af4a3b", apple: "https://music.apple.com/ru/album/lonely-night/1684942408?i=1684942414", amazon: "https://amazon.com/music/player/tracks/B0C3MMVR56?marketplaceId=ATVPDKIKX0DER&musicTerritory=US&ref=dm_sh_PJCoJADGxMuRTMAkkwelIEYfg" },
-      { name: "Влюбленные" },
-      { name: "Ночь" },
-      { name: "Кино" },
-      { name: "Сонный город" },
-      { name: " Ре" },
-    ]
+      { name: "Embrace me ", spotify: 'https://open.spotify.com/track/4mWq3iOhdWDqMW7VZko1w0?si=XF46CvwRSG-ajDnm_9oXcA' },
+      { name: "Город", youtube: 'https://www.youtube.com/watch?v=SiucGr6kcTA', spotify: 'https://open.spotify.com/track/3Tzry0ZMuRRFH4mHtIKNUH?si=dCDCZ4K8RE6K_JYupgT8CA' },
+      { name: "Сбежим?", youtube: 'https://www.youtube.com/watch?v=ASEf-eSoL1M', spotify: 'https://open.spotify.com/track/7iIjra5nWhVaiWl2tpRoJC?si=hbTZEQeWSFiTh8TOGDNnlg' },
+      { name: "Lonely night", youtube: "https://music.youtube.com/watch?v=SfmN-pGZaZY", spotify: "https://open.spotify.com/track/3K2YdJrstzuUb28OfAuua0?si=9a88eed764af4a3b", apple: "https://music.apple.com/ru/album/lonely-night/1684942408?i=1684942414" },
+      { name: "Влюбленные", spotify: 'https://open.spotify.com/track/6wB33OD5jEUDAxgKW5nHjX?si=gR-wEg1CTtO2YipHX6VtBw' },
+      { name: "Ночь", spotify: 'https://open.spotify.com/track/2YenLaqrNfHuS8sImqbLkk?si=IVPe-2WjS_yDOBJZVOJ6Gw' },
+      { name: "Кино", spotify: 'https://open.spotify.com/track/4vkqap1LvbUwDBvet4rgYj?si=S2YZx6EcS0aFvRlu0k5OQA' },
+      { name: "Сонный город", spotify: 'https://open.spotify.com/track/7FZGx2zwvFh5zYX4Pz8iva?si=t3QexGK3QA6U5sO8dGbDDw' },
+      { name: " Ре", spotify: 'https://open.spotify.com/track/3x9fFFtOJQXSLDEh3iQEEt?si=fk7oLkfuTyGoqms1w4jw8Q' },
+    ] as TrackItem[]
   },
   {
     type: 'album',
@@ -159,16 +165,29 @@ export type BaseMusicItem = {
   amazon?: string
 }
 
+export type TrackItem = {
+  youtube?: string
+  youtube_music?: string
+  spotify?: string
+  apple?: string
+  vk?: string
+  yandex?: string
+  zvuk?: string
+  amazon?: string
+}
+
 export function getGroups() {
   let result = {}
 
   MUSIC.forEach(item => {
     if (!result.hasOwnProperty(item.group)) {
-      result[item.group] = { items: [] }
+      result[item.group] = { items: [], isMain: false }
     }
 
     result[item.group].items.push(item)
   })
+
+  result['Cinematic'].isMain = true
 
   return result
 }

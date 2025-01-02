@@ -27,7 +27,7 @@ export default async function PageMusic({
   }
 
   return (
-    <div className="flex flex-col-reverse md:flex-row gap-2 xl:gap-16 mt-16 mb-8 px-8 xl:px-48 !text-stone-300">
+    <div className="flex flex-col-reverse md:flex-row gap-2 md:gap-6 xl:gap-16 lg:gap-8 mt-16 mb-8 max-w-screen-2xl px-8 md:px-16 xl:px-48 !text-stone-300">
       <ul className="md:hidden block mt-8">
         {item.type === "album" &&
           item.items &&
@@ -47,7 +47,7 @@ export default async function PageMusic({
           ))}
       </ul>
       {item.description && (
-          <div className="block mt-8 lg:hidden pb-2 tracking-tight lg:text-l text-wrap !text-stone-300">
+          <div className="block mt-8 md:hidden pb-2 tracking-tight lg:text-l text-wrap !text-stone-300">
             {item.description}
           </div>
         )}
@@ -77,7 +77,7 @@ export default async function PageMusic({
 
         <hr className="my-4 xl:my-7" />
         {item.description && (
-          <div className="hidden lg:block pb-2 tracking-tight lg:text-l text-wrap !text-stone-300">
+          <div className="hidden md:block pb-2 tracking-tight lg:text-l text-wrap !text-stone-300">
             {item.description}
           </div>
         )}

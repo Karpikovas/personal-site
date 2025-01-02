@@ -6,7 +6,7 @@ export const metadata: Metadata = {
 
 export default function PressPage() {
   return (
-    <div className="flex flex-col gap-8 container mt-16 mb-8 px-8 xl:px-48">
+    <div className="flex flex-col gap-8 container mt-16 mb-8 px-8 md:px-16 xl:px-48">
       <h1 className="text-4xl font-bold">Press</h1>
       <a
         href="#"

@@ -8,7 +8,7 @@ export const Music = () => {
   return (
     <>
       {Object.keys(groups).map((key) => (
-        <Group key={key} name={key} items={groups[key].items} type="single" />
+        <Group key={key} name={key} items={groups[key].items} type="single" isMain={groups[key].isMain} />
       ))}
     </>
   );
