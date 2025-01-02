@@ -1,23 +1,36 @@
 "use client";
 import { PUBLIC_PAGES } from "@/config/pages-url.config";
 import { Social } from "./Social";
+import { MusicLinks } from "./MusicLinks";
 
 import { useState } from "react";
+import { Contacts } from "./Contacts";
 
 export const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const links = {
+    spotify: "https://open.spotify.com/album/164XXOs8lERD7QBJei7VOn",
+    apple: "https://music.apple.com/ru/album/dreams-of-paris-single/1537459971",
+    vk: "https://vk.com/music/album/-2000205076_9205076_ccad3981b65f286e54",
+    yandex: "https://music.yandex.ru/album/12582186",
+    youtube: "https://www.youtube.com/watch?v=hpnklUgaUW0",
+    zvuk: "https://zvuk.com/artist/210264255",
+  };
 
   return (
     <header>
-      <div className="flex items-center relative justify-between bg-neutral-950 py-4 lg:py-6 px-8 lg:px-12 shadow-[inset_0_4px_4px_-4px_rgba(255,255,255,0.2),0_8px_8px_-8px_rgba(255,255,255,0.2)] z-10">
-
+      <div className="flex items-center relative justify-between bg-neutral-950 py-4 lg:py-6 px-8 lg:px-8 xl:px-12 shadow-[inset_0_4px_4px_-4px_rgba(255,255,255,0.2),0_8px_8px_-8px_rgba(255,255,255,0.2)] z-10">
+        <div className="hidden text-2xl space-x-4 lg:flex lg:w-72 !text-stone-400">
+          {/* <Social /> */}
+          <MusicLinks {...links} />
+        </div>
         <a
           href={PUBLIC_PAGES.HOME}
-          className="text-center text-xl md:text-xl lg:text-2xl tracking-[.2em] font-medium !text-stone-300"
+          className="text-center text-xl md:text-xl lg:text-3xl tracking-[.15em] font-semibold !text-stone-100"
         >
           LEYLA ROMANOVA
         </a>
-        <nav>
+        <nav className="lg:w-72">
           <section className="MOBILE-MENU flex lg:hidden">
             <div
               className="HAMBURGER-ICON space-y-2"
@@ -46,38 +59,46 @@ export const Navbar = () => {
                   <line x1="6" y1="6" x2="18" y2="18" />
                 </svg>
               </div>
-              <ul className="flex flex-col items-center justify-between min-h-[250px]">
-                {/* <li className="border-b border-gray-400 my-8 uppercase">
+              <ul className="flex flex-col items-center justify-between min-h-[250px] !text-stone-400">
+                <li className="flex flex-col items-center justify-end my-8 gap-4 text-2xl !text-stone-200">
+                  Listen
+                  <MusicLinks {...links} />
+                </li>
+                <li className="border-b border-gray-400 my-8 uppercase !text-stone-400">
                   <a href={PUBLIC_PAGES.PRESS}>Press</a>
-                </li> */}
-                <li className="border-b border-gray-400 my-8 uppercase !text-stone-300">
+                </li>
+                <li className="border-b border-gray-400 my-8 uppercase !text-stone-400">
                   <a href={PUBLIC_PAGES.PHOTO}>Photo</a>
                 </li>
-                <li className="border-b border-gray-400 my-8 uppercase !text-stone-300">
+                <li className="border-b border-gray-400 my-8 uppercase !text-stone-400">
                   <a href={PUBLIC_PAGES.CONTACTS}>Contacts</a>
                 </li>
-                <li className="flex items-center justify-end my-8 gap-3 text-2xl !text-stone-300">
+
+                <li className="flex items-center justify-end my-8   gap-3 text-xl !text-stone-400">
                   <Social />
                 </li>
               </ul>
             </div>
           </section>
 
-          <ul className="DESKTOP-MENU hidden space-x-8 lg:flex">
+          <ul className="DESKTOP-MENU hidden lg:justify-end space-x-8 lg:flex font-semibold text-xl !text-stone-400">
             {/* <li>
-              <a href={PUBLIC_PAGES.PRESS}>Press</a>
+              <MusicLinks {...links} />
             </li> */}
+            <li>
+              <a href={PUBLIC_PAGES.PRESS}>Press</a>
+            </li>
             <li>
               <a href={PUBLIC_PAGES.PHOTO}>Photo</a>
             </li>
             <li>
               <a href={PUBLIC_PAGES.CONTACTS}>Contacts</a>
             </li>
+            {/* <li>
+              <Contacts/>
+            </li> */}
           </ul>
         </nav>
-        <div className="hidden text-lg space-x-4 lg:flex">
-          <Social />
-        </div>
         <style>{`
       .hideMenuNav {
         display: none;

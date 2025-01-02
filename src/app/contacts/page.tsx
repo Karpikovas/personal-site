@@ -1,10 +1,11 @@
 import { TbMailFilled } from "react-icons/tb";
 import Link from "next/link";
 import type { Metadata } from "next";
+import { Social } from "@/components/Social";
 
 export const metadata: Metadata = {
-	title: 'Contacts',
-}
+  title: "Contacts",
+};
 
 export default function ContactsPage() {
   return (
@@ -22,7 +23,7 @@ export default function ContactsPage() {
             <div>
               <h2 className="text-xl xl:text-3xl">Leyla Romanova</h2>
 
-              <div className="flex flex-col text-l xl:text-2xl mt-2">
+              <div className="flex flex-col text-l xl:text-2xl mt-4">
                 <Link
                   href="mailto:contact@leylaromanova.com"
                   className="inline-flex items-center gap-2 text-l xl:text-2xl"
@@ -33,13 +34,11 @@ export default function ContactsPage() {
             </div>
           </div>
 
-          {/* <hr className="xl:w-3/5 mt-4 mb-4" /> */}
-          {/* <h1 className="text-4xl mb-8">Socials</h1>
-          <div>
-            <Social/>
-
-            <div></div>
-          </div> */}
+          <hr className="xl:w-3/5 mt-4 mb-6" />
+          {/* <h1 className="text-4xl mb-8 mt-4">Socials</h1> */}
+          <div className="flex gap-4 text-2xl !text-stone-300">
+            <Social onlySocials={true}/>
+          </div>
         </div>
       </div>
     </div>

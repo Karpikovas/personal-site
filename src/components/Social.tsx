@@ -6,30 +6,53 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 
-
-export const Social = () => {
+export const Social = ({ onlySocials = false }: { onlySocials?: boolean }) => {
   const socials = {
-    vk: 'https://vk.com/leylaromanova',
-    telegram: 'https://t.me/leylaromanovamusic',
-    instagram: 'https://www.instagram.com/leyla.e.romanova/',
-    facebook: 'https://www.facebook.com/romanova.leyla/',
-    youtube: 'https://www.youtube.com/@LeylaRomanova'
-  }
+    vk: "https://vk.com/leylaromanova",
+    telegram: "https://t.me/leylaromanovamusic",
+    instagram: "https://www.instagram.com/leyla.e.romanova/",
+    facebook: "https://www.facebook.com/romanova.leyla/",
+    youtube: "https://www.youtube.com/@LeylaRomanova",
+  };
   return (
     <>
-      <a className="hover:text-stone-400 cursor-pointer !text-stone-300" target="_blank" href={socials.instagram}>
+      <a
+        className="hover:text-stone-400 cursor-pointer !text-stone-300"
+        target="_blank"
+        href={socials.instagram}
+      >
         <FaInstagram />
       </a>
-      <a className="hover:text-stone-400 cursor-pointer !text-stone-300" target="_blank" href={socials.telegram}>
-        <FaTelegram />
-      </a>
-      <a className="hover:text-stone-400 cursor-pointer !text-stone-300" target="_blank" href={socials.facebook}>
+      <a
+        className="hover:text-stone-400 cursor-pointer !text-stone-300"
+        target="_blank"
+        href={socials.facebook}
+      >
         <FaFacebook />
       </a>
-      <a className="hover:text-stone-400 cursor-pointer !text-stone-300" target="_blank" href={socials.youtube}>
-        <FaYoutube />
+      <a
+        className="hover:text-stone-400 cursor-pointer !text-stone-300"
+        target="_blank"
+        href={socials.telegram}
+      >
+        <FaTelegram />
       </a>
-      <a className="hover:text-stone-400 cursor-pointer !text-stone-300" target="_blank" href={socials.vk}>
+
+      {!onlySocials && (
+        <a
+          className="hover:text-stone-400 cursor-pointer !text-stone-300"
+          target="_blank"
+          href={socials.youtube}
+        >
+          <FaYoutube />
+        </a>
+      )}
+
+      <a
+        className="hover:text-stone-400 cursor-pointer !text-stone-300"
+        target="_blank"
+        href={socials.vk}
+      >
         <FaVk />
       </a>
     </>

@@ -122,7 +122,7 @@ const MUSIC: BaseMusicItem[] = [
     href: 'dedication',
     group: 'Orchestral (live) & Chamber',
     name: 'Dedication',
-    image: 'Reverie.png',
+    image: 'Dedication.png',
   },
   // Chamber
   {

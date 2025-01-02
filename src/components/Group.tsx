@@ -60,16 +60,17 @@ export const Group = ({
           <div className="embla__container">
             {items.map((item) => (
               <div key={item.name} className="embla__slide ">
-                <div className="relative group inline-block" onClick={() => onItemClick(item)}>
+                <div className="relative group inline-block h-full" onClick={() => onItemClick(item)}>
                   <Image
-                    className="border border-stone-900 rounded-xl mb-2"
+                    className="border border-stone-900 rounded-xl"
                     src={"/covers/" + item.image}
                     alt={item.name}
                     width={1200}
                     height={1200}
                     sizes="100vw"
                     priority
-                    style={{ width: "1200px", height: "auto" }} // optional
+                    // style={{ objectFit: "cover", width: "auto", height: "400px", maxWidth: '400px' }} // optional
+                    style={{ width: "1200px", height: "100%", objectFit: "cover" }} 
                   />
 
                   <div className="hidden lg:group-hover:flex flex-col justify-center align-center absolute px-10 py-12 text-center border border-stone-900 rounded-xl bottom-0 left-0 top-0 right-0 transition ease-in duration-300 bg-black/[.85]">
@@ -87,15 +88,15 @@ export const Group = ({
                       </li>
                     ))}
                   </ul>
-                    <div className="text-3xl mt-4 !text-stone-300">
+                    <div className="lg:text-4xl xl:text-5xl mt-4 !text-stone-300">
                       <MusicLinks {...item} />
                     </div>
 
                     <div className="sm:mb-8 sm:flex sm:justify-center mt-4 absolute bottom-0 right-4">
-                      <div className="relative rounded-full px-3 py-1 text-xl border border-gray-600 hover:border-gray-400">
+                      <div className="relative rounded-full px-4 py-1 text-xl bg-stone-950 border-gray-600 hover:bg-stone-800">
                         <a href={'music/' + item.href} className="font-semibold">
                           <span
-                            className="absolute inset-0"
+                            className="absolute inset-0 text-stone-500"
                             aria-hidden="true"
                           ></span>
                           More →

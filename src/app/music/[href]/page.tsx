@@ -27,14 +27,14 @@ export default async function PageMusic({
   }
 
   return (
-    <div className="flex flex-col-reverse md:flex-row gap-16 mt-16 mb-8 px-8 xl:px-48 !text-stone-300">
-      <ul className="md:hidden block">
+    <div className="flex flex-col-reverse md:flex-row gap-2 xl:gap-16 mt-16 mb-8 px-8 xl:px-48 !text-stone-300">
+      <ul className="md:hidden block mt-8">
         {item.type === "album" &&
           item.items &&
           item.items.map((item, index) => (
             <li
               key={item.name}
-              className="text-xl flex justify-between mb-1 font-normal !text-stone-300"
+              className="text-lg flex justify-between mb-1 font-normal !text-stone-300"
             >
               <span>
                 <span className="inline-flex font-medium w-6 !text-stone-300">
@@ -46,6 +46,11 @@ export default async function PageMusic({
             </li>
           ))}
       </ul>
+      {item.description && (
+          <div className="block mt-8 lg:hidden pb-2 tracking-tight lg:text-l text-wrap !text-stone-300">
+            {item.description}
+          </div>
+        )}
       <div className="md:basis-1/2">
         <Image
           className="border border-stone-900 rounded-xl mb-2"
@@ -62,17 +67,17 @@ export default async function PageMusic({
         </div>
       </div>
       <div className="md:basis-1/2">
-        <h2 className="pb-6 tracking-tight lg:text-3xl font-semibold text-wrap !text-stone-300s">
+        <h2 className="text-2xl pb-2 xl:pb-6 tracking-tight lg:text-3xl font-semibold text-wrap !text-stone-300s">
           {item.name}
         </h2>
 
-        <h3 className="pb-2 tracking-tight lg:text-l font-semibold text-wrap !text-stone-300">
+        <h3 className="text-sm pb-2 tracking-tight lg:text-l font-semibold text-wrap !text-stone-300">
           {item.group.toUpperCase()}
         </h3>
 
-        <hr className="my-7 " />
+        <hr className="my-4 xl:my-7" />
         {item.description && (
-          <div className="pb-2 tracking-tight lg:text-l text-wrap !text-stone-300">
+          <div className="hidden lg:block pb-2 tracking-tight lg:text-l text-wrap !text-stone-300">
             {item.description}
           </div>
         )}
