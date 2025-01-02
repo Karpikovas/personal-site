@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Contacts } from "@/components/Contacts";
+import { Contacts } from "../components/Contacts";
 import { Open_Sans } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components/Navbar";
+import { Navbar } from "../components/Navbar";
 
 const font = Open_Sans({
   variable: "--font-default",

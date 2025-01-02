@@ -160,10 +160,9 @@ export type BaseMusicItem = {
 }
 
 export function getGroups() {
-  const single = MUSIC.filter(item => item.type === 'single')
   let result = {}
 
-  single.forEach(item => {
+  MUSIC.forEach(item => {
     if (!result.hasOwnProperty(item.group)) {
       result[item.group] = { items: [] }
     }
@@ -172,18 +171,6 @@ export function getGroups() {
   })
 
   return result
-}
-
-export function getAlbums() {
-  const album = MUSIC.filter(item => item.type === 'album')
-
-  let albums = []
-
-  album.forEach(item => {
-    albums.push(item)
-  })
-
-  return albums
 }
 
 export function getByHref(href: string) {
