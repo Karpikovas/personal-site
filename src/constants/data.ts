@@ -7,11 +7,12 @@ const MUSIC: BaseMusicItem[] = [
     href: 'fairy-tale',
     name: 'Fairy Tale',
     image: 'Fairy Tale.jpg',
+    description: 'FAIRY TALE consists of countless parts of all groups of instruments of the symphony orchestra (strings – from violin to double bass, woodwinds – from flute to bassoon, brass – from trumpet to tuba, percussion – from timpani to metallophones), keyboards (piano, celesta), choir – in general, almost everything one can imagine. This piece of music is my attempt to become one step closer to my main musical teachers, the real wizards, Pyotr Tchaikovsky and John Williams.',
     spotify: 'https://open.spotify.com/album/6e5FurpsJah1T6yNxkc4w6',
     youtube: 'https://youtu.be/wVQa67AJ_78?si=Cx24zjV6cJN-bTjy',
     apple: 'https://music.apple.com/ru/album/fairy-tale-single/1784537366',
-    vk: 'https://vk.com/music/album/-2000726824_22726824',
-    yandex: 'https://music.yandex.ru/album/34423278/track/133960379',
+    vk: 'https://boom.ru/redirect/album/28284775?mt_sub3=28284775&mt_sub1=FAIRY%20TALE&mt_click_id=mt-iybts5-1736752033-1767008222&mt_sub2=%27album%27',
+    yandex: 'https://music.yandex.ru/album/34423278',
     zvuk: 'https://zvuk.com/release/36512200'
   },
   {
@@ -36,6 +37,7 @@ const MUSIC: BaseMusicItem[] = [
     group: 'Electronic',
     name: 'Are You Waiting For Me?',
     image: 'Are you waiting for me.jpg',
+    description: 'We are all prisoners of time. It cannot be stopped, delayed or outstripped. Everything happens when it is supposed to happen – not earlier and not later. We have to spend part of our lives waiting. But if you are ready to wait, then what you are waiting for is important and valuable to you. And if they are waiting for you, it means you are important and valuable to someone. I like to intertwine genres and create music of the future, the roots of which originate in my past – because one cannot exist without the other.',
     spotify: 'https://open.spotify.com/album/7BKyak549ykUYt98L3dW2N?si=E0Av7fr0Qu6OJslFTJ0Dyg',
     apple: 'https://music.apple.com/ru/album/are-you-waiting-for-me-single/1773385941',
     vk: 'https://vk.com/music/album/-2000186406_22186406_01f86d5fe0e4f6533c',
@@ -49,6 +51,7 @@ const MUSIC: BaseMusicItem[] = [
     href: 'diptych',
     name: 'Diptych',
     image: 'Diptych.jpg',
+    description: 'DIPTYCH is conceived as a conceptual, futuristic, eclectic piece of music. It combines elements of trance-progressive, instrumental music and chorale (which I performed in Latin).',
     spotify: 'https://open.spotify.com/album/2FilJmUXcBZ42RbAGv7BUH',
     apple: 'https://music.apple.com/ru/album/diptych/1703612185?i=1703612186',
     vk: 'https://vk.com/music/album/-2000714094_18714094_957737b64b38673c8d',
@@ -62,6 +65,7 @@ const MUSIC: BaseMusicItem[] = [
     href: 'back-to-life',
     name: 'Back to Life',
     image: 'Back to life.jpg',
+    description: 'BACK TO LIFE is my debut in electronic music. Special thanks to Elnara (a wonderful singer from Baku) for her magical vocals.',
     spotify: 'https://open.spotify.com/album/7C9yHilQmy4M34naKsDcXz',
     apple: 'https://music.apple.com/ru/album/back-to-life-feat-elnarə-xəlilova/1697207806?i=1697207807',
     vk: 'https://vk.com/music/album/-2000418125_18418125_e7a30053d59c84479c',
@@ -79,22 +83,102 @@ const MUSIC: BaseMusicItem[] = [
     apple: 'https://music.apple.com/ru/album/lr/1761763816',
     vk: 'https://vk.com/music/album/-2000887854_17887854_9d4b6e697241660587',
     yandex: 'https://music.yandex.ru/album/25675223',
-    youtube: 'https://www.youtube.com/watch?v=DaGAILITo4Q&list=OLAK5uy_ki1nGaSoxmNYMxgg3_5VackJ2wuQ9FLPE',
+    youtube: 'https://www.youtube.com/playlist?list=PLR-SOxG3wl8rhNaKo9VECvO1ejZIEJmkV',
     zvuk: 'https://zvuk.com/release/29518203',
     items: [
       {
         name: "Вернусь",
-        youtube: ''
+        spotify: 'https://open.spotify.com/track/02EjhMlRPeIIDAXSNp4Gup?si=a820b0fad0bb4b4a',
+        apple: 'https://music.apple.com/us/album/%D0%BF%D0%BE-%D0%B2%D1%81%D1%82%D1%80%D0%B5%D1%87%D0%BD%D0%BE%D0%B9/1761763816?i=1761763817',
+        vk: 'https://vk.com/audio-2001867647_119867647',
+        yandex: 'https://music.yandex.ru/album/25675223/track/113378030',
+        youtube: 'https://youtu.be/20gLVQ15v0Y?si=Q_M__XsNH0e5YRwo',
+        zvuk: 'https://zvuk.com/track/131150186',
+        youtube_music: 'https://youtu.be/DaGAILITo4Q'
       },
-      { name: "Embrace me ", spotify: 'https://open.spotify.com/track/4mWq3iOhdWDqMW7VZko1w0?si=XF46CvwRSG-ajDnm_9oXcA' },
-      { name: "Город", youtube: 'https://www.youtube.com/watch?v=SiucGr6kcTA', spotify: 'https://open.spotify.com/track/3Tzry0ZMuRRFH4mHtIKNUH?si=dCDCZ4K8RE6K_JYupgT8CA' },
-      { name: "Сбежим?", youtube: 'https://www.youtube.com/watch?v=ASEf-eSoL1M', spotify: 'https://open.spotify.com/track/7iIjra5nWhVaiWl2tpRoJC?si=hbTZEQeWSFiTh8TOGDNnlg' },
-      { name: "Lonely night", youtube: "https://music.youtube.com/watch?v=SfmN-pGZaZY", spotify: "https://open.spotify.com/track/3K2YdJrstzuUb28OfAuua0?si=9a88eed764af4a3b", apple: "https://music.apple.com/ru/album/lonely-night/1684942408?i=1684942414" },
-      { name: "Влюбленные", spotify: 'https://open.spotify.com/track/6wB33OD5jEUDAxgKW5nHjX?si=gR-wEg1CTtO2YipHX6VtBw' },
-      { name: "Ночь", spotify: 'https://open.spotify.com/track/2YenLaqrNfHuS8sImqbLkk?si=IVPe-2WjS_yDOBJZVOJ6Gw' },
-      { name: "Кино", spotify: 'https://open.spotify.com/track/4vkqap1LvbUwDBvet4rgYj?si=S2YZx6EcS0aFvRlu0k5OQA' },
-      { name: "Сонный город", spotify: 'https://open.spotify.com/track/7FZGx2zwvFh5zYX4Pz8iva?si=t3QexGK3QA6U5sO8dGbDDw' },
-      { name: " Ре", spotify: 'https://open.spotify.com/track/3x9fFFtOJQXSLDEh3iQEEt?si=fk7oLkfuTyGoqms1w4jw8Q' },
+      {
+        name: "Embrace me ",
+        spotify: 'https://open.spotify.com/track/4mWq3iOhdWDqMW7VZko1w0?si=a2f01cf5474d4728',
+        apple: 'https://music.apple.com/us/album/embrace-me/1761763816?i=1761763969',
+        vk: 'https://vk.com/audio-2001867646_119867646',
+        yandex: 'https://music.yandex.ru/album/25675223/track/113378031',
+        youtube: 'https://youtu.be/xI3kX7Ci-D4?si=3fRyRlDw1n6lMRFY',
+        zvuk: 'https://zvuk.com/track/131150190'
+      },
+      {
+        name: "Город",
+        spotify: 'https://open.spotify.com/track/3Tzry0ZMuRRFH4mHtIKNUH?si=c7079b452e22423e',
+        apple: 'https://music.apple.com/us/album/%D0%B3%D0%BE%D1%80%D0%BE%D0%B4/1761763816?i=1761763976',
+        vk: 'https://vk.com/audio-2001867645_119867645',
+        yandex: 'https://music.yandex.ru/album/25675223/track/113378032',
+        youtube: 'https://youtu.be/gXW809TCucA?si=eRHF5fNGUqx2kbFc',
+        zvuk: 'https://zvuk.com/track/131150189',
+        youtube_music: 'https://youtu.be/SiucGr6kcTA'
+      },
+      {
+        name: "Сбежим?",
+        spotify: 'https://open.spotify.com/track/7iIjra5nWhVaiWl2tpRoJC?si=c161df2c291a4205',
+        apple: 'https://music.apple.com/us/album/%D1%81%D0%B1%D0%B5%D0%B6%D0%B8%D0%BC/1761763816?i=1761763980',
+        vk: 'https://vk.com/audio-2001867643_119867643',
+        yandex: 'https://music.yandex.ru/album/25675223/track/113378033',
+        youtube: 'https://youtu.be/UB7k1cYIDfY?si=jd6BdtuNZyD1yugW',
+        zvuk: 'https://zvuk.com/track/131150195',
+        youtube_music: 'https://youtu.be/ASEf-eSoL1M'
+      },
+      {
+        name: "Lonely night",
+        spotify: 'https://open.spotify.com/track/3K2YdJrstzuUb28OfAuua0?si=78ca2e92722d4a7b',
+        apple: 'https://music.apple.com/us/album/lonely-night/1761763816?i=1761763985',
+        vk: 'https://vk.com/audio-2001867642_119867642',
+        yandex: 'https://music.yandex.ru/album/25675223/track/113378034',
+        youtube: 'https://youtu.be/SfmN-pGZaZY?si=u-wnpeHMPZuTWsru',
+        zvuk: 'https://zvuk.com/track/131150191'
+      },
+      {
+        name: "Влюбленные",
+        spotify: 'https://open.spotify.com/track/6wB33OD5jEUDAxgKW5nHjX?si=fb717551ca7f4e46',
+        apple: 'https://music.apple.com/us/album/%D0%B2%D0%BB%D1%8E%D0%B1%D0%BB%D1%91%D0%BD%D0%BD%D1%8B%D0%B5/1761763816?i=1761763987',
+        vk: 'https://vk.com/audio-2001867641_119867641',
+        yandex: 'https://music.yandex.ru/album/25675223/track/113378035',
+        youtube: 'https://youtu.be/nUwlPJzgAIs?si=pKDIIPMMlV_dAexA',
+        zvuk: 'https://zvuk.com/track/131150193'
+      },
+      {
+        name: "Ночь",
+        spotify: 'https://open.spotify.com/track/2YenLaqrNfHuS8sImqbLkk?si=8d943116395941a7',
+        apple: 'https://music.apple.com/us/album/%D0%BD%D0%BE%D1%87%D1%8C/1761763816?i=1761763988',
+        vk: 'https://vk.com/audio-2001867640_119867640',
+        yandex: 'https://music.yandex.ru/album/25675223/track/113378036',
+        youtube: 'https://youtu.be/it3xOjCVHDo?si=d2o25n2EdgHH1fW_',
+        zvuk: 'https://zvuk.com/track/131150192'
+      },
+      {
+        name: "Кино",
+        spotify: 'https://open.spotify.com/track/4vkqap1LvbUwDBvet4rgYj?si=6d56cc41f45645e2',
+        apple: 'https://music.apple.com/us/album/%D0%BA%D0%B8%D0%BD%D0%BE/1761763816?i=1761763989',
+        vk: 'https://vk.com/audio-2001867639_119867639',
+        yandex: 'https://music.yandex.ru/album/25675223/track/113378037',
+        youtube: 'https://youtu.be/fI_YZL-zQyU?si=_xlGyjICg4YQXIkk',
+        zvuk: 'https://zvuk.com/track/131150194'
+      },
+      {
+        name: "Сонный город",
+        spotify: 'https://open.spotify.com/track/7FZGx2zwvFh5zYX4Pz8iva?si=e18b450366eb4bc0',
+        apple: 'https://music.apple.com/us/album/%D1%81%D0%BE%D0%BD%D0%BD%D1%8B%D0%B9-%D0%B3%D0%BE%D1%80%D0%BE%D0%B4/1761763816?i=1761763990',
+        vk: 'https://vk.com/audio-2001867636_119867636',
+        yandex: 'https://music.yandex.ru/album/25675223/track/113378038',
+        youtube: 'https://youtu.be/aCUfiHs8eKc?si=cmtxXVnsq9M7V-QF',
+        zvuk: 'https://zvuk.com/track/131150187'
+      },
+      {
+        name: " Ре",
+        spotify: 'https://open.spotify.com/track/3x9fFFtOJQXSLDEh3iQEEt?si=1fffa8f0e8024bec',
+        apple: 'https://music.apple.com/us/album/%D1%80%D0%B5/1761763816?i=1761763992',
+        vk: 'https://vk.com/audio-2001867634_119867634',
+        yandex: 'https://music.yandex.ru/album/25675223/track/113378039',
+        youtube: 'https://youtu.be/-OK4J6VZMZ0?si=jGachy8HyStQHkV_',
+        zvuk: 'https://zvuk.com/track/131150188'
+      },
     ] as TrackItem[]
   },
   {
@@ -107,12 +191,30 @@ const MUSIC: BaseMusicItem[] = [
     apple: 'https://music.apple.com/ru/album/neopiano-single/1779315945',
     vk: 'https://music.vk.com/link/PYe3a',
     yandex: 'https://music.yandex.ru/album/33995506',
-    youtube: 'https://youtu.be/HaN8WLoCkKY?si=vVcxMCgJUmlhEglh',
+    youtube: 'https://www.youtube.com/watch?v=HaN8WLoCkKY&list=OLAK5uy_mnm03ydq2n5L1jKmbYzWmXN-AQckerJpQ',
     zvuk: 'https://zvuk.com/release/36121300',
     items: [
-      { name: 'Fantasia', youtube: 'https://www.youtube.com/watch?v=9cUQ8ac_Pdw' },
-      { name: 'Capriccio', youtube: 'https://www.youtube.com/watch?v=HaN8WLoCkKY' },
-    ]
+      {
+        name: 'Fantasia',
+        spotify: 'https://open.spotify.com/track/4SPvF3tMWFtjbczgMX7wCb?si=36ff9d392cb74989',
+        apple: 'https://music.apple.com/us/album/fantasia/1779315945?i=1779316131',
+        vk: 'https://vk.com/audio-2001240333_132240333',
+        yandex: 'https://music.yandex.ru/album/33995506/track/132877941',
+        youtube: 'https://www.youtube.com/watch?v=PmARwMUdgPc',
+        zvuk: 'https://zvuk.com/track/141221939',
+        youtube_music: 'https://youtu.be/9cUQ8ac_Pdw'
+      },
+      {
+        name: 'Capriccio',
+        spotify: 'https://open.spotify.com/track/02SA1ElfE12vQxVCyuhVQz?si=16448b487fe64b76',
+        apple: 'https://music.apple.com/us/album/capriccio/1779315945?i=1779315948',
+        vk: 'https://vk.com/audio-2001240334_132240334',
+        yandex: 'https://music.yandex.ru/album/33995506/track/132877937',
+        youtube: 'https://youtu.be/LHRyUr03Fok?si=sr6hcb0uv5M9pcvB',
+        zvuk: 'https://zvuk.com/track/141221938',
+        youtube_music: 'https://youtu.be/HaN8WLoCkKY?si=X4dGUVyph3QG8XAg'
+      },
+    ] as TrackItem[]
   },
   // Live video
   {
@@ -121,14 +223,15 @@ const MUSIC: BaseMusicItem[] = [
     href: 'reverie',
     name: 'Reverie',
     image: 'Reverie.png',
-    youtube: 'https://youtu.be/j2RQo0AcVO0?si=JCoMi3i3QmhuggVK'
+    youtube: 'https://youtu.be/j2RQo0AcVO0?si=Ivk60cqFJYMntBKA'
   },
   {
     type: 'single',
-    href: 'dedication',
+    href: 'ithaf-rehearsal',
     group: 'Orchestral (live) & Chamber',
-    name: 'Dedication',
+    name: 'Ithaf (rehearsal)',
     image: 'Dedication.png',
+    youtube: 'https://www.youtube.com/watch?v=xZeMhpLGJaY',
   },
   // Chamber
   {
@@ -137,10 +240,10 @@ const MUSIC: BaseMusicItem[] = [
     group: 'Orchestral (live) & Chamber',
     name: 'Dreams of Paris',
     image: 'Dreams of Paris.png',
-    spotify: 'https://open.spotify.com/album/164XXOs8lERD7QBJei7VOn',
-    apple: 'https://music.apple.com/ru/album/dreams-of-paris-single/1537459971',
+    //spotify: 'https://open.spotify.com/album/164XXOs8lERD7QBJei7VOn',
+    //apple: 'https://music.apple.com/ru/album/dreams-of-paris-single/1537459971',
     //vk: 'https://vk.com/music/album/-2000205076_9205076_ccad3981b65f286e54',
-    yandex: 'https://music.yandex.ru/album/12582186',
+    //yandex: 'https://music.yandex.ru/album/12582186',
     youtube: 'https://www.youtube.com/watch?v=hpnklUgaUW0'
   },
 ]

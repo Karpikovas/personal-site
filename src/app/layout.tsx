@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_NAME}`,
     default: SITE_NAME ,
   },
-  description: 'Leyla Romanova is a composer who creates music of different genres — from orchestral and neoclassical piano music to techno',
+  description: 'Leyla Romanova is a composer who creates music of different genres – from orchestral, chamber and neoclassical piano music to trance-techno',
 };
 
 export default function RootLayout({

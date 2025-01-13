@@ -6,6 +6,7 @@ import { AiFillAmazonCircle } from "react-icons/ai";
 
 interface IMusicLinksProps {
   youtube?: string;
+  youtube_music?: string;
   spotify?: string;
   apple?: string;
   amazon?: string;
@@ -14,6 +15,7 @@ interface IMusicLinksProps {
 }
 export const MusicLinksV = ({
   youtube,
+  youtube_music,
   spotify,
   apple,
   amazon,
@@ -56,7 +58,13 @@ export const MusicLinksV = ({
 
       {yandex && (
         <Link href={yandex} className={linkClass}>
-          <TbBrandYandex /> 
+          <TbBrandYandex />
+        </Link>
+      )}
+
+      {youtube_music && (
+        <Link href={youtube_music} target="_blank" className={linkClass}>
+          <SiYoutubemusic />
         </Link>
       )}
     </div>
