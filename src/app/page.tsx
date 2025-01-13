@@ -19,8 +19,8 @@ export default function Home() {
         <div className="flex flex-col items-center mb-8 md:mb-10 xl:mb-16">
           <p className="text-xl xl:text-3xl  !text-stone-300">
             <b>Leyla Romanova</b> is a <i>composer</i> who creates music of
-            different genres — from orchestral and neoclassical piano music to
-            techno
+            different genres – from orchestral, chamber and neoclassical piano
+            music to trance-techno techno
           </p>
         </div>
         <Music />
