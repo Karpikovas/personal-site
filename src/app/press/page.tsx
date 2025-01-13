@@ -16,27 +16,31 @@ export default function PressPage() {
         <Link
           href={item.href}
           target="_blank"
-          className="block w-100 p-4 bg-white rounded-lg shadow hover:bg-stone-850 dark:bg-neutral-950 dark:border-stone-850 dark:hover:bg-stone-850"
+          className="block w-100 p-3 sm:p-4 bg-white rounded-lg shadow hover:bg-stone-850 dark:bg-neutral-950 dark:border-stone-850 dark:hover:bg-stone-850"
         >
           <div className="flex align-items justify-between gap-8">
-            <div className="flex flex-col">
-              <h5 className="mb-2 text-xl font-bold tracking-tight !text-stone-300 dark:text-white">
+            <div className="flex flex-col w-2/3">
+              <h5 className="mb-2 text-m sm:text-l md:text-xl font-bold tracking-tight !text-stone-300 dark:text-white trunc">
                 {item.name}
               </h5>
-              <p className="text-stone-600 font-semibold">{item.source}</p>
+              <p className="text-sm sm:text-m md:text-xl text-stone-600 font-semibold">
+                {item.source}
+              </p>
             </div>
-            <div className="relative">
-              <Image
-                className="border border-stone-900 rounded-xl mb-2"
-                src={`/covers/${item.image}`}
-                alt={item.image || ""}
-                width={100}
-                height={100}
-                sizes="100vw"
-                priority
-                style={{ width: "100px", height: "auto" }} // optional
-              />
-              <div className="lg:group-hover:flex flex-col justify-center align-center absolute px-10 py-12 text-center border border-stone-900 rounded-xl bottom-0 left-0 top-0 right-0 transition ease-in duration-300 bg-black/[.35]"></div>
+            <div className="flex flex-col mb-2">
+              <div className="relative">
+                <Image
+                  className="border border-stone-900 rounded-xl"
+                  src={`/covers/${item.image}`}
+                  alt={item.image || ""}
+                  width={100}
+                  height={100}
+                  sizes="100vw"
+                  priority
+                  style={{ width: "100px", height: "100%" }} // optional
+                ></Image>
+                <div className="lg:group-hover:flex flex-col justify-center align-center absolute px-10 py-12 text-center border border-stone-900 rounded-xl bottom-0 left-0 top-0 right-0 transition ease-in duration-300 bg-black/[.35]"></div>
+              </div>
             </div>
           </div>
         </Link>
