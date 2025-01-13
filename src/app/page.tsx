@@ -20,7 +20,7 @@ export default function Home() {
           <p className="text-xl xl:text-3xl  !text-stone-300">
             <b>Leyla Romanova</b> is a <i>composer</i> who creates music of
             different genres – from orchestral, chamber and neoclassical piano
-            music to trance-techno techno
+            music to trance-techno
           </p>
         </div>
         <Music />
