@@ -3,6 +3,7 @@ import { Contacts } from "../components/Contacts";
 import { Open_Sans } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "../components/Navbar";
+import { META } from "@/constants/siteMetaData";
 
 const font = Open_Sans({
   variable: "--font-default",
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_NAME}`,
     default: SITE_NAME ,
   },
-  description: 'Leyla Romanova is a composer who creates music of different genres – from orchestral, chamber and neoclassical piano music to trance-techno',
+  description: META.description,
 };
 
 export default function RootLayout({
