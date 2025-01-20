@@ -1,4 +1,5 @@
 // @ts-nocheck
+
 const MUSIC: BaseMusicItem[] = [
   // Cinematic
   {
@@ -13,7 +14,7 @@ const MUSIC: BaseMusicItem[] = [
     apple: 'https://music.apple.com/ru/album/fairy-tale-single/1784537366',
     vk: 'https://boom.ru/redirect/album/28284775?mt_sub3=28284775&mt_sub1=FAIRY%20TALE&mt_click_id=mt-iybts5-1736752033-1767008222&mt_sub2=%27album%27',
     yandex: 'https://music.yandex.ru/album/34423278',
-    zvuk: 'https://zvuk.com/release/36512200'
+    zvuk: 'https://zvuk.com/release/36512200',
   },
   {
     type: 'single',
@@ -535,7 +536,13 @@ export type TrackItem = {
 }
 
 export function getGroups() {
-  let result = {}
+  let result = {
+    'Cinematic': { items: [], isMain: true },
+    'Electronic': { items: [], isMain: false },
+    'Orchestral (live) & Chamber': { items: [], isMain: false },
+    'Piano': { items: [], isMain: false },
+    'Songs (rock | alternative)': { items: [], isMain: false },
+  }
 
   MUSIC.forEach(item => {
     if (!result.hasOwnProperty(item.group)) {
