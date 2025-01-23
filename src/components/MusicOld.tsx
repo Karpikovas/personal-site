@@ -24,7 +24,6 @@ export const Music = () => {
             alt={releaze.name}
             width={350}
             height={350}
-            priority
           />
         </div>
         <p className="w-full lg:w-2/3 lg:text-xl hidden lg:block">
@@ -65,7 +64,6 @@ export const Music = () => {
               alt={album.name}
               width={350}
               height={350}
-              priority
             />
             <div className="mt-2 text-4xl font-semibold mb-1">{album.name}</div>
           </div>

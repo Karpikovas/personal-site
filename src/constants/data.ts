@@ -441,7 +441,7 @@ const PRESS_NEW: PressItem[] = [
     name: 'Cybersymphony, Exploring Cinematic Realms Through Music',
     created_date: '2024-05-06',
     image: 'Cybersymphony.jpg',
-    source: 'Hailtune',
+    source: 'Hailtunes',
     href: 'https://hailtunes.com/cybersymphony-a-musical-odyssey-through-the-cinematic-universe/'
   },
   {

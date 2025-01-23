@@ -36,7 +36,6 @@ export default function PressPage() {
                   width={100}
                   height={100}
                   sizes="100vw"
-                  priority
                   style={{ width: "100px", height: "100%" }} // optional
                 ></Image>
                 <div className="lg:group-hover:flex flex-col justify-center align-center absolute px-10 py-12 text-center border border-stone-900 rounded-xl bottom-0 left-0 top-0 right-0 transition ease-in duration-300 bg-black/[.35]"></div>

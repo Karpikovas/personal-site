@@ -78,8 +78,6 @@ export const Group = ({
                     width={1200}
                     height={1200}
                     sizes="100vw"
-                    priority
-                    // style={{ objectFit: "cover", width: "auto", height: "400px", maxWidth: '400px' }} // optional
                     style={{
                       width: "1200px",
                       height: "100%",
@@ -87,8 +85,8 @@ export const Group = ({
                     }}
                   />
 
-                  <div className="hidden lg:group-hover:flex flex-col justify-center align-center absolute px-10 py-12 text-center border border-stone-900 rounded-xl bottom-0 left-0 top-0 right-0 transition ease-in duration-300 bg-black/[.85]">
-                    <div className="text-2xl">{item.name}</div>
+                  <div className="hidden lg:group-hover:flex flex-col justify-center align-center absolute px-10 py-12 text-center border border-stone-900 rounded-xl bottom-0 left-0 top-0 right-0 transition ease-in duration-300 bg-black/[.9]">
+                    <div className={`!text-stone-100 font-semibold ${isMain ? 'lg:text-2xl xl:text-3xl' : 'lg:text-xl xl:text-2xl'}`}>{item.name}</div>
                     <ul>
                       {type === "album" &&
                         item.items &&
@@ -106,7 +104,7 @@ export const Group = ({
                           </li>
                         ))}
                     </ul>
-                    <div className={`mt-4 !text-stone-300 ${isMain ? 'lg:text-4xl xl:text-5xl' : 'lg:text-3xl xl:text-4xl'}`}>
+                    <div className={`mt-6 !text-stone-300 ${isMain ? 'lg:text-4xl xl:text-5xl' : 'lg:text-3xl xl:text-4xl'}`}>
                       <MusicLinks {...item} />
                     </div>
 

@@ -30,7 +30,6 @@ function renderNextImage(
         alt={alt}
         title={title}
         sizes={sizes}
-        priority
         placeholder={"blurDataURL" in photo ? "blur" : undefined}
         className="rounded shadow-lg"
       />
@@ -51,26 +50,17 @@ export function PhotoGallery() {
     { src: "/photo/6.jpg", width: 2683, height: BASE_HEIGHT , alt: 'Leyla Romanova' },
     { src: "/photo/7.jpg", width: 1595, height: 1918 , alt: 'Leyla Romanova' },
     { src: "/photo/9.jpg", width: 7360, height: 3978 , alt: 'Leyla Romanova' },
-    
-    // { src: "/photo/8.jpg", width: 3267, height: 4912 , alt: 'Leyla Romanova' },
-    
+    // // { src: "/photo/8.jpg", width: 3267, height: 4912 , alt: 'Leyla Romanova' },
     { src: "/photo/13.jpg", width: 7360, height: 4897 , alt: 'Leyla Romanova' },
     { src: "/photo/10.jpg", width: 2683, height: BASE_HEIGHT , alt: 'Leyla Romanova' },
     { src: "/photo/11.jpg", width: 2683, height: BASE_HEIGHT , alt: 'Leyla Romanova' },
-    
     { src: "/photo/12.jpg", width: 3268, height: 4912 , alt: 'Leyla Romanova' },
-
-    
-    
     { src: "/photo/14.jpg", width: 2683, height: BASE_HEIGHT , alt: 'Leyla Romanova' },
-    
     { src: "/photo/15.jpg", width: 7360, height: 2810 , alt: 'Leyla Romanova' },
-    
     { src: "/photo/16.jpg", width: 7360, height: 2654 , alt: 'Leyla Romanova' },
     { src: "/photo/19.jpg", width: 2683, height: BASE_HEIGHT , alt: 'Leyla Romanova' },
     { src: "/photo/17.jpg", width: 7360, height: 2692 , alt: 'Leyla Romanova' },
     { src: "/photo/18.jpg", width: 7360, height: 3743 , alt: 'Leyla Romanova' },
-    
     { src: "/photo/20.jpg", width: 3024, height: BASE_HEIGHT , alt: 'Leyla Romanova' },
     { src: "/photo/21.jpg", width: 3024, height: BASE_HEIGHT , alt: 'Leyla Romanova' },
     { src: "/photo/22.jpg", width: 3024, height: BASE_HEIGHT , alt: 'Leyla Romanova' },

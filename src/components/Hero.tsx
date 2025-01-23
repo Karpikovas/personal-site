@@ -34,7 +34,6 @@ export const Hero = () => {
               alt="Leyla Romanova"
               width={650}
               height={975}
-              priority
             />
           </div>
         </div>
