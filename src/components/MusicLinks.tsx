@@ -3,10 +3,11 @@ import { SiApplemusic, SiSpotify, SiYoutubemusic, SiVk } from "react-icons/si";
 
 import { TbBrandYandex } from "react-icons/tb";
 import { AiFillAmazonCircle } from "react-icons/ai";
+import { PiVideoFill } from "react-icons/pi";
 
 interface IMusicLinksProps {
   youtube?: string;
-  youtube_music?: string;
+  video?: string;
   spotify?: string;
   apple?: string;
   vk?: string;
@@ -16,7 +17,7 @@ interface IMusicLinksProps {
 }
 export const MusicLinks = ({
   youtube,
-  youtube_music,
+  video,
   spotify,
   apple,
   amazon,
@@ -85,6 +86,12 @@ export const MusicLinks = ({
         <Link href={yandex} target="_blank" className={linkClass}>
           <TbBrandYandex />
         </Link>
+      )}
+
+      {video && (
+         <Link href={video} target="_blank" className={linkClass}>
+         <PiVideoFill/>
+       </Link>
       )}
     </div>
   );

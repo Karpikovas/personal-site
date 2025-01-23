@@ -95,7 +95,7 @@ const MUSIC: BaseMusicItem[] = [
         yandex: 'https://music.yandex.ru/album/25675223/track/113378030',
         youtube: 'https://youtu.be/20gLVQ15v0Y?si=Q_M__XsNH0e5YRwo',
         zvuk: 'https://zvuk.com/track/131150186',
-        youtube_music: 'https://youtu.be/DaGAILITo4Q'
+        video: 'https://youtu.be/DaGAILITo4Q'
       },
       {
         name: "Embrace me ",
@@ -114,7 +114,7 @@ const MUSIC: BaseMusicItem[] = [
         yandex: 'https://music.yandex.ru/album/25675223/track/113378032',
         youtube: 'https://youtu.be/gXW809TCucA?si=eRHF5fNGUqx2kbFc',
         zvuk: 'https://zvuk.com/track/131150189',
-        youtube_music: 'https://youtu.be/SiucGr6kcTA'
+        video: 'https://youtu.be/SiucGr6kcTA'
       },
       {
         name: "Сбежим?",
@@ -124,7 +124,7 @@ const MUSIC: BaseMusicItem[] = [
         yandex: 'https://music.yandex.ru/album/25675223/track/113378033',
         youtube: 'https://youtu.be/UB7k1cYIDfY?si=jd6BdtuNZyD1yugW',
         zvuk: 'https://zvuk.com/track/131150195',
-        youtube_music: 'https://youtu.be/ASEf-eSoL1M'
+        video: 'https://youtu.be/ASEf-eSoL1M'
       },
       {
         name: "Lonely night",
@@ -203,7 +203,7 @@ const MUSIC: BaseMusicItem[] = [
         yandex: 'https://music.yandex.ru/album/33995506/track/132877941',
         youtube: 'https://www.youtube.com/watch?v=PmARwMUdgPc',
         zvuk: 'https://zvuk.com/track/141221939',
-        youtube_music: 'https://youtu.be/9cUQ8ac_Pdw'
+        video: 'https://youtu.be/9cUQ8ac_Pdw'
       },
       {
         name: 'Capriccio',
@@ -213,7 +213,7 @@ const MUSIC: BaseMusicItem[] = [
         yandex: 'https://music.yandex.ru/album/33995506/track/132877937',
         youtube: 'https://youtu.be/LHRyUr03Fok?si=sr6hcb0uv5M9pcvB',
         zvuk: 'https://zvuk.com/track/141221938',
-        youtube_music: 'https://youtu.be/HaN8WLoCkKY?si=X4dGUVyph3QG8XAg'
+        video: 'https://youtu.be/HaN8WLoCkKY?si=X4dGUVyph3QG8XAg'
       },
     ] as TrackItem[]
   },
@@ -224,7 +224,7 @@ const MUSIC: BaseMusicItem[] = [
     href: 'reverie',
     name: 'Reverie',
     image: 'Reverie.png',
-    youtube: 'https://youtu.be/j2RQo0AcVO0?si=Ivk60cqFJYMntBKA'
+    video: 'https://youtu.be/j2RQo0AcVO0?si=Ivk60cqFJYMntBKA'
   },
   {
     type: 'single',
@@ -232,7 +232,7 @@ const MUSIC: BaseMusicItem[] = [
     group: 'Orchestral (live) & Chamber',
     name: 'Ithaf (rehearsal)',
     image: 'Dedication.png',
-    youtube: 'https://www.youtube.com/watch?v=xZeMhpLGJaY',
+    video: 'https://www.youtube.com/watch?v=xZeMhpLGJaY',
   },
   // Chamber
   {
@@ -241,11 +241,7 @@ const MUSIC: BaseMusicItem[] = [
     group: 'Orchestral (live) & Chamber',
     name: 'Dreams of Paris',
     image: 'Dreams of Paris.png',
-    //spotify: 'https://open.spotify.com/album/164XXOs8lERD7QBJei7VOn',
-    //apple: 'https://music.apple.com/ru/album/dreams-of-paris-single/1537459971',
-    //vk: 'https://vk.com/music/album/-2000205076_9205076_ccad3981b65f286e54',
-    //yandex: 'https://music.yandex.ru/album/12582186',
-    youtube: 'https://www.youtube.com/watch?v=hpnklUgaUW0'
+    video: 'https://www.youtube.com/watch?v=hpnklUgaUW0'
   },
 ]
 
@@ -515,7 +511,7 @@ export type BaseMusicItem = {
   href: string,
   // links
   youtube?: string
-  youtube_music?: string
+  video?: string
   spotify?: string
   apple?: string
   vk?: string

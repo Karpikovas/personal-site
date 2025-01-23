@@ -16,7 +16,7 @@ export default function PressPage() {
         <Link
           href={item.href}
           target="_blank"
-          className="block w-100 p-3 sm:p-4 bg-white rounded-lg shadow hover:bg-stone-850 dark:bg-neutral-950 dark:border-stone-850 dark:hover:bg-stone-850"
+          className="fadeIn1 block w-100 p-3 sm:p-4 bg-white rounded-lg shadow hover:bg-stone-850 dark:bg-neutral-950 dark:border-stone-850 dark:hover:bg-stone-850"
         >
           <div className="flex align-items justify-between gap-8">
             <div className="flex flex-col w-2/3">

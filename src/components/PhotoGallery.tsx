@@ -76,7 +76,7 @@ export function PhotoGallery() {
   ];
 
   return (
-    <>
+    <div className="fadeIn1">
       <RowsPhotoAlbum
         photos={photos}
         render={{ image: renderNextImage }}
@@ -97,6 +97,6 @@ export function PhotoGallery() {
         open={index >= 0}
         close={() => setIndex(-1)}
       />
-    </>
+    </div>
   );
 }
