@@ -59,11 +59,11 @@ export const Group = ({
 
       <div className="embla">
         <div className="embla__viewport" ref={emblaRef}>
-          <div className="embla__container gap-3 sm:gap-4 md:gap-8">
+          <div className="embla__container flex-col sm:flex-row gap-3 sm:gap-4 md:gap-8">
             {items.map((item) => (
               <div
                 key={item.name}
-                className={`embla__slide ${!isMain && "w-1/3"} ${
+                className={`sm:max-w-1/2 embla__slide ${!isMain && "sm:w-1/3"} ${
                   items.length === 1 && "pr-3 sm:pr-4 md:pr-8"
                 }`}
               >
@@ -85,8 +85,12 @@ export const Group = ({
                     }}
                   />
 
+                  <div className={`mt-4 mb-6 !text-stone-300 text-xl sm:hidden`}>
+                    <MusicLinks {...item} />
+                  </div>
+
                   <div className="hidden lg:group-hover:flex flex-col justify-center align-center absolute px-10 py-12 text-center border border-stone-900 rounded-xl bottom-0 left-0 top-0 right-0 transition ease-in duration-300 bg-black/[.9]">
-                    <div className={`!text-stone-100 font-semibold ${isMain ? 'lg:text-2xl xl:text-3xl' : 'lg:text-xl xl:text-2xl'}`}>{item.name}</div>
+                    <h3 className={`!text-stone-100 font-semibold ${isMain ? 'lg:text-2xl xl:text-3xl' : 'lg:text-xl xl:text-2xl'}`}>{item.name}</h3>
                     <ul>
                       {type === "album" &&
                         item.items &&

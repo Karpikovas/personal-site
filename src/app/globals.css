@@ -33,14 +33,11 @@ body {
 .embla__container {
   display: flex;
   touch-action: pan-y pinch-zoom;
-  /* gap: 2rem; */
-  /* margin-left: calc(var(--slide-spacing) * -1); */
 }
+
 .embla__slide {
   transform: translate3d(0, 0, 0);
   flex: 0 0 1;
-  min-width: 30%;
-  max-width: 50%;
 }
 
 .embla__slide__img {
