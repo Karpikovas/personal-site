@@ -25,22 +25,20 @@ export const MusicLinks = ({
   zvuk,
 }: IMusicLinksProps) => {
   const linkClass = "hover:text-stone-400 cursor-pointer";
-  //const linkClassCustom = 'bg-white hover:bg-stone-400 p-2 rounded-xl text-black flex items-center justify-center';
+
   return (
     <div className="flex flex-row justify-center gap-2">
-            {spotify && (
+      {spotify && (
         <Link href={spotify} target="_blank" className={linkClass}>
           <SiSpotify />
         </Link>
       )}
-      
+
       {youtube && (
         <Link href={youtube} target="_blank" className={linkClass}>
           <SiYoutubemusic />
         </Link>
       )}
-
-
 
       {apple && (
         <Link href={apple} target="_blank" className={linkClass}>
@@ -49,7 +47,7 @@ export const MusicLinks = ({
       )}
 
       {vk && (
-        <Link href={vk} className={linkClass}>
+        <Link href={vk} target="_blank" className={linkClass}>
           <SiVk />
         </Link>
       )}
@@ -61,7 +59,7 @@ export const MusicLinks = ({
       )}
 
       {zvuk && (
-        <Link href={zvuk} className={linkClass}>
+        <Link href={zvuk} target="_blank" className={linkClass}>
           <svg
             stroke="currentColor"
             fill="currentColor"
@@ -84,7 +82,7 @@ export const MusicLinks = ({
       )}
 
       {yandex && (
-        <Link href={yandex} className={linkClass}>
+        <Link href={yandex} target="_blank" className={linkClass}>
           <TbBrandYandex />
         </Link>
       )}
