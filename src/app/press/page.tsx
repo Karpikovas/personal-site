@@ -14,6 +14,7 @@ export default function PressPage() {
       <h1 className="text-4xl font-bold !text-stone-300">Press</h1>
       {press.map((item) => (
         <Link
+          key={item.created_date + item.name}
           href={item.href}
           target="_blank"
           className="fadeIn1 block w-100 p-3 sm:p-4 bg-white rounded-lg shadow hover:bg-stone-850 !bg-neutral-950 !border-stone-850 !hover:bg-stone-850"

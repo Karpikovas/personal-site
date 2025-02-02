@@ -341,30 +341,35 @@ const PRESS_NEW: PressItem[] = [
     created_date: '2024-12-27',
     image: 'Fairy Tale.jpg',
     source: 'Odyssey Magazine',
-    href: 'https://odysseymagazines.com/music-1/fairytale-by-leyla-romanova-review'
+    href: 'https://odysseymagazines.com/music-1/fairytale-by-leyla-romanova-review',
+    order: 1,
   },
   {
     name: 'A Symphony of Dreams: Leyla Romanova’s Fairy Tale is an Orchestral Masterpiece of Cinematic Drama, Emotional Depth, and Timeless Dedication',
     created_date: '2024-12-27',
     image: 'Fairy Tale.jpg',
     source: 'KIMU',
-    href: 'https://karlismyunkle.com/2024/12/27/a-symphony-of-dreams-leyla-romanovas-fairy-tale-is-an-orchestral-masterpiece-of-cinematic-drama-emotional-depth-and-timeless-dedication/'
+    href: 'https://karlismyunkle.com/2024/12/27/a-symphony-of-dreams-leyla-romanovas-fairy-tale-is-an-orchestral-masterpiece-of-cinematic-drama-emotional-depth-and-timeless-dedication/',
+    order: 2,
   },
   {
     name: 'Fairy Tale – Leyla Romanova (reviewed by Dave Franklin)',
     image: 'Fairy Tale.jpg',
     source: 'Dancing About Architecture',
     href: 'https://dancing-about-architecture.com/fairy-tale-leyla-romanova-reviewed-by-dave-franklin/',
-    created_date: '2024-12-26'
+    created_date: '2024-12-26',
+    order: 3,
   },
   {
     name: 'Neo Classical music from Leyla Romanova',
     created_date: '2024-12-30',
     image: 'Fairy Tale.jpg',
     source: 'Plastic Magazine',
-    href: 'https://plasticmag.co.uk/2024/12/neo-classical-music-from-leyla-romanova/'
+    href: 'https://plasticmag.co.uk/2024/12/neo-classical-music-from-leyla-romanova/',
+    order: 4,
   },
   {
+    order: 6,
     name: 'Leyla Romanova’s “Fairy Tale” is a Symphony of Dreams',
     created_date: '2024-12-30',
     image: 'Fairy Tale.jpg',
@@ -372,14 +377,24 @@ const PRESS_NEW: PressItem[] = [
     href: 'https://rotatemagazine.com/leyla-romanova-fairy-tale-is-a-symphony-of-dreams/'
   },
   {
+    order: 7,
     name: `Leyla Romanova's "Fairy Tale": A Symphonic Ode to Love and Legacy`,
     created_date: '2025-01-02',
     image: 'Fairy Tale.jpg',
     source: 'AKT Music',
     href: 'https://www.aktmusic.com/2025/01/leyla-romanova-s-fairy-tale-a-symphonic-ode-to-love-and-legacy.html?fbclid=PAZXh0bgNhZW0CMTEAAab3V0MqaCO7w6bc8VJn2nIm-dnNL8cPsklI-9QvriCKHwwGDHLL3ztWNIQ_aem_kyfYRl5faZVRVwfR_8T5qA'
   },
+  {
+    order: 5,
+    name: 'Entrez dans le Fairy Tale de Leyla Romanova',
+    created_date: '2025-01-04',
+    image: 'Fairy Tale.jpg',
+    href: 'https://extravafrench.com/2025/01/04/entrez-dans-le-fairy-tale-de-leyla-romanova/',
+    source: 'Extravafrench'
+  },
   // CYBERSYMPHONY
   {
+    order: 12,
     name: 'Cinematic Instrumental Music from Leyla Romanova',
     created_date: '2024-04-29',
     image: 'Cybersymphony.jpg',
@@ -387,6 +402,7 @@ const PRESS_NEW: PressItem[] = [
     href: 'https://plasticmag.co.uk/2024/04/cinematic-instrumental-music-from-leyla-romanova/'
   },
   {
+    order: 13,
     name: 'Leyla Romanova’s ‘CYBERSYMPHONY’ Takes Audiences on a Cinematic Journey',
     created_date: '2024-04-28',
     image: 'Cybersymphony.jpg',
@@ -394,13 +410,15 @@ const PRESS_NEW: PressItem[] = [
     href: 'https://www.theindiegrid.co.uk/latest-news/leyla-romanovas-cybersymphony-takes-audiences-on-an-epic-cinematic-journey/'
   },
   {
+    order: 14,
     name: 'Leyla Romanova CYBERSYMPHONY (Dedicated to Christopher Nolan)',
     created_date: '2024-04-23',
     image: 'Cybersymphony.jpg',
-    source: 'Stereo Stickma',
+    source: 'Stereo Stickman',
     href: 'https://stereostickman.com/music/leyla-romanova-cybersymphony-dedicated-to-christopher-nolan/'
   },
   {
+    order: 15,
     name: 'From Orchestral Grandeur to Techno-Thrills: Exploring “Cybersymphony” by Leyla Romanova',
     created_date: '2024-04-29',
     image: 'Cybersymphony.jpg',
@@ -408,13 +426,15 @@ const PRESS_NEW: PressItem[] = [
     href: 'https://www.musicarenagh.com/from-orchestral-grandeur-to-techno-thrills-exploring-cybersymphony-by-leyla-romanova/'
   },
   {
+    order: 16, 
     name: 'Leyla Romanova delivers an epic musical odyssey with "CYBERSYMPHONY"',
     created_date: '2024-04-30',
     image: 'Cybersymphony.jpg',
-    source: 'Earmil',
+    source: 'Earmilk',
     href: 'https://earmilk.com/2024/04/30/leyla-romanova-delivers-an-epic-musical-odyssey-with-cybersymphony/'
   },
   {
+    order: 17,
     name: 'Cybersymphony (Dedicated to Christopher Nolan) – Leyla Romanova (reviewed by Dave Franklin)',
     created_date: '2024-05-01',
     image: 'Cybersymphony.jpg',
@@ -427,13 +447,16 @@ const PRESS_NEW: PressItem[] = [
     href: 'https://findnoenemy.com/leyla-romanov-cybersymphony-dedicated-to-christopher-nolan-mesmerised/'
   },
   {
+    order: 18,
     name: 'Leyla Romanova ouvre une nouvelle ère avec « CYBERSYMPHONY » : Un hommage vibrant à Christopher Nolan',
     created_date: '2024-05-02',
     image: 'Cybersymphony.jpg',
     source: 'Extravafrench',
     href: 'https://extravafrench.com/2024/05/02/leyla-romanova-ouvre-une-nouvelle-ere-avec-cybersymphony-un-hommage-vibrant-a-christopher-nolan/'
   },
+
   {
+    order: 19,
     name: 'Cybersymphony, Exploring Cinematic Realms Through Music',
     created_date: '2024-05-06',
     image: 'Cybersymphony.jpg',
@@ -441,6 +464,7 @@ const PRESS_NEW: PressItem[] = [
     href: 'https://hailtunes.com/cybersymphony-a-musical-odyssey-through-the-cinematic-universe/'
   },
   {
+    order: 20,
     name: 'Discovery: Leyla Romanova',
     created_date: '2024-05-16',
     image: 'Cybersymphony.jpg',
@@ -448,15 +472,17 @@ const PRESS_NEW: PressItem[] = [
     href: 'https://yorkcalling.co.uk/2024/05/16/discovery-leyla-romanova/'
   },
   {
+    order: 21,
     name: `Leyla Romanova Unveils New Single 'Cybersymphony', a Tribute to Christopher Nolan`,
     created_date: '2024-04-27',
     image: 'Cybersymphony.jpg',
-    source: 'Tunesaraun',
+    source: 'Tunesaround',
     href: 'https://www.tunesaround.com/post/leyla-romanova-unveils-new-single-cybersymphony-a-tribute-to-christopher-nolan'
   },
 
   // Are you waiting for me
   {
+    order: 8,
     name: '`Are You Waiting for Me?` by Leyla Romanova: "Electrifying Energy and Ethereal Sounds that Transcend Time and Space".',
     image: 'Are you waiting for me.jpg',
     source: 'Badwolfrecords',
@@ -464,6 +490,7 @@ const PRESS_NEW: PressItem[] = [
     created_date: '2024-11-09'
   },
   {
+    order: 9,
     name: 'Leyla Romanova Releases Ethereal New Single "Are You Waiting For Me?"',
     image: 'Are you waiting for me.jpg',
     source: 'TJPL NEWS',
@@ -471,6 +498,7 @@ const PRESS_NEW: PressItem[] = [
     created_date: '2024-10-31'
   },
   {
+    order: 10,
     name: 'WE REVIEW THE NEW SINGLE FROM LEYLA ROMANOVA',
     image: 'Are you waiting for me.jpg',
     source: 'RGM',
@@ -478,6 +506,7 @@ const PRESS_NEW: PressItem[] = [
     created_date: '2025-01-06'
   },
   {
+    order: 11,
     name: 'Leyla Romanova Explores Time and Patience in Conceptual New Single ‘Are You Waiting For Me?’',
     image: 'Are you waiting for me.jpg',
     source: 'Rotate Magazine',
@@ -486,6 +515,7 @@ const PRESS_NEW: PressItem[] = [
   },
   // LR album
   {
+    order: 22,
     name: 'Обзор НАШЕго радио (Андрей Куренков - об альбоме "LR" на НАШЕм в программе "фАнотека" - с 38:24)',
     href: 'https://www.nashe.ru/podcasts/73/1793',
     image: 'LR альбом.jpg',
@@ -498,7 +528,8 @@ export type PressItem = {
   href: string
   image?: string
   source?: string
-  created_date: string
+  created_date: string,
+  order?: number
 }
 
 export type BaseMusicItem = {
@@ -559,7 +590,7 @@ export function getByHref(href: string) {
 }
 
 export function getPress() {
-  return PRESS_NEW.sort(function (a, b) {
-    return new Date(b.created_date) - new Date(a.created_date);
+  return PRESS_NEW.filter(a => !!a.order).sort(function (a, b) {
+    return a.order - b.order;
   });
 }
