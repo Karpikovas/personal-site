@@ -5,6 +5,10 @@ import "./globals.css";
 import { Navbar } from "../components/Navbar";
 import { siteConfig, metadata } from "@/constants/siteMetaData";
 
+import "yet-another-react-lightbox/plugins/captions.css";
+import "yet-another-react-lightbox/styles.css";
+import "react-photo-album/rows.css";
+
 const font = Open_Sans({
   variable: "--font-default",
   subsets: ["cyrillic", "cyrillic-ext", "latin", "latin-ext"],

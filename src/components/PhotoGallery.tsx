@@ -1,46 +1,15 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
 import {
-  Photo,
-  RenderImageContext,
-  RenderImageProps,
   RowsPhotoAlbum,
 } from "react-photo-album";
-import "react-photo-album/rows.css";
 import Lightbox from "yet-another-react-lightbox";
 import Captions from "yet-another-react-lightbox/plugins/captions";
-import "yet-another-react-lightbox/plugins/captions.css";
-import "yet-another-react-lightbox/styles.css";
+import { renderNextImage } from "./NextImage";
 
 const ELENA_KVITA = 'by Elena Kvita';
 const ROMAN_AGISHEV = 'by Roman Agishev';
-
-function renderNextImage(
-  { alt = "", title, sizes }: RenderImageProps,
-  { photo, width, height }: RenderImageContext
-) {
-  return (
-    <div
-      style={{
-        width: "100%",
-        position: "relative",
-        aspectRatio: `${width} / ${height}`,
-      }}
-    >
-      <Image
-        fill
-        src={photo}
-        alt={alt}
-        title={title}
-        sizes={sizes}
-        placeholder={"blurDataURL" in photo ? "blur" : undefined}
-        className="rounded shadow-lg"
-      />
-    </div>
-  );
-}
 const BASE_HEIGHT = 4032;
 
 export function PhotoGallery() {
@@ -81,7 +50,7 @@ export function PhotoGallery() {
   ];
 
   return (
-    <div className="fadeIn1">
+    <div>
       <RowsPhotoAlbum
         photos={photos}
         render={{ image: renderNextImage }}
