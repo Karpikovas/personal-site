@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p 3005",
     "lint": "next lint"
   },
   "dependencies": {
@@ -16,6 +16,7 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "babel-plugin-react-compiler": "19.0.0-beta-27714ef-20250124",
     "embla-carousel": "^8.5.1",
     "embla-carousel-react": "^8.5.1",
     "eslint": "^8",
