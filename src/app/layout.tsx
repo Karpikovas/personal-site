@@ -3,21 +3,14 @@ import { Contacts } from "../components/Contacts";
 import { Open_Sans } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "../components/Navbar";
-import { META } from "@/constants/siteMetaData";
+import { siteConfig, metadata } from "@/constants/siteMetaData";
 
 const font = Open_Sans({
   variable: "--font-default",
   subsets: ["cyrillic", "cyrillic-ext", "latin", "latin-ext"],
 });
 
-const SITE_NAME = 'Leyla Romanova'
-export const metadata: Metadata = {
-  title: {
-    template: `%s | ${SITE_NAME}`,
-    default: SITE_NAME ,
-  },
-  description: META.description,
-};
+export { metadata };
 
 export default function RootLayout({
   children,
