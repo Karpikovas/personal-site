@@ -8,7 +8,7 @@ const MUSIC: BaseMusicItem[] = [
     href: 'fairy-tale',
     name: 'Fairy Tale',
     image: 'Fairy Tale.jpg',
-    description: 'FAIRY TALE consists of countless parts of all groups of instruments of the symphony orchestra (strings – from violin to double bass, woodwinds – from flute to bassoon, brass – from trumpet to tuba, percussion – from timpani to metallophones), keyboards (piano, celesta), choir – in general, almost everything one can imagine. This piece of music is my attempt to become one step closer to my main musical teachers, the real wizards, Pyotr Tchaikovsky and John Williams.',
+    description: 'FAIRY TALE consists of countless parts of all groups of instruments of the symphony orchestra (strings – from violin to double bass, woodwinds – from flute to bassoon, brass – from trumpet to tuba, percussion – from timpani to metallophones), keyboards (piano, celesta), choir – in general, almost everything one can imagine. This piece of music is my attempt to become one step closer to my main musical Teachers, the real wizards, Pyotr Tchaikovsky and John Williams.',
     spotify: 'https://open.spotify.com/album/6e5FurpsJah1T6yNxkc4w6',
     youtube: 'https://youtu.be/wVQa67AJ_78?si=Cx24zjV6cJN-bTjy',
     apple: 'https://music.apple.com/ru/album/fairy-tale-single/1784537366',
