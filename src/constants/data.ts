@@ -79,7 +79,7 @@ const MUSIC: BaseMusicItem[] = [
     group: 'Rock | Pop Rock',
     name: 'LR album',
     href: 'lr-album',
-    image: 'LR альбом.jpg',
+    image: 'LR альбом.png',
     spotify: 'https://open.spotify.com/album/5ovsKLRsWiiqEwg4nYykN3',
     apple: 'https://music.apple.com/ru/album/lr/1761763816',
     vk: 'https://vk.com/music/album/-2000887854_17887854_9d4b6e697241660587',
@@ -328,7 +328,7 @@ const PRESS: PressItem[] = [
     href: 'https://rotatemagazine.com/leyla-romanova-are-you-waiting-for-me-review/'
   },
   {
-    image: 'LR альбом.jpg',
+    image: 'LR альбом.png',
     name: 'Обзор НАШЕго радио (Андрей Куренков - об альбоме "LR" на НАШЕм в программе "фАнотека" - с 38:24)',
     href: 'https://www.nashe.ru/podcasts/73/1793'
   }
@@ -518,7 +518,7 @@ const PRESS_NEW: PressItem[] = [
     order: 22,
     name: 'Обзор НАШЕго радио (Андрей Куренков - об альбоме "LR" на НАШЕм в программе "фАнотека" - с 38:24)',
     href: 'https://www.nashe.ru/podcasts/73/1793',
-    image: 'LR альбом.jpg',
+    image: 'LR альбом.png',
     created_date: '2023-05-11'
   }
 ]

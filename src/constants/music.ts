@@ -19,7 +19,7 @@ export const MUSIC = {
   albums: [
     {
       name: 'LR album',
-      image: 'LR альбом.jpg',
+      image: 'LR альбом.png',
       group: 'songs',
       items: [
         {
