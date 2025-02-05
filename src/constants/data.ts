@@ -568,7 +568,7 @@ export function getGroups() {
     'Electronic': { items: [], isMain: false },
     'Orchestral (live) & Chamber': { items: [], isMain: false },
     'Piano': { items: [], isMain: false },
-    'Rock | Pop Rock)': { items: [], isMain: false },
+    'Rock | Pop Rock': { items: [], isMain: false },
   }
 
   MUSIC.forEach(item => {
