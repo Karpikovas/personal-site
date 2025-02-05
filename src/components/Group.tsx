@@ -113,13 +113,13 @@ export const Group = ({
                     </div>
 
                     <div className="sm:mb-8 sm:flex sm:justify-center mt-4 absolute bottom-0 right-4">
-                      <div className="relative rounded-full px-4 py-1 text-xl bg-stone-950 border-gray-600 hover:bg-stone-800">
+                      <div className="relative rounded-full px-4 py-1 text-xl bg-stone-950 border-gray-600 !hover:bg-stone-800">
                         <a
                           href={"music/" + item.href}
                           className="font-semibold"
                         >
                           <span
-                            className="absolute inset-0 text-stone-500"
+                            className="absolute inset-0 !text-stone-500"
                             aria-hidden="true"
                           ></span>
                           More →
