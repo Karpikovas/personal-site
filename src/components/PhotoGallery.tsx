@@ -4,9 +4,10 @@ import { useState } from "react";
 import {
   RowsPhotoAlbum,
 } from "react-photo-album";
-// import Lightbox from "yet-another-react-lightbox";
-// import Captions from "yet-another-react-lightbox/plugins/captions";
+import Lightbox from "yet-another-react-lightbox";
+import Captions from "yet-another-react-lightbox/plugins/captions";
 import { renderNextImage } from "./NextImage";
+import NextJsImage from "./NextJsImage";
 
 const ELENA_KVITA = 'by Elena Kvita';
 const ROMAN_AGISHEV = 'by Roman Agishev';
@@ -65,13 +66,14 @@ export function PhotoGallery() {
         onClick={({ index: current }) => setIndex(current)}
       />
 
-      {/* <Lightbox
+      <Lightbox
         plugins={[Captions]}
         index={index}
         slides={photos}
         open={index >= 0}
+        render={{ slide: NextJsImage }}
         close={() => setIndex(-1)}
-      /> */}
+      />
     </div>
   );
 }
