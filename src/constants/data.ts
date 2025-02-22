@@ -52,7 +52,7 @@ const MUSIC: BaseMusicItem[] = [
     href: 'diptych',
     name: 'Diptych',
     image: 'Diptych.jpg',
-    description: 'DIPTYCH is conceived as a conceptual, futuristic, eclectic piece of music. It combines elements of trance-progressive, instrumental music and chorale (which I performed in Latin).',
+    description: 'DIPTYCH is conceived as a conceptual, futuristic, eclectic piece of music. It combines elements of trance-progressive, instrumental music and chorale (performed in Latin).',
     spotify: 'https://open.spotify.com/album/2FilJmUXcBZ42RbAGv7BUH',
     apple: 'https://music.apple.com/ru/album/diptych/1703612185?i=1703612186',
     vk: 'https://vk.com/music/album/-2000714094_18714094_957737b64b38673c8d',
