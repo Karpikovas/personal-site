@@ -11,7 +11,8 @@ export async function generateMetadata({ params }) {
   const item = getByHref(href);
 
   const title = `${item?.name} | ${siteConfig.title}`;
-  const img =  item?.image ? `/covers/${item?.image}` : ''
+  const img = item?.image ? `/covers/${item?.image}` : '';
+  const descr = item?.description ? item?.description : siteConfig.description;
 
   return {
     title: item?.name,
@@ -21,13 +22,13 @@ export async function generateMetadata({ params }) {
       type: "website",
       url: item?.href,
       title: title,
-      description: item?.description,
+      description: descr,
       images: [{ url: img }],
     },
     twitter: {
       card: "summary_large_image",
       title: title,
-      description: item?.description,
+      description: descr,
       images: [img],
     },
   };
