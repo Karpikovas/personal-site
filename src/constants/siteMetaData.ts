@@ -4,8 +4,9 @@ const DOMAIN = 'leylaromanova.com';
 export const siteConfig = {
   title: 'Leyla Romanova',
   description: 'Leyla Romanova is a composer who creates music of different genres – from orchestral, chamber and neoclassical piano music to trance-techno',
-  keywords: 'Leyla Romanova, composer, orchestral, chamber, neoclassical piano music, trance-techno, композитор, Лейла Романова, фортепианная неоклассика, оркестровые проиведения, техно',
-  url: DOMAIN,
+  keywords: 'Leyla Romanova, composer, orchestral, chamber, neoclassical piano music, trance-techno, композитор, Лейла Романова, фортепианная неоклассика, оркестровые произведения, техно',
+  url: '/',
+  image: `/preview.jpg`,
 }
 
 export const metadata: Metadata = {
@@ -21,5 +22,12 @@ export const metadata: Metadata = {
     url: siteConfig.url,
     title: siteConfig.title,
     description: siteConfig.description,
+    images: [{ url: siteConfig.image }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: siteConfig.title,
+    description: siteConfig.description,
+    images: [siteConfig.image],
   },
 }
