@@ -2,6 +2,7 @@ import { MusicLinks } from "@/components/MusicLinks";
 import { getByHref } from "@/constants/data";
 import Image from "next/image";
 import { notFound } from "next/navigation";
+import { siteConfig } from "@/constants/siteMetaData";
 
 // or Dynamic metadata
 // @ts-ignore
@@ -9,9 +10,26 @@ export async function generateMetadata({ params }) {
   const { href } = await params;
   const item = getByHref(href);
 
+  const title = `${item?.name} | ${siteConfig.title}`;
+
   return {
     title: item?.name,
-  }
+    description: item?.description,
+    keywords: siteConfig.keywords + ', ' + item?.name,
+    openGraph: {
+      type: "website",
+      url: item?.href,
+      title: title,
+      description: item?.description,
+      images: [{ url: item?.image }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: title,
+      description: item?.description,
+      images: [item?.image],
+    },
+  };
 }
 
 export default async function PageMusic({
@@ -47,10 +65,10 @@ export default async function PageMusic({
           ))}
       </ul>
       {item.description && (
-          <div className="block mt-8 md:hidden pb-2 tracking-tight lg:text-l text-wrap !text-stone-300">
-            {item.description}
-          </div>
-        )}
+        <div className="block mt-8 md:hidden pb-2 tracking-tight lg:text-l text-wrap !text-stone-300">
+          {item.description}
+        </div>
+      )}
       <div className="md:basis-1/2">
         <Image
           className="border border-stone-900 rounded-xl mb-2"
