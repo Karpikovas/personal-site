@@ -9,11 +9,11 @@ import { Contacts } from "./Contacts";
 export const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const links = {
-    spotify: "https://open.spotify.com/album/164XXOs8lERD7QBJei7VOn",
-    apple: "https://music.apple.com/ru/album/dreams-of-paris-single/1537459971",
-    vk: "https://vk.com/music/album/-2000205076_9205076_ccad3981b65f286e54",
-    yandex: "https://music.yandex.ru/album/12582186",
-    youtube: "https://www.youtube.com/watch?v=hpnklUgaUW0",
+    spotify: "https://open.spotify.com/artist/57Urcz3Cz6tDGqr83lKlSO",
+    apple: "https://music.apple.com/ru/artist/leyla-romanova/1537459980",
+    vk: "https://vk.com/artist/leylaromanova_",
+    yandex: "https://music.yandex.ru/artist/10232907",
+    youtube: "https://www.youtube.com/leylaromanova",
     zvuk: "https://zvuk.com/artist/210264255",
   };
 

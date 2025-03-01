@@ -6,6 +6,7 @@ import Image from "next/image";
 import { MusicLinks } from "./MusicLinks";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const useWidth = () => {
   const [width, setWidth] = useState(0);
@@ -63,9 +64,9 @@ export const Group = ({
             {items.map((item) => (
               <div
                 key={item.name}
-                className={`sm:max-w-1/2 embla__slide ${!isMain && "sm:w-1/3"} ${
-                  items.length === 1 && "pr-3 sm:pr-4 md:pr-8"
-                }`}
+                className={`sm:max-w-1/2 embla__slide ${
+                  !isMain && "sm:w-1/3"
+                } ${items.length === 1 && "pr-3 sm:pr-4 md:pr-8"}`}
               >
                 <div
                   className="relative group inline-block h-full"
@@ -85,12 +86,22 @@ export const Group = ({
                     }}
                   />
 
-                  <div className={`mt-4 mb-6 !text-stone-300 text-xl sm:hidden`}>
+                  <div
+                    className={`mt-4 mb-6 !text-stone-300 text-xl sm:hidden`}
+                  >
                     <MusicLinks {...item} />
                   </div>
 
                   <div className="hidden lg:group-hover:flex flex-col justify-center align-center absolute px-10 py-12 text-center border border-stone-900 rounded-xl bottom-0 left-0 top-0 right-0 transition ease-in duration-300 bg-black/[.9]">
-                    <h3 className={`!text-stone-100 font-semibold ${isMain ? 'lg:text-2xl xl:text-3xl' : 'lg:text-xl xl:text-2xl'}`}>{item.name}</h3>
+                    <h3
+                      className={`!text-stone-100 font-semibold ${
+                        isMain
+                          ? "lg:text-2xl xl:text-3xl"
+                          : "lg:text-xl xl:text-2xl"
+                      }`}
+                    >
+                      {item.name}
+                    </h3>
                     <ul>
                       {type === "album" &&
                         item.items &&
@@ -108,23 +119,23 @@ export const Group = ({
                           </li>
                         ))}
                     </ul>
-                    <div className={`mt-6 !text-stone-300 ${isMain ? 'lg:text-4xl xl:text-5xl' : 'lg:text-3xl xl:text-4xl'}`}>
+                    <div
+                      className={`mt-6 !text-stone-300 ${
+                        isMain
+                          ? "lg:text-4xl xl:text-5xl"
+                          : "lg:text-3xl xl:text-4xl"
+                      }`}
+                    >
                       <MusicLinks {...item} />
                     </div>
 
                     <div className="sm:mb-8 sm:flex sm:justify-center mt-4 absolute bottom-0 right-4">
-                      <div className="relative rounded-full px-4 py-1 text-xl bg-stone-950 border-gray-600 !hover:bg-stone-800">
-                        <a
-                          href={"music/" + item.href}
-                          className="font-semibold"
-                        >
-                          <span
-                            className="absolute inset-0 !text-stone-500"
-                            aria-hidden="true"
-                          ></span>
-                          More →
-                        </a>
-                      </div>
+                      <Link
+                        href={"music/" + item.href}
+                        className="relative rounded-full px-4 py-1 text-xl bg-stone-800 border-gray-600 hover:bg-stone-700 font-semibold !text-stone-200"
+                      >
+                        More →
+                      </Link>
                     </div>
                   </div>
                 </div>
