@@ -1,4 +1,4 @@
 #!/bin/bash
 
 # TODO: healthcheck
-docker run --name site_next --network shared -d --restart=always site:latest
+docker run --log-opt max-size=100m --name site_next --network shared -d --restart=always site:latest
