@@ -1,14 +1,14 @@
-import { MusicLinks } from "@/components/MusicLinks";
-import { getByHref } from "@/constants/data";
+import {MusicLinks} from "@/components/MusicLinks";
+import {getByHref} from "@/constants/data";
 import Image from "next/image";
-import { notFound } from "next/navigation";
-import { siteConfig } from "@/constants/siteMetaData";
+import {notFound} from "next/navigation";
+import {siteConfig} from "@/constants/siteMetaData";
 
 // or Dynamic metadata
 // @ts-ignore
-export async function generateMetadata({ params }) {
-  const { href } = await params;
-  const item = getByHref(href);
+export async function generateMetadata({params}) {
+  const {href} = await params;
+  const item = getByHref(decodeURIComponent(href));
 
   const title = `${item?.name} | ${siteConfig.title}`;
   const img = item?.image ? `/covers/${item?.image}` : '';
@@ -23,7 +23,7 @@ export async function generateMetadata({ params }) {
       url: item?.href,
       title: title,
       description: descr,
-      images: [{ url: img }],
+      images: [{url: img}],
     },
     twitter: {
       card: "summary_large_image",
@@ -35,19 +35,20 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function PageMusic({
-  params,
-}: {
+                                          params,
+                                        }: {
   params: Promise<{ href: string }>;
 }) {
-  const { href } = await params;
-  const item = getByHref(href);
+  const {href} = await params;
+  const item = getByHref(decodeURIComponent(href))
 
   if (!item) {
     return notFound();
   }
 
   return (
-    <div className="flex flex-col-reverse md:flex-row gap-2 md:gap-6 xl:gap-16 lg:gap-8 mt-16 mb-8 max-w-screen-2xl px-8 md:px-16 xl:px-48 !text-stone-300">
+    <div
+      className="flex flex-col-reverse md:flex-row gap-2 md:gap-6 xl:gap-16 lg:gap-8 mt-16 mb-8 max-w-screen-2xl px-8 md:px-16 xl:px-48 !text-stone-300">
       <ul className="md:hidden block mt-8">
         {item.type === "album" &&
           item.items &&
@@ -79,7 +80,7 @@ export default async function PageMusic({
           width={1200}
           height={1200}
           sizes="100vw"
-          style={{ width: "1200px", height: "auto" }} // optional
+          style={{width: "1200px", height: "auto"}} // optional
         />
         <div className="text-4xl mt-5 !text-stone-300">
           <MusicLinks {...item} />
@@ -94,7 +95,7 @@ export default async function PageMusic({
           {item.group.toUpperCase()}
         </h3>
 
-        <hr className="my-4 xl:my-7" />
+        <hr className="my-4 xl:my-7"/>
         {item.description && (
           <div className="hidden md:block pb-2 tracking-tight lg:text-l text-wrap !text-stone-300">
             {item.description}

@@ -10,6 +10,7 @@ const nextConfig: NextConfig = {
   },
   // output: "standalone", 
   reactStrictMode: true,
+  trailingSlash: false,
   eslint: {
     ignoreDuringBuilds: true,
   },

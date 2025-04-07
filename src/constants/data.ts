@@ -75,6 +75,19 @@ const MUSIC: BaseMusicItem[] = [
     zvuk: 'https://zvuk.com/track/132960202'
   },
   {
+    type: 'single',
+    group: 'Rock | Pop Rock',
+    name: 'Кого искала я?',
+    href: 'кого-искала-я',
+    image: 'LR-кого-искала-я.jpg',
+    apple: 'https://music.apple.com/ru/album/кого-искала-я-single/1803591472',
+    yandex: 'https://music.yandex.ru/album/35921460',
+    youtube: 'https://music.youtube.com/playlist?list=OLAK5uy_mj5UBFwmdJ4z9CAs6IOiSMW6VV3B2z4nA',
+    vk: 'https://music.vk.com/link/ONS5D',
+    zvuk: 'https://zvuk.com/release/38006933',
+    spotify: 'https://open.spotify.com/album/1joCNOP2CrNROu0yJNYEAe',
+  },
+  {
     type: 'album',
     group: 'Rock | Pop Rock',
     name: 'LR album',
@@ -426,7 +439,7 @@ const PRESS_NEW: PressItem[] = [
     href: 'https://www.musicarenagh.com/from-orchestral-grandeur-to-techno-thrills-exploring-cybersymphony-by-leyla-romanova/'
   },
   {
-    order: 16, 
+    order: 16,
     name: 'Leyla Romanova delivers an epic musical odyssey with "CYBERSYMPHONY"',
     created_date: '2024-04-30',
     image: 'Cybersymphony.jpg',
@@ -564,16 +577,16 @@ export type TrackItem = {
 
 export function getGroups() {
   let result = {
-    'Cinematic': { items: [], isMain: true },
-    'Electronic': { items: [], isMain: false },
-    'Orchestral (live) & Chamber': { items: [], isMain: false },
-    'Piano': { items: [], isMain: false },
-    'Rock | Pop Rock': { items: [], isMain: false },
+    'Cinematic': {items: [], isMain: true},
+    'Electronic': {items: [], isMain: false},
+    'Orchestral (live) & Chamber': {items: [], isMain: false},
+    'Piano': {items: [], isMain: false},
+    'Rock | Pop Rock': {items: [], isMain: false},
   }
 
   MUSIC.forEach(item => {
     if (!result.hasOwnProperty(item.group)) {
-      result[item.group] = { items: [], isMain: false }
+      result[item.group] = {items: [], isMain: false}
     }
 
     result[item.group].items.push(item)

@@ -5,6 +5,7 @@ export const siteConfig = {
   title: 'Leyla Romanova',
   description: 'Official website of composer Leyla Romanova who creates music of different genres – from orchestral, chamber and neoclassical piano music to trance-techno.',
   keywords: 'Leyla Romanova, official website, composer, orchestral, chamber, neoclassical piano music, trance-techno, композитор, Лейла Романова, фортепианная неоклассика, оркестровые произведения, техно',
+  title_meta: 'Leyla Romanova - composer - musical artist',
   url: '/',
   image: `/preview.jpg`,
 }
@@ -17,10 +18,13 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   keywords: siteConfig.keywords,
+  alternates: {
+    canonical: './',
+  },
   openGraph: {
     type: 'website',
     url: siteConfig.url,
-    title: siteConfig.title,
+    title: siteConfig.title ,
     description: siteConfig.description,
     images: [{ url: siteConfig.image }],
   },
@@ -31,3 +35,4 @@ export const metadata: Metadata = {
     images: [siteConfig.image],
   },
 }
+
