@@ -1,9 +1,8 @@
-import type { Metadata } from "next";
-import { Contacts } from "../components/Contacts";
+import { Contacts } from "@/components/Contacts";
 import { Open_Sans } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "../components/Navbar";
-import { siteConfig, metadata } from "@/constants/siteMetaData";
+import { Navbar } from "@/components/Navbar";
+import { metadata } from "@/constants/siteMetaData";
 
 import "yet-another-react-lightbox/plugins/captions.css";
 import "yet-another-react-lightbox/styles.css";

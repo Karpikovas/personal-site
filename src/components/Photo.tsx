@@ -1,7 +1,3 @@
-// import Image from "next/image"
-
-import { MusicLinks } from "./MusicLinks"
-
 export const Photo = () => {
 
   return (

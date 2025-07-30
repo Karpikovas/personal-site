@@ -8,10 +8,6 @@ import { renderNextImage } from "./NextImage";
 import NextJsImage from "./NextJsImage";
 import { photos } from "./photos";
 
-function nextImageUrl(src: string, size: number) {
-  return `/_next/image?url=${encodeURIComponent(src)}&w=${size}&q=75`;
-}
-
 
 export function PhotoGallery() {
   const [index, setIndex] = useState(-1);

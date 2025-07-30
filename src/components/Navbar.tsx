@@ -4,7 +4,6 @@ import { Social } from "./Social";
 import { MusicLinks } from "./MusicLinks";
 
 import { useState } from "react";
-import { Contacts } from "./Contacts";
 
 export const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);

@@ -259,95 +259,6 @@ const MUSIC: BaseMusicItem[] = [
 ]
 
 const PRESS: PressItem[] = [
-  {
-    image: 'Cybersymphony.jpg',
-    source: 'Plastic Magazine',
-    href: 'https://plasticmag.co.uk/2024/04/cinematic-instrumental-music-from-leyla-romanova/'
-  },
-  {
-    image: 'Cybersymphony.jpg',
-    source: 'The Indie Grid',
-    href: 'https://www.theindiegrid.co.uk/latest-news/leyla-romanovas-cybersymphony-takes-audiences-on-an-epic-cinematic-journey/'
-  },
-  {
-    image: 'Cybersymphony.jpg',
-    source: 'Stereo Stickman',
-    href: 'https://stereostickman.com/music/leyla-romanova-cybersymphony-dedicated-to-christopher-nolan/'
-  },
-  {
-    image: 'Cybersymphony.jpg',
-    source: 'Tunesaround',
-    href: 'https://www.tunesaround.com/post/leyla-romanova-unveils-new-single-cybersymphony-a-tribute-to-christopher-nolan'
-  },
-  {
-    image: 'Cybersymphony.jpg',
-    source: 'Music Arena GH',
-    href: 'https://www.musicarenagh.com/from-orchestral-grandeur-to-techno-thrills-exploring-cybersymphony-by-leyla-romanova/'
-  },
-  {
-    image: 'Cybersymphony.jpg',
-    source: 'Earmilk',
-    href: 'https://earmilk.com/2024/04/30/leyla-romanova-delivers-an-epic-musical-odyssey-with-cybersymphony/'
-  },
-  {
-    image: 'Cybersymphony.jpg',
-    source: 'Dancing About Architecture',
-    href: 'https://dancing-about-architecture.com/cybersymphony-dedicated-to-christopher-nolan-leyla-romanova-reviewed-by-dave-franklin/'
-  },
-  {
-    image: 'Cybersymphony.jpg',
-    source: 'Find No Enemy',
-    href: 'https://findnoenemy.com/leyla-romanov-cybersymphony-dedicated-to-christopher-nolan-mesmerised/'
-  },
-  {
-    image: 'Cybersymphony.jpg',
-    source: 'Extravafrench',
-    href: 'https://extravafrench.com/2024/05/02/leyla-romanova-ouvre-une-nouvelle-ere-avec-cybersymphony-un-hommage-vibrant-a-christopher-nolan/'
-  },
-  {
-    image: 'Cybersymphony.jpg',
-    source: 'Hailtunes',
-    href: 'https://hailtunes.com/cybersymphony-a-musical-odyssey-through-the-cinematic-universe/'
-  },
-  {
-    image: 'Cybersymphony.jpg',
-    source: 'Nagamag',
-    href: 'https://www.nagamag.com/the-latest/leyla-romanova-cybersymphony-dedicated-to-christopher-nolan-electronica-music-review'
-  },
-  {
-    image: 'Cybersymphony.jpg',
-    source: 'York Calling',
-    href: 'https://yorkcalling.co.uk/2024/05/16/discovery-leyla-romanova/'
-  },
-
-  {
-    image: 'Are you waiting for me.jpg',
-    source: 'Badwolfrecords',
-    href: 'https://www.badwolfrecords.net/en/post/are-you-waiting-for-me-by-leyla-romanova-electrifying-energy-and-ethereal-sounds-that-transcend'
-  },
-  {
-    image: 'Are you waiting for me.jpg',
-    source: 'TJPL NEWS',
-    href: 'https://www.tjplnews.com/post/leyla-romanova-releases-ethereal-new-single-are-you-waiting-for-me'
-  },
-  {
-    image: 'Are you waiting for me.jpg',
-    source: 'RGM',
-    href: 'https://rgm.press/we-review-the-new-single-from-leyla-romanova/review/'
-  },
-  {
-    image: 'Are you waiting for me.jpg',
-    source: 'Rotate Magazine',
-    href: 'https://rotatemagazine.com/leyla-romanova-are-you-waiting-for-me-review/'
-  },
-  {
-    image: 'Lr.png',
-    name: 'Обзор НАШЕго радио (Андрей Куренков - об альбоме "LR" на НАШЕм в программе "фАнотека" - с 38:24)',
-    href: 'https://www.nashe.ru/podcasts/73/1793'
-  }
-]
-
-const PRESS_NEW: PressItem[] = [
   // Fairy Tale
   {
     name: '‘Fairy Tale’ by Leyla Romanova: Review',
@@ -603,7 +514,7 @@ export function getByHref(href: string) {
 }
 
 export function getPress() {
-  return PRESS_NEW.filter(a => !!a.order).sort(function (a, b) {
+  return PRESS.filter(a => !!a.order).sort(function (a, b) {
     return a.order - b.order;
   });
 }
