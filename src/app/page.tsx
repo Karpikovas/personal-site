@@ -1,17 +1,7 @@
 import { Music } from "@/components/Music";
 import { Photo } from "@/components/Photo";
-import { MusicLinks } from "@/components/MusicLinks";
-import { siteConfig } from "@/constants/siteMetaData";
 
 export default function Home() {
-  const links = {
-    spotify: "https://open.spotify.com/album/164XXOs8lERD7QBJei7VOn",
-    apple: "https://music.apple.com/ru/album/dreams-of-paris-single/1537459971",
-    vk: "https://vk.com/music/album/-2000205076_9205076_ccad3981b65f286e54",
-    yandex: "https://music.yandex.ru/album/12582186",
-    youtube: "https://www.youtube.com/watch?v=hpnklUgaUW0",
-    zvuk: "https://zvuk.com/artist/210264255",
-  };
   return (
     <div className="fadeIn">
       <Photo />
