@@ -94,7 +94,7 @@ export const photosData = [
 
 
   {
-    src: "/photo/IMG_0138E.jpg",
+    src: "/photo/IMG_0138E.png",
     width: 7360,
     height: 4898,
     alt: "Leyla Romanova",
