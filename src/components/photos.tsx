@@ -5,34 +5,6 @@ const BASE_HEIGHT = 4032;
 
 export const photosData = [
   {
-    src: "/photo/IMG_0108.jpg",
-    width: 3024,
-    height: 4032,
-    alt: "Leyla Romanova",
-    order: -1,
-  },
-  {
-    src: "/photo/IMG_9635.jpg",
-    width: 3024,
-    height: 4032,
-    alt: "Leyla Romanova",
-    order: -1,
-  },
-  {
-    src: "/photo/IMG_9638.jpg",
-    width: 3024,
-    height: 4032,
-    alt: "Leyla Romanova",
-    order: -1,
-  },
-  {
-    src: "/photo/IMG_9639.jpg",
-    width: 3024,
-    height: 4032,
-    alt: "Leyla Romanova",
-    order: -1,
-  },
-  {
     src: "/photo/IMG_0044.jpg",
     width: 3269,
     height: 4912,
