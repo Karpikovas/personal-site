@@ -17,8 +17,6 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "babel-plugin-react-compiler": "19.0.0-beta-27714ef-20250124",
-    "embla-carousel": "^8.5.1",
-    "embla-carousel-react": "^8.5.1",
     "eslint": "^8",
     "eslint-config-next": "15.0.1",
     "framer-motion": "^11.11.17",

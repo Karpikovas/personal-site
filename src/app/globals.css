@@ -86,20 +86,6 @@ body {
   justify-content: center;
 }
 
-.embla__button:disabled {
-  color: var(--detail-high-contrast);
-}
-
-.embla__button__svg {
-  width: 35%;
-  height: 35%;
-}
-.embla__slide {
-  transition: opacity 0.2s ease-in-out;
-}
-/* .embla__slide:not(.is-snapped) {
-  opacity: 0.16;
-} */
 
 body {
   animation: fadeInAnimation ease 3s;

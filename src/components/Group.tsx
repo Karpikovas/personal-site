@@ -2,7 +2,7 @@
 import {BaseMusicItem} from "@/constants/data";
 import Image from "next/image";
 import {MusicLinks} from "./MusicLinks";
-import {useState, useEffect, useRef} from "react";
+import {useState, useEffect, useRef, useCallback} from "react";
 import {useRouter} from "next/navigation";
 import Link from "next/link";
 
@@ -31,41 +31,43 @@ export const Group = ({
   const width = useWidth();
   const router = useRouter();
   const containerRef = useRef<HTMLDivElement>(null);
-  const groupRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isVisible, setIsVisible] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
   const [isLeftEdge, setIsLeftEdge] = useState(true);
   const [isRightEdge, setIsRightEdge] = useState(false);
 
-  const slidesToShow = width < 640 ? 1 : 3;
+  // Определяем количество видимых слайдов
+  const getSlidesToShow = useCallback(() => {
+    if (width < 768) return 1;    // Мобильные - 1 слайд
+    if (width < 1024) return 2;   // Планшеты - 2 слайда
+    return 3;                     // Десктоп - 3 слайда
+  }, [width]);
+
+  const slidesToShow = getSlidesToShow();
   const maxIndex = Math.max(0, items.length - slidesToShow);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => setIsVisible(entry.isIntersecting),
-      { threshold: 0.5 }
-    );
-    if (groupRef.current) observer.observe(groupRef.current);
-    return () => {
-      if (groupRef.current) observer.unobserve(groupRef.current);
-    };
-  }, []);
-
-  const checkEdges = () => {
+  // Проверка границ скролла
+  const checkEdges = useCallback(() => {
     if (!containerRef.current) return;
     const { scrollLeft, scrollWidth, clientWidth } = containerRef.current;
     setIsLeftEdge(scrollLeft <= 10);
     setIsRightEdge(scrollLeft >= scrollWidth - clientWidth - 10);
-  };
 
-  const scrollToSlide = (index: number) => {
+    // Обновляем текущий индекс
+    const slideWidth = containerRef.current.children[0]?.clientWidth || 0;
+    const gap = parseInt(window.getComputedStyle(containerRef.current).gap) || 0;
+    const newIndex = Math.round(scrollLeft / (slideWidth + gap));
+    setCurrentIndex(Math.max(0, Math.min(newIndex, maxIndex)));
+  }, [maxIndex]);
+
+  // Прокрутка к конкретному слайду
+  const scrollToSlide = useCallback((index: number) => {
     if (!containerRef.current) return;
     const newIndex = Math.max(0, Math.min(index, maxIndex));
     setCurrentIndex(newIndex);
 
     const container = containerRef.current;
-    const slide = container.children[0] as HTMLElement;
-    const slideWidth = slide?.offsetWidth || 0;
+    const slideWidth = container.children[0]?.clientWidth || 0;
     const gap = parseInt(window.getComputedStyle(container).gap) || 0;
     const scrollPosition = newIndex * (slideWidth + gap);
 
@@ -73,22 +75,34 @@ export const Group = ({
       left: scrollPosition,
       behavior: 'smooth'
     });
-  };
+  }, [maxIndex]);
 
+  // Инициализация событий
   useEffect(() => {
     const container = containerRef.current;
     if (container) {
       container.addEventListener('scroll', checkEdges);
-      checkEdges(); // Initial check
+      checkEdges(); // Начальная проверка
       return () => container.removeEventListener('scroll', checkEdges);
     }
-  }, []);
+  }, [checkEdges]);
 
   const nextSlide = () => scrollToSlide(currentIndex + 1);
   const prevSlide = () => scrollToSlide(currentIndex - 1);
 
+  // Рассчитываем ширину слайдов
+  const getSlideWidth = () => {
+    if (width < 768) return 'w-full'; // На мобильных - полная ширина
+    if (width < 1024) return 'w-1/2'; // На планшетах - половина
+    return 'w-1/3'; // На десктопе - треть
+  };
+
   return (
-    <div className="mb-10 md:mb-16 xl:mb-20" ref={groupRef}>
+    <div
+      className="mb-10 md:mb-16 xl:mb-20"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       <div className="flex flex-row gap-4 lg:gap-10 items-baseline mb-4 lg:mb-8">
         <h2 className="w-auto pb-2 tracking-tight text-md md:text-2xl lg:text-4xl font-semibold text-nowrap !text-stone-300">
           {name.toString().toUpperCase()}
@@ -97,22 +111,40 @@ export const Group = ({
       </div>
 
       <div className="relative">
-        {/* Left Button */}
-        {items.length > slidesToShow && width >= 1024 && isVisible && !isLeftEdge && (
-          <button
-            onClick={prevSlide}
-            className="absolute -left-14 top-1/2 -translate-y-1/2 z-10 w-12 h-12 flex items-center justify-center rounded-full bg-stone-600/30 hover:bg-stone-600/60 transition-all duration-300 shadow-lg border border-stone-500/30"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7"/>
-            </svg>
-          </button>
+        {/* Кнопки навигации для десктопа */}
+        {items.length > slidesToShow && width >= 1024 && (
+          <>
+            {!isLeftEdge && (
+              <button
+                onClick={prevSlide}
+                className={`absolute -left-14 top-1/2 -translate-y-1/2 z-10 w-12 h-12 flex items-center justify-center rounded-full bg-stone-600/80 hover:bg-stone-600/90 transition-all duration-300 shadow-lg border border-stone-500/30 ${
+                  isHovered ? 'opacity-100' : 'opacity-0'
+                }`}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7"/>
+                </svg>
+              </button>
+            )}
+            {!isRightEdge && (
+              <button
+                onClick={nextSlide}
+                className={`absolute -right-14 top-1/2 -translate-y-1/2 z-10 w-12 h-12 flex items-center justify-center rounded-full bg-stone-600/80 hover:bg-stone-600/90 transition-all duration-300 shadow-lg border border-stone-500/30 ${
+                  isHovered ? 'opacity-100' : 'opacity-0'
+                }`}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7"/>
+                </svg>
+              </button>
+            )}
+          </>
         )}
 
-        {/* Slides Container */}
+        {/* Контейнер слайдов */}
         <div
           ref={containerRef}
-          className="flex gap-4 md:gap-6 overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar"
+          className="flex lg:gap-1 overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar"
           style={{
             scrollbarWidth: 'none',
             msOverflowStyle: 'none',
@@ -121,7 +153,7 @@ export const Group = ({
           {items.map((item) => (
             <div
               key={item.name}
-              className="flex-shrink-0 snap-start w-[calc(100%-16px)] sm:w-[calc(50%-12px)] md:w-[calc(33.333%-16px)]"
+              className={`flex-shrink-0 snap-start ${getSlideWidth()} px-2`}
             >
               <div
                 className="relative group inline-block w-full aspect-square"
@@ -133,11 +165,11 @@ export const Group = ({
                   alt={item.name}
                   width={1200}
                   height={1200}
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 />
 
                 {width < 1024 && (
-                  <div className="mt-2 !text-stone-300 text-sm md:text-base">
+                  <div className="mt-2 !text-stone-300 text-xl">
                     <MusicLinks {...item} />
                   </div>
                 )}
@@ -175,35 +207,35 @@ export const Group = ({
           ))}
         </div>
 
-        {/* Right Button */}
-        {items.length > slidesToShow && width >= 1024 && isVisible && !isRightEdge && (
-          <button
-            onClick={nextSlide}
-            className="absolute -right-14 top-1/2 -translate-y-1/2 z-10 w-12 h-12 flex items-center justify-center rounded-full bg-stone-600/30 hover:bg-stone-600/60 transition-all duration-300 shadow-lg border border-stone-500/30"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7"/>
-            </svg>
-          </button>
-        )}
-
-        {/* Mobile Navigation */}
+        {/* Кнопки навигации для мобильных и планшетов */}
         {items.length > slidesToShow && width < 1024 && (
           <div className="flex justify-center mt-3">
-            <div className="flex flex-row gap-4">
+            <div className="flex flex-row gap-5">
               <button
                 onClick={prevSlide}
-                disabled={currentIndex === 0}
-                className={`rounded-full px-4 py-1 bg-stone-400/20 text-white ${currentIndex === 0 ? 'opacity-50 cursor-default' : 'cursor-pointer hover:bg-stone-500/90'}`}
+                disabled={isLeftEdge}
+                className={`w-10 h-10 flex items-center justify-center rounded-full transition-all duration-300 shadow-lg border ${
+                  isLeftEdge
+                    ? 'bg-stone-600/20 border-stone-500/10 cursor-default opacity-50'
+                    : 'bg-stone-600/30 hover:bg-stone-600/60 border-stone-500/30 cursor-pointer'
+                }`}
               >
-                ←
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7"/>
+                </svg>
               </button>
               <button
                 onClick={nextSlide}
-                disabled={currentIndex >= maxIndex}
-                className={`rounded-full px-4 py-1 bg-stone-400/20 text-white ${currentIndex >= maxIndex ? 'opacity-50 cursor-default' : 'cursor-pointer hover:bg-stone-500/90'}`}
+                disabled={isRightEdge}
+                className={`w-10 h-10 flex items-center justify-center rounded-full transition-all duration-300 shadow-lg border ${
+                  isRightEdge
+                    ? 'bg-stone-600/20 border-stone-500/10 cursor-default opacity-50'
+                    : 'bg-stone-600/30 hover:bg-stone-600/60 border-stone-500/30 cursor-pointer'
+                }`}
               >
-                →
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7"/>
+                </svg>
               </button>
             </div>
           </div>
