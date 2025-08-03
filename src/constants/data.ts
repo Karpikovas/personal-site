@@ -93,7 +93,25 @@ const MUSIC: BaseMusicItem[] = [
   },
   {
     type: 'single',
-    group: 'Rock | Pop Rock',
+    group: 'Pop | Rock ',
+    href: 'tomorrow',
+    name: 'Tomorrow',
+    image: 'LR-Tomorrow-cover.jpg',
+    description: '"Tomorrow" – a pop ballad with jazz undertones. To me, it sounds like a late evening accompanied by the crackle of an old vinyl record – quivering, warm, and nostalgic, like a rendezvous with the past.\n\n' +
+      'Jazz has always been the voice of my childhood. My father instilled in me a love for it, filling our home with magic: cassettes of Nat King Cole, Al Jarreau, Frank Sinatra, Louis Armstrong, and Ella Fitzgerald played like the soundtrack to my brightest memories. And so, throughout my youth, I kept discovering new artists – from Michael Buble to Jamie Cullum – letting their music carry me away.\n\n' +
+      'Now, years later, jazz fills my home again every evening– my youngest son, Kirill, so much like my father, is drawn to those warm, vibrant sounds. I began playing jazz melodies for him, and then… this song was born – "Tomorrow." Kirill is only 1 year old, but he already knows what he wants: he points at the speaker, waiting for me to pick him up so we can sway to the music together, again and again.\n\n' +
+      'So, in a way, this song is a bridge between generations – between me, my father, and my son, between my past and my future.\n\n' +
+      'And of course, it\'s about love – because that\'s where the deepest meaning lies.',
+    spotify: 'https://open.spotify.com/album/08R4AmoEYAdHuLlnLYVVoI',
+    apple: 'https://music.apple.com/ru/album/18266011042app=music&mt=1&at=1000lgif&ct=bq&is=1&is=1',
+    youtube: 'https://youtu.be/nzQf65FrYts?si=Zn4F3Yp6QXbhtcBC',
+    yandex: 'https://music.yandex.ru/album/37423216',
+    vk: 'https://music.vk.com/link/yHmrG',
+    zvuk: 'https://zvuk.com/release/39482163'
+  },
+  {
+    type: 'single',
+    group: 'Pop | Rock ',
     name: 'Кого искала я?',
     href: 'кого-искала-я',
     image: 'LR-кого-искала-я.jpg',
@@ -106,7 +124,7 @@ const MUSIC: BaseMusicItem[] = [
   },
   {
     type: 'album',
-    group: 'Rock | Pop Rock',
+    group: 'Pop | Rock ',
     name: 'LR album',
     href: 'lr-album',
     image: 'Lr.png',
@@ -509,7 +527,7 @@ export function getGroups() {
     'Electronic': {items: [], isMain: false},
     'Orchestral (live) & Chamber': {items: [], isMain: false},
     'Piano': {items: [], isMain: false},
-    'Rock | Pop Rock': {items: [], isMain: false},
+    'Pop | Rock ': {items: [], isMain: false},
   }
 
   MUSIC.forEach(item => {

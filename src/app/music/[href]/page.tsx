@@ -68,11 +68,11 @@ export default async function PageMusic({
           ))}
       </ul>
       {item.description && (
-        <div className="block mt-8 md:hidden pb-2 tracking-tight lg:text-l text-wrap !text-stone-300">
+        <div className="block mt-8 md:hidden pb-2 tracking-tight lg:text-l text-wrap !text-stone-300 whitespace-pre-wrap">
           {item.description}
         </div>
       )}
-      <div className="md:basis-1/2">
+      <div className="md:basis-2/5">
         <Image
           className="border border-stone-900 rounded-xl mb-2"
           src={"/covers/" + item.image}
@@ -86,7 +86,7 @@ export default async function PageMusic({
           <MusicLinks {...item} />
         </div>
       </div>
-      <div className="md:basis-1/2">
+      <div className="md:basis-3/5">
         <h2 className="text-2xl pb-2 xl:pb-6 tracking-tight lg:text-3xl font-semibold text-wrap !text-stone-300s">
           {item.name}
         </h2>
@@ -97,7 +97,7 @@ export default async function PageMusic({
 
         <hr className="my-4 xl:my-7"/>
         {item.description && (
-          <div className="hidden md:block pb-2 tracking-tight lg:text-l text-wrap !text-stone-300">
+          <div className="hidden md:block pb-2 tracking-tight lg:text-l text-wrap !text-stone-300 whitespace-pre-wrap">
             {item.description}
           </div>
         )}

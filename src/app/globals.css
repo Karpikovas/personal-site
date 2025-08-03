@@ -162,3 +162,23 @@ main {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+
+/* Стили для скрытия scrollbar */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Стили для snap-прокрутки */
+.snap-x {
+  scroll-snap-type: x mandatory;
+}
+
+.snap-start {
+  scroll-snap-align: start;
+}
