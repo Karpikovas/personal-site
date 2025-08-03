@@ -5,6 +5,23 @@ const MUSIC: BaseMusicItem[] = [
   {
     type: 'single',
     group: 'Cinematic',
+    href: 'the-one-uncoded',
+    name: 'The One Uncoded',
+    image: 'The One Uncoded.jpg',
+    description: 'THE ONE UNCODED is a deeply personal track. I was 11 when I first watched “The Matrix” – and my world turned upside down. I realized nothing was impossible – that boundaries existed only in the mind. And indeed, throughout my childhood and youth, I kept “erasing” them… until 2012 came – a single “event” knocked me off course, made me stop believing in myself. I kept living, but as if on autopilot – half-asleep, shrouded in a thick veil of "normality."\n' +
+      '\n' +
+      'Then, just recently, it was as if someone shook me awake with the words: “What the hell took you so long?..” That same evening, I felt drawn to rewatch “The Matrix 4” – and déjà vu struck – there it was, the exact same dialogue. It’s surreal, of course, to feel such a connection to characters and events of a fictional film… But the most important thing is that I finally felt alive again – and I wrote this track.\n' +
+      'P.S. Huge thanks to the gorgeous Baku-based singer Elnarə Xəlilova for her magical vocals.',
+    spotify: 'https://open.spotify.com/album/1n9PA2Lm29EhA9wvHUjS0n',
+    apple: 'https://music.apple.com/ru/album/the-one-uncoded-single/1821247272',
+    youtube: 'https://www.youtube.com/watch?v=bAy4qWDaieI',
+    yandex: 'https://music.yandex.ru/album/37090163/',
+    vk: 'https://music.vk.com/link/hLvr7',
+    zvuk: 'https://zvuk.com/track/144621123'
+  },
+  {
+    type: 'single',
+    group: 'Cinematic',
     href: 'fairy-tale',
     name: 'Fairy Tale',
     image: 'Fairy Tale.jpg',
@@ -488,7 +505,7 @@ export type TrackItem = {
 
 export function getGroups() {
   let result = {
-    'Cinematic': {items: [], isMain: true},
+    'Cinematic': {items: [], isMain: false},
     'Electronic': {items: [], isMain: false},
     'Orchestral (live) & Chamber': {items: [], isMain: false},
     'Piano': {items: [], isMain: false},
@@ -503,7 +520,7 @@ export function getGroups() {
     result[item.group].items.push(item)
   })
 
-  result['Cinematic'].isMain = true
+  //result['Cinematic'].isMain = true
 
   return result
 }
