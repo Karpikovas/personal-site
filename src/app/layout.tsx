@@ -43,7 +43,6 @@ export default function RootLayout({
 
           <div className="container mt-16 mb-8 mx-auto px-8 xl:px-38"></div>
         </main>
-
         <Contacts />
       </body>
     </html>
