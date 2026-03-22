@@ -3,6 +3,7 @@ import {getAllMusicHrefs, getByHref} from "@/constants/data";
 import Image from "next/image";
 import {notFound} from "next/navigation";
 import {siteConfig} from "@/constants/siteMetaData";
+import { withBasePath } from "@/constants/basePath";
 
 export async function generateStaticParams() {
   return getAllMusicHrefs().map((href) => ({href}));
@@ -15,7 +16,7 @@ export async function generateMetadata({params}) {
   const item = getByHref(decodeURIComponent(href));
 
   const title = `${item?.name} | ${siteConfig.title}`;
-  const img = item?.image ? `/covers/${item?.image}` : '';
+  const img = item?.image ? withBasePath(`/covers/${item?.image}`) : '';
   const descr = item?.description ? item?.description : siteConfig.description;
 
   return {
@@ -79,7 +80,7 @@ export default async function PageMusic({
       <div className="md:basis-2/5">
         <Image
           className="border border-stone-900 rounded-xl mb-2"
-          src={"/covers/" + item.image}
+          src={withBasePath("/covers/" + item.image)}
           alt={item.name}
           width={1200}
           height={1200}

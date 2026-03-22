@@ -1,7 +1,8 @@
 import type { NextConfig } from "next";
 
 const isPagesPreview = process.env.NEXT_PUBLIC_IS_PAGES_PREVIEW === "true";
-const repositoryName = process.env.GITHUB_REPOSITORY?.split("/")[1] || "";
+const repositoryName =
+  process.env.NEXT_PUBLIC_PAGES_REPOSITORY || process.env.GITHUB_REPOSITORY?.split("/")[1] || "";
 const isUserPagesRepo = repositoryName.endsWith(".github.io");
 const branchDir = process.env.NEXT_PUBLIC_PAGES_BRANCH_PATH || "";
 

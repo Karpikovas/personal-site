@@ -4,6 +4,7 @@ import type { PressItem } from "@/constants/data";
 import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
+import { withBasePath } from "@/constants/basePath";
 
 const ITEMS_PER_PAGE = 10;
 type PaginationItem = number | "...";
@@ -61,7 +62,7 @@ export const PressList = ({ press }: { press: PressItem[] }) => {
               <div className="relative">
                 <Image
                   className="border border-stone-900 rounded-xl"
-                  src={`/covers/${item.image}`}
+                  src={withBasePath(`/covers/${item.image}`)}
                   alt={item.image || ""}
                   width={100}
                   height={100}

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { MusicLinks } from "./MusicLinks";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { withBasePath } from "@/constants/basePath";
 
 export const Group = ({
   name,
@@ -46,7 +47,7 @@ export const Group = ({
                 <div className="relative mt-2 aspect-square overflow-hidden rounded-xl border border-stone-900 group/image">
                   <Image
                     className="w-full h-full object-cover"
-                    src={"/covers/" + item.image}
+                    src={withBasePath("/covers/" + item.image)}
                     alt={item.name}
                     width={1200}
                     height={1200}

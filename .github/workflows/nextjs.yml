@@ -65,6 +65,7 @@ jobs:
         env:
           NEXT_PUBLIC_IS_PAGES_PREVIEW: "true"
           NEXT_PUBLIC_DISABLE_SEO: "true"
+          NEXT_PUBLIC_PAGES_REPOSITORY: ${{ github.event.repository.name }}
           NEXT_PUBLIC_PAGES_BRANCH_PATH: ${{ github.ref_name }}
         run: ${{ steps.detect-package-manager.outputs.build_runner }} next build
 

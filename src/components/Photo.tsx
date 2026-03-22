@@ -1,10 +1,12 @@
+import { withBasePath } from "@/constants/basePath";
+
 export const Photo = () => {
 
   return (
     <div style={{
       minHeight: '150px',
       height: '65vh',
-      backgroundImage: 'url(/cover-new.jpg)',
+      backgroundImage: `url(${withBasePath("/cover-new.jpg")})`,
       backgroundAttachment: 'scroll',
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',
