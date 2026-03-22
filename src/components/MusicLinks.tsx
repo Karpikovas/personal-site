@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import { SiApplemusic, SiSpotify, SiYoutubemusic, SiVk } from "react-icons/si";
+import type { MouseEvent } from "react";
 
 import { TbBrandYandex } from "react-icons/tb";
 import { AiFillAmazonCircle } from "react-icons/ai";
@@ -26,41 +29,44 @@ export const MusicLinks = ({
   zvuk,
 }: IMusicLinksProps) => {
   const linkClass = "hover:text-stone-400 cursor-pointer";
+  const handleLinkClick = (event: MouseEvent<HTMLAnchorElement>) => {
+    event.stopPropagation();
+  };
 
   return (
     <div className="flex flex-row justify-center gap-2">
       {spotify && (
-        <Link href={spotify} target="_blank" className={linkClass}>
+        <Link href={spotify} target="_blank" className={linkClass} onClick={handleLinkClick}>
           <SiSpotify />
         </Link>
       )}
 
       {youtube && (
-        <Link href={youtube} target="_blank" className={linkClass}>
+        <Link href={youtube} target="_blank" className={linkClass} onClick={handleLinkClick}>
           <SiYoutubemusic />
         </Link>
       )}
 
       {apple && (
-        <Link href={apple} target="_blank" className={linkClass}>
+        <Link href={apple} target="_blank" className={linkClass} onClick={handleLinkClick}>
           <SiApplemusic />
         </Link>
       )}
 
       {vk && (
-        <Link href={vk} target="_blank" className={linkClass}>
+        <Link href={vk} target="_blank" className={linkClass} onClick={handleLinkClick}>
           <SiVk />
         </Link>
       )}
 
       {amazon && (
-        <Link href={amazon} target="_blank" className={linkClass}>
+        <Link href={amazon} target="_blank" className={linkClass} onClick={handleLinkClick}>
           <AiFillAmazonCircle />
         </Link>
       )}
 
       {zvuk && (
-        <Link href={zvuk} target="_blank" className={linkClass}>
+        <Link href={zvuk} target="_blank" className={linkClass} onClick={handleLinkClick}>
           <svg
             stroke="currentColor"
             fill="currentColor"
@@ -83,13 +89,13 @@ export const MusicLinks = ({
       )}
 
       {yandex && (
-        <Link href={yandex} target="_blank" className={linkClass}>
+        <Link href={yandex} target="_blank" className={linkClass} onClick={handleLinkClick}>
           <TbBrandYandex />
         </Link>
       )}
 
       {video && (
-         <Link href={video} target="_blank" className={linkClass}>
+         <Link href={video} target="_blank" className={linkClass} onClick={handleLinkClick}>
          <PiVideoFill/>
        </Link>
       )}

@@ -7,6 +7,8 @@ const MUSIC: BaseMusicItem[] = [
     group: 'Cinematic',
     href: 'the-one-uncoded',
     name: 'The One Uncoded',
+    cardSubtitle: 'Instrumental | Electronica',
+    releaseYear: 2025,
     image: 'The One Uncoded.jpg',
     description: 'THE ONE UNCODED is a deeply personal track. I was 11 when I first watched “The Matrix” – and my world turned upside down. I realized nothing was impossible – that boundaries existed only in the mind. And indeed, throughout my childhood and youth, I kept “erasing” them… until 2012 came – a single “event” knocked me off course, made me stop believing in myself. I kept living, but as if on autopilot – half-asleep, shrouded in a thick veil of "normality."\n' +
       '\n' +
@@ -24,6 +26,8 @@ const MUSIC: BaseMusicItem[] = [
     group: 'Cinematic',
     href: 'fairy-tale',
     name: 'Fairy Tale',
+    cardSubtitle: 'Symphonic Orchestral',
+    releaseYear: 2024,
     image: 'Fairy Tale.jpg',
     description: 'FAIRY TALE consists of countless parts of all groups of instruments of the symphony orchestra (strings – from violin to double bass, woodwinds – from flute to bassoon, brass – from trumpet to tuba, percussion – from timpani to metallophones), keyboards (piano, celesta), choir – in general, almost everything one can imagine. This piece of music is my attempt to become one step closer to my main musical Teachers, the real wizards, Pyotr Tchaikovsky and John Williams.',
     spotify: 'https://open.spotify.com/album/6e5FurpsJah1T6yNxkc4w6',
@@ -36,7 +40,9 @@ const MUSIC: BaseMusicItem[] = [
   {
     type: 'single',
     group: 'Cinematic',
-    name: 'CYBERSYMPHONY (dedicated to Christopher Nolan)',
+    name: 'CYBERSYMPHONY (Dedicated to Christopher Nolan)',
+    cardSubtitle: 'Instrumental | Electronica',
+    releaseYear: 2024,
     href: 'cybersymphony',
     image: 'Cybersymphony.jpg',
     description: 'CYBERSYMPHONY is my debut in the cinematic style. The track combines elements of classical orchestral music, chorale, techno-trance — I tried to make it integral but at the same time multi-layered, encompassing different moods and colors so that it could seem like a concentrated soundtrack to a real film. While working on this track, I pictured in my head the story of a superhero who goes through various life trials, fights in fierce battles with dangerous enemies, finds himself one step away from death, but wins, showing remarkable willpower, and sometimes gives himself up to simple human weaknesses, hanging out at hard techno raves, missing his beloved and indulging in dreams. I dedicated this soundtrack to my favorite director, Christopher Nolan, whose films always inspire and give new meanings.',
@@ -53,7 +59,9 @@ const MUSIC: BaseMusicItem[] = [
     type: 'single',
     href: 'are-you-waiting-for-me',
     group: 'Electronic',
-    name: 'Are You Waiting For Me?',
+    name: 'Are You Waiting for Me?',
+    cardSubtitle: 'Instrumental | Trance',
+    releaseYear: 2024,
     image: 'Are you waiting for me.jpg',
     description: 'We are all prisoners of time. It cannot be stopped, delayed or outstripped. Everything happens when it is supposed to happen – not earlier and not later. We have to spend part of our lives waiting. But if you are ready to wait, then what you are waiting for is important and valuable to you. And if they are waiting for you, it means you are important and valuable to someone. I like to intertwine genres and create music of the future, the roots of which originate in my past – because one cannot exist without the other.',
     spotify: 'https://open.spotify.com/album/7BKyak549ykUYt98L3dW2N?si=E0Av7fr0Qu6OJslFTJ0Dyg',
@@ -68,6 +76,8 @@ const MUSIC: BaseMusicItem[] = [
     group: 'Electronic',
     href: 'diptych',
     name: 'Diptych',
+    cardSubtitle: 'Trance | Electronica',
+    releaseYear: 2023,
     image: 'Diptych.jpg',
     description: 'DIPTYCH is conceived as a conceptual, futuristic, eclectic piece of music. It combines elements of trance-progressive, instrumental music and chorale (performed in Latin).',
     spotify: 'https://open.spotify.com/album/2FilJmUXcBZ42RbAGv7BUH',
@@ -82,6 +92,8 @@ const MUSIC: BaseMusicItem[] = [
     group: 'Electronic',
     href: 'back-to-life',
     name: 'Back to Life',
+    cardSubtitle: 'Trance | Oriental Fusion',
+    releaseYear: 2023,
     image: 'Back to life.jpg',
     description: 'BACK TO LIFE is my debut in electronic music. Special thanks to Elnara (a wonderful singer from Baku) for her magical vocals.',
     spotify: 'https://open.spotify.com/album/7C9yHilQmy4M34naKsDcXz',
@@ -96,6 +108,8 @@ const MUSIC: BaseMusicItem[] = [
     group: 'Pop | Rock ',
     href: 'tomorrow',
     name: 'Tomorrow',
+    cardSubtitle: 'Song | Pop-Jazz Ballad',
+    releaseYear: 2025,
     image: 'LR-Tomorrow-cover.jpg',
     description: '"Tomorrow" – a pop ballad with jazz undertones. To me, it sounds like a late evening accompanied by the crackle of an old vinyl record – quivering, warm, and nostalgic, like a rendezvous with the past.\n\n' +
       'Jazz has always been the voice of my childhood. My father instilled in me a love for it, filling our home with magic: cassettes of Nat King Cole, Al Jarreau, Frank Sinatra, Louis Armstrong, and Ella Fitzgerald played like the soundtrack to my brightest memories. And so, throughout my youth, I kept discovering new artists – from Michael Buble to Jamie Cullum – letting their music carry me away.\n\n' +
@@ -114,6 +128,8 @@ const MUSIC: BaseMusicItem[] = [
     group: 'Pop | Rock ',
     name: 'Кого искала я?',
     href: 'кого-искала-я',
+    cardSubtitle: 'Rock | Instrumental',
+    releaseYear: 2024,
     image: 'LR-кого-искала-я.jpg',
     apple: 'https://music.apple.com/ru/album/кого-искала-я-single/1803591472',
     yandex: 'https://music.yandex.ru/album/35921460',
@@ -125,8 +141,10 @@ const MUSIC: BaseMusicItem[] = [
   {
     type: 'album',
     group: 'Pop | Rock ',
-    name: 'LR album',
+    name: 'LR',
     href: 'lr-album',
+    cardSubtitle: 'Pop-rock',
+    releaseYear: 2023,
     image: 'Lr.png',
     spotify: 'https://open.spotify.com/album/5ovsKLRsWiiqEwg4nYykN3',
     apple: 'https://music.apple.com/ru/album/lr/1761763816',
@@ -234,7 +252,10 @@ const MUSIC: BaseMusicItem[] = [
     type: 'album',
     group: 'Piano',
     href: 'maxi-single',
-    name: 'Maxi-single',
+    name: 'NeoPiano',
+    cardSubtitle: 'Neoclassical | Piano',
+    releaseYear: 2024,
+    cardType: 'maxi-single',
     image: 'NeoPiano.jpg',
     spotify: 'https://open.spotify.com/album/1YWrNBqBZomePAtcBgamJM?si=v0toeBkISAyLQab3VZUMFg',
     apple: 'https://music.apple.com/ru/album/neopiano-single/1779315945',
@@ -271,6 +292,7 @@ const MUSIC: BaseMusicItem[] = [
     group: 'Orchestral (live) & Chamber',
     href: 'reverie',
     name: 'Reverie',
+    cardSubtitle: 'String orchestra',
     image: 'Reverie.png',
     video: 'https://youtu.be/j2RQo0AcVO0?si=Ivk60cqFJYMntBKA'
   },
@@ -279,6 +301,7 @@ const MUSIC: BaseMusicItem[] = [
     href: 'ithaf-rehearsal',
     group: 'Orchestral (live) & Chamber',
     name: 'Ithaf (rehearsal)',
+    cardSubtitle: 'String orchestra',
     image: 'Dedication.png',
     video: 'https://www.youtube.com/watch?v=xZeMhpLGJaY',
   },
@@ -288,6 +311,7 @@ const MUSIC: BaseMusicItem[] = [
     href: 'dreams-of-paris',
     group: 'Orchestral (live) & Chamber',
     name: 'Dreams of Paris',
+    cardSubtitle: 'Chamber',
     image: 'Dreams of Paris.png',
     video: 'https://www.youtube.com/watch?v=hpnklUgaUW0'
   },
@@ -612,6 +636,9 @@ export type BaseMusicItem = {
   type: string
   group: string
   name: string
+  cardSubtitle?: string
+  releaseYear?: number
+  cardType?: string
   image?: string
   description?: string
   items?: any[],
@@ -639,25 +666,34 @@ export type TrackItem = {
 }
 
 export function getGroups() {
-  let result = {
-    'Cinematic': {items: [], isMain: false},
-    'Electronic': {items: [], isMain: false},
-    'Orchestral (live) & Chamber': {items: [], isMain: false},
-    'Piano': {items: [], isMain: false},
-    'Pop | Rock ': {items: [], isMain: false},
-  }
+  const byHref = new Map(MUSIC.map(item => [item.href, item]))
+  const pick = (hrefs: string[]) => hrefs.map(href => byHref.get(href)).filter(Boolean)
 
-  MUSIC.forEach(item => {
-    if (!result.hasOwnProperty(item.group)) {
-      result[item.group] = {items: [], isMain: false}
+  return {
+    'RELEASES': {
+      items: pick([
+        'the-one-uncoded',
+        'tomorrow',
+        'fairy-tale',
+        'are-you-waiting-for-me',
+        'cybersymphony',
+        'maxi-single',
+        'diptych',
+        'back-to-life',
+        'кого-искала-я',
+        'lr-album',
+      ]),
+      isMain: false
+    },
+    'LIVE Orchestral & Chamber': {
+      items: pick([
+        'reverie',
+        'ithaf-rehearsal',
+        'dreams-of-paris',
+      ]),
+      isMain: false
     }
-
-    result[item.group].items.push(item)
-  })
-
-  //result['Cinematic'].isMain = true
-
-  return result
+  }
 }
 
 export function getByHref(href: string) {
