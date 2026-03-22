@@ -131,9 +131,9 @@ const MUSIC: BaseMusicItem[] = [
       'Now, years later, jazz fills my home again every evening– my youngest son, Kirill, so much like my father, is drawn to those warm, vibrant sounds. I began playing jazz melodies for him, and then… this song was born – "Tomorrow." Kirill is only 1 year old, but he already knows what he wants: he points at the speaker, waiting for me to pick him up so we can sway to the music together, again and again.\n\n' +
       'So, in a way, this song is a bridge between generations – between me, my father, and my son, between my past and my future.\n\n' +
       'And of course, it\'s about love – because that\'s where the deepest meaning lies.',
-    spotify: 'https://open.spotify.com/album/08R4AmoEYAdHuLlnLYVVoI',
-    apple: 'https://music.apple.com/ru/album/18266011042app=music&mt=1&at=1000lgif&ct=bq&is=1&is=1',
-    youtube: 'https://youtu.be/nzQf65FrYts?si=Zn4F3Yp6QXbhtcBC',
+    spotify: 'https://open.spotify.com/album/0BR4AmoEYAqHuLlntJYWoi',
+    apple: 'https://music.apple.com/ru/album/1826601104?app=music&mt=1&at=1000lqjf&ct=bq&Is=1&ls=1',
+    youtube: 'https://youtu.be/nzQf6sFrYts?si=Zn4F3Vp6QXbhtcBC',
     yandex: 'https://music.yandex.ru/album/37423216',
     vk: 'https://music.vk.com/link/yHmrG',
     zvuk: 'https://zvuk.com/release/39482163'
@@ -793,6 +793,10 @@ export function getGroups() {
 export function getByHref(href: string) {
   const music = MUSIC.find(item => item.href === href)
   return music
+}
+
+export function getAllMusicHrefs() {
+  return MUSIC.map(item => item.href)
 }
 
 export function getPress() {

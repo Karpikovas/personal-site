@@ -1,3 +1,5 @@
+import { withBasePath } from "@/constants/basePath";
+
 const ELENA_KVITA = "by Elena Kvita";
 const ROMAN_AGISHEV = "by Roman Agishev";
 const BASE_HEIGHT = 4032;
@@ -342,7 +344,9 @@ export const photosData = [
 
 
 export const getSortedPhotos = () => {
-  return photosData.sort((a, b) => a.order - b.order);
+  return photosData
+    .sort((a, b) => a.order - b.order)
+    .map((photo) => ({ ...photo, src: withBasePath(photo.src) }));
 };
 
 
