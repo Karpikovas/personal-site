@@ -1,6 +1,21 @@
 // @ts-nocheck
 
 const MUSIC: BaseMusicItem[] = [
+  {
+    type: 'single',
+    group: 'Pop | Rock ',
+    href: 'lettres-sous-la-pluie',
+    name: 'Lettres sous la pluie',
+    cardSubtitle: 'Song | French Chanson',
+    releaseYear: 2026,
+    image: 'Lettres sous la pluie.png',
+    spotify: 'https://open.spotify.com/track/5aFzCZMp9iHYHY8cMBR8Gb',
+    apple: 'https://music.apple.com/by/song/lettres-sous-la-pluie/1870389376',
+    youtube: 'https://youtu.be/mPbyXuWZP54',
+    yandex: 'https://music.yandex.ru/album/40288203/track/147375524',
+    vk: 'https://vk.com/artist/leylaromanova?z=audio_playlist-2000477752_26477752',
+    zvuk: 'https://zvuk.com/track/173609966'
+  },
   // Cinematic
   {
     type: 'single',
@@ -672,6 +687,7 @@ export function getGroups() {
   return {
     'RELEASES': {
       items: pick([
+        'lettres-sous-la-pluie',
         'the-one-uncoded',
         'tomorrow',
         'fairy-tale',
