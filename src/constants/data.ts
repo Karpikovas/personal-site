@@ -333,9 +333,90 @@ const MUSIC: BaseMusicItem[] = [
 ]
 
 const PRESS: PressItem[] = [
-  // The One Uncoded (новые статьи)
+  // Lettres sous la pluie
   {
     order: 1,
+    name: 'Leyla Romanova unveils cinematic new single "Lettres sous la pluie"',
+    created_date: '2026-02-01',
+    image: 'Lettres sous la pluie.png',
+    source: "It's All Indie",
+    href: 'https://www.itsallindie.com/2026/02/leyla-romanova-unveils-cinematic-new.html'
+  },
+  {
+    order: 2,
+    name: 'Leyla Romanova sur Lettres sous la pluie, la compositrice symphonique se met au son une averse acoustique',
+    created_date: '2026-02-13',
+    image: 'Lettres sous la pluie.png',
+    source: 'Extravafrench magazine',
+    href: 'https://extravafrench.com/2026/02/13/leyla-romanova-sur-lettres-sous-la-pluie-la-compositrice-symphonique-se-met-au-son-une-averse-acoustique/'
+  },
+  {
+    order: 3,
+    name: 'Leyla Romanova’s Lettres sous la pluie will have you daydreaming about Paris',
+    created_date: '2026-02-01',
+    image: 'Lettres sous la pluie.png',
+    source: 'Lost in the Manor',
+    href: 'https://www.lostinthemanor.co.uk/blog/leyla-romanovas-lettres-sous-la-pluie-will-have-you-daydreaming-about-paris'
+  },
+  {
+    order: 4,
+    name: 'Leyla Romanova paints Paris in sound on lush new track Lettres sous la pluie',
+    created_date: '2026-02-16',
+    image: 'Lettres sous la pluie.png',
+    source: 'York Calling',
+    href: 'https://yorkcalling.co.uk/2026/02/16/leyla-romanova-paints-paris-in-sound-on-lush-new-track-lettres-sous-la-pluie/'
+  },
+  {
+    order: 5,
+    name: 'Lettres sous la pluie - Leyla Romanova',
+    created_date: '2026-02-01',
+    image: 'Lettres sous la pluie.png',
+    source: 'Dancing About Architecture',
+    href: 'https://dancing-about-architecture.com/lettres-sous-la-pluie-leyla-romanova-genchev-sound/'
+  },
+  {
+    order: 6,
+    name: 'Brand new single from Leyla Romanova',
+    created_date: '2026-02-01',
+    image: 'Lettres sous la pluie.png',
+    source: 'Plastic Magazine',
+    href: 'https://plasticmag.co.uk/2026/02/brand-new-single-from-leyla-romanova/'
+  },
+  {
+    order: 7,
+    name: 'Leyla Romanova - Lettres sous la pluie review',
+    created_date: '2026-02-01',
+    image: 'Lettres sous la pluie.png',
+    source: 'Rotate Magazine',
+    href: 'https://rotatemagazine.com/leyla-romanova-lettres-sous-la-pluie-review/'
+  },
+  {
+    order: 8,
+    name: 'Leyla Romanova - Lettres sous la pluie',
+    created_date: '2026-02-01',
+    image: 'Lettres sous la pluie.png',
+    source: 'Clout',
+    href: 'https://cloutcloutclout.com/new-music/leyla-romanova-lettres-sous-la-pluie/'
+  },
+  {
+    order: 9,
+    name: 'Lettres sous la pluie, Leyla Romanova fait chanter la memoire',
+    created_date: '2026-02-01',
+    image: 'Lettres sous la pluie.png',
+    source: 'IGGY Magazine',
+    href: 'https://www.iggymagazine.com/lettres-sous-la-pluie-leyla-romanova-fait-chanter-la-memoire/'
+  },
+  {
+    order: 10,
+    name: 'Lettres sous la pluie par Leyla Romanova',
+    created_date: '2026-02-01',
+    image: 'Lettres sous la pluie.png',
+    source: 'Revolutions De Rythme',
+    href: 'https://www.revolutionsderythme.co/post/lettres-sous-la-pluie-par-leyla-romanova'
+  },
+  // The One Uncoded (новые статьи)
+  {
+    order: 11,
     name: 'Leyla Romanova On the Making Of “The One Uncoded”',
     created_date: '2025-07-01',
     image: 'The One Uncoded.jpg',
@@ -343,7 +424,7 @@ const PRESS: PressItem[] = [
     href: 'https://www.thepunkhead.com/music/leyla-romanova-on-the-making-of-the-one-uncoded'
   },
   {
-    order: 2,
+    order: 12,
     name: 'Leyla Romanova drops brand new single',
     created_date: '2025-07-01',
     image: 'The One Uncoded.jpg',
@@ -351,7 +432,7 @@ const PRESS: PressItem[] = [
     href: 'https://plasticmag.co.uk/2025/07/leyla-romanova-drops-brand-new-single/'
   },
   {
-    order: 3,
+    order: 13,
     name: 'Leyla Romanova - The One Uncoded (Genchev Sound)',
     created_date: '2025-07-02',
     image: 'The One Uncoded.jpg',
@@ -359,7 +440,7 @@ const PRESS: PressItem[] = [
     href: 'https://bigtakeover.com/recordings/leyla-romanova-the-one-uncoded-genchev-sound'
   },
   {
-    order: 4,
+    order: 14,
     name: 'Leyla Romanova takes us on an eye-opening and consciously astute trip with The Matrix-inspired new composition, The One Uncoded',
     created_date: '2025-06-30',
     image: 'The One Uncoded.jpg',
@@ -367,7 +448,7 @@ const PRESS: PressItem[] = [
     href: 'https://karlismyunkle.com/2025/06/30/leyla-romanova-takes-us-on-an-eye-opening-and-consciously-astute-trip-with-the-matrix-inspired-new-composition-the-one-uncode/'
   },
   {
-    order: 5,
+    order: 15,
     name: 'Leyla Romanova explores a darkened atmosphere for her latest single “The One Uncoded“',
     created_date: '2025-07-01',
     image: 'The One Uncoded.jpg',
@@ -375,7 +456,7 @@ const PRESS: PressItem[] = [
     href: 'https://theindiegrid.co.uk/latest-news/leyla-romanova-explores-a-darkened-atmosphere-for-her-latest-single-the-one-uncoded/'
   },
   {
-    order: 6,
+    order: 16,
     name: 'Leyla Romanova – The One Uncoded',
     created_date: '2025-07-01',
     image: 'The One Uncoded.jpg',
@@ -383,7 +464,7 @@ const PRESS: PressItem[] = [
     href: 'https://www.thepitldn.com/pitnews/the-one-uncoded'
   },
   {
-    order: 7,
+    order: 17,
     name: 'Inspired by The Matrix, ‘The One Uncoded’ Is Leyla Romanova\'s self-awakening single',
     created_date: '2025-06-30',
     image: 'The One Uncoded.jpg',
@@ -391,7 +472,7 @@ const PRESS: PressItem[] = [
     href: 'https://unrecordedmu.com/2025/06/30/inspired-by-the-matrix-the-one-uncoded-is-leyla-romanovas-self-awakening-single/'
   },
   {
-    order: 8,
+    order: 18,
     name: 'Leyla Romanova breaks into The Matrix With “The One Uncoded”\n',
     created_date: '2025-07-03',
     image: 'The One Uncoded.jpg',
@@ -399,7 +480,7 @@ const PRESS: PressItem[] = [
     href: 'https://magneticmag.com/2025/07/leyla-romanova-breaks-into-the-matrix-with-the-one-uncoded/'
   },
   {
-    order: 9,
+    order: 19,
     name: 'The One Uncoded: A Cyberpunk Awakening Set To Music',
     created_date: '2025-07-12',
     image: 'The One Uncoded.jpg',
@@ -407,7 +488,7 @@ const PRESS: PressItem[] = [
     href: 'https://cinematicgiants.com/2025/07/12/the-one-uncoded-a-cyberpunk-awakening-set-to-music/'
   },
   {
-    order: 10,
+    order: 20,
     name: 'Dark Cinematic Midtempo: The One Uncoded by Leyla Romanova',
     created_date: '2025-07-01',
     image: 'The One Uncoded.jpg',
@@ -415,7 +496,7 @@ const PRESS: PressItem[] = [
     href: 'https://ekm.co/leyla-romanova-the-one-uncoded/'
   },
   {
-    order: 11,
+    order: 21,
     name: 'The One Uncoded - Leyla Romanova (reviewed by Dave Franklin)',
     created_date: '2025-07-03',
     image: 'The One Uncoded.jpg',
@@ -423,7 +504,7 @@ const PRESS: PressItem[] = [
     href: 'https://dancing-about-architecture.com/the-one-uncoded-leyla-romanova-reviewed-by-dave-franklin/'
   },
   {
-    order: 12,
+    order: 22,
     name: 'Review: The One Uncoded by Leyla Romanova',
     created_date: '2025-07-03',
     image: 'The One Uncoded.jpg',
@@ -431,7 +512,7 @@ const PRESS: PressItem[] = [
     href: 'https://odysseymagazines.com/music-1/template-review-rne7n-2mf22-5e6wm-m5wx9-ep975'
   },
   {
-    order: 13,
+    order: 23,
     name: 'The One Uncoded: Un Voyage Électronique Entre Rêve Et Renaissance',
     created_date: '2025-07-01',
     image: 'The One Uncoded.jpg',
@@ -439,7 +520,7 @@ const PRESS: PressItem[] = [
     href: 'https://www.infomusic.fr/the-one-uncoded-un-voyage-electronique-entre-reve-et-renaissance/'
   },
   {
-    order: 14,
+    order: 24,
     name: '“The One Uncoded” by Leyla Romanova is your code breaking?',
     created_date: '2025-07-01',
     image: 'The One Uncoded.jpg',
@@ -449,7 +530,7 @@ const PRESS: PressItem[] = [
 
   // Fairy Tale
   {
-    order: 15,
+    order: 25,
     name: '‘Fairy Tale’ by Leyla Romanova: Review',
     created_date: '2024-12-27',
     image: 'Fairy Tale.jpg',
@@ -457,7 +538,7 @@ const PRESS: PressItem[] = [
     href: 'https://odysseymagazines.com/music-1/fairytale-by-leyla-romanova-review'
   },
   {
-    order: 16,
+    order: 26,
     name: 'A Symphony of Dreams: Leyla Romanova’s Fairy Tale is an Orchestral Masterpiece of Cinematic Drama, Emotional Depth, and Timeless Dedication',
     created_date: '2024-12-27',
     image: 'Fairy Tale.jpg',
@@ -465,7 +546,7 @@ const PRESS: PressItem[] = [
     href: 'https://karlismyunkle.com/2024/12/27/a-symphony-of-dreams-leyla-romanovas-fairy-tale-is-an-orchestral-masterpiece-of-cinematic-drama-emotional-depth-and-timeless-dedication/'
   },
   {
-    order: 17,
+    order: 27,
     name: 'Fairy Tale – Leyla Romanova (reviewed by Dave Franklin)',
     image: 'Fairy Tale.jpg',
     source: 'Dancing About Architecture',
@@ -473,7 +554,7 @@ const PRESS: PressItem[] = [
     created_date: '2024-12-26'
   },
   {
-    order: 18,
+    order: 28,
     name: 'Neo Classical music from Leyla Romanova',
     created_date: '2024-12-30',
     image: 'Fairy Tale.jpg',
@@ -481,7 +562,7 @@ const PRESS: PressItem[] = [
     href: 'https://plasticmag.co.uk/2024/12/neo-classical-music-from-leyla-romanova/'
   },
   {
-    order: 19,
+    order: 29,
     name: 'Leyla Romanova’s "Fairy Tale" is a Symphony of Dreams',
     created_date: '2024-12-30',
     image: 'Fairy Tale.jpg',
@@ -489,7 +570,7 @@ const PRESS: PressItem[] = [
     href: 'https://rotatemagazine.com/leyla-romanova-fairy-tale-is-a-symphony-of-dreams/'
   },
   {
-    order: 20,
+    order: 30,
     name: `Leyla Romanova's "Fairy Tale": A Symphonic Ode to Love and Legacy`,
     created_date: '2025-01-02',
     image: 'Fairy Tale.jpg',
@@ -497,7 +578,7 @@ const PRESS: PressItem[] = [
     href: 'https://www.aktmusic.com/2025/01/leyla-romanova-s-fairy-tale-a-symphonic-ode-to-love-and-legacy.html?fbclid=PAZXh0bgNhZW0CMTEAAab3V0MqaCO7w6bc8VJn2nIm-dnNL8cPsklI-9QvriCKHwwGDHLL3ztWNIQ_aem_kyfYRl5faZVRVwfR_8T5qA'
   },
   {
-    order: 21,
+    order: 31,
     name: 'Entrez dans le Fairy Tale de Leyla Romanova',
     created_date: '2025-01-04',
     image: 'Fairy Tale.jpg',
@@ -507,7 +588,7 @@ const PRESS: PressItem[] = [
 
   // Are you waiting for me
   {
-    order: 22,
+    order: 32,
     name: '`Are You Waiting for Me?` by Leyla Romanova: "Electrifying Energy and Ethereal Sounds that Transcend Time and Space".',
     image: 'Are you waiting for me.jpg',
     source: 'Badwolfrecords',
@@ -515,7 +596,7 @@ const PRESS: PressItem[] = [
     created_date: '2024-11-09'
   },
   {
-    order: 23,
+    order: 33,
     name: 'Leyla Romanova Releases Ethereal New Single "Are You Waiting For Me?"',
     image: 'Are you waiting for me.jpg',
     source: 'TJPL NEWS',
@@ -523,7 +604,7 @@ const PRESS: PressItem[] = [
     created_date: '2024-10-31'
   },
   {
-    order: 24,
+    order: 34,
     name: 'WE REVIEW THE NEW SINGLE FROM LEYLA ROMANOVA',
     image: 'Are you waiting for me.jpg',
     source: 'RGM',
@@ -531,7 +612,7 @@ const PRESS: PressItem[] = [
     created_date: '2025-01-06'
   },
   {
-    order: 25,
+    order: 35,
     name: 'Leyla Romanova Explores Time and Patience in Conceptual New Single ‘Are You Waiting For Me?’',
     image: 'Are you waiting for me.jpg',
     source: 'Rotate Magazine',
@@ -541,7 +622,7 @@ const PRESS: PressItem[] = [
 
   // CYBERSYMPHONY
   {
-    order: 26,
+    order: 36,
     name: 'Cinematic Instrumental Music from Leyla Romanova',
     created_date: '2024-04-29',
     image: 'Cybersymphony.jpg',
@@ -549,7 +630,7 @@ const PRESS: PressItem[] = [
     href: 'https://plasticmag.co.uk/2024/04/cinematic-instrumental-music-from-leyla-romanova/'
   },
   {
-    order: 27,
+    order: 37,
     name: 'Leyla Romanova’s ‘CYBERSYMPHONY’ Takes Audiences on a Cinematic Journey',
     created_date: '2024-04-28',
     image: 'Cybersymphony.jpg',
@@ -557,7 +638,7 @@ const PRESS: PressItem[] = [
     href: 'https://www.theindiegrid.co.uk/latest-news/leyla-romanovas-cybersymphony-takes-audiences-on-an-epic-cinematic-journey/'
   },
   {
-    order: 28,
+    order: 38,
     name: 'Leyla Romanova CYBERSYMPHONY (Dedicated to Christopher Nolan)',
     created_date: '2024-04-23',
     image: 'Cybersymphony.jpg',
@@ -565,7 +646,7 @@ const PRESS: PressItem[] = [
     href: 'https://stereostickman.com/music/leyla-romanova-cybersymphony-dedicated-to-christopher-nolan/'
   },
   {
-    order: 29,
+    order: 39,
     name: 'From Orchestral Grandeur to Techno-Thrills: Exploring "Cybersymphony" by Leyla Romanova',
     created_date: '2024-04-29',
     image: 'Cybersymphony.jpg',
@@ -573,7 +654,7 @@ const PRESS: PressItem[] = [
     href: 'https://www.musicarenagh.com/from-orchestral-grandeur-to-techno-thrills-exploring-cybersymphony-by-leyla-romanova/'
   },
   {
-    order: 30,
+    order: 40,
     name: 'Leyla Romanova delivers an epic musical odyssey with "CYBERSYMPHONY"',
     created_date: '2024-04-30',
     image: 'Cybersymphony.jpg',
@@ -581,7 +662,7 @@ const PRESS: PressItem[] = [
     href: 'https://earmilk.com/2024/04/30/leyla-romanova-delivers-an-epic-musical-odyssey-with-cybersymphony/'
   },
   {
-    order: 31,
+    order: 41,
     name: 'Cybersymphony (Dedicated to Christopher Nolan) – Leyla Romanova (reviewed by Dave Franklin)',
     created_date: '2024-05-01',
     image: 'Cybersymphony.jpg',
@@ -589,7 +670,7 @@ const PRESS: PressItem[] = [
     href: 'https://dancing-about-architecture.com/cybersymphony-dedicated-to-christopher-nolan-leyla-romanova-reviewed-by-dave-franklin/'
   },
   {
-    order: 32,
+    order: 42,
     name: 'Leyla Romanov Cybersymphony Dedicated to Christopher Nolan Mesmerised',
     created_date: '2024-05-01',
     image: 'Cybersymphony.jpg',
@@ -597,7 +678,7 @@ const PRESS: PressItem[] = [
     href: 'https://findnoenemy.com/leyla-romanov-cybersymphony-dedicated-to-christopher-nolan-mesmerised/'
   },
   {
-    order: 33,
+    order: 43,
     name: 'Leyla Romanova ouvre une nouvelle ère avec « CYBERSYMPHONY » : Un hommage vibrant à Christopher Nolan',
     created_date: '2024-05-02',
     image: 'Cybersymphony.jpg',
@@ -605,7 +686,7 @@ const PRESS: PressItem[] = [
     href: 'https://extravafrench.com/2024/05/02/leyla-romanova-ouvre-une-nouvelle-ere-avec-cybersymphony-un-hommage-vibrant-a-christopher-nolan/'
   },
   {
-    order: 34,
+    order: 44,
     name: 'Cybersymphony, Exploring Cinematic Realms Through Music',
     created_date: '2024-05-06',
     image: 'Cybersymphony.jpg',
@@ -613,7 +694,7 @@ const PRESS: PressItem[] = [
     href: 'https://hailtunes.com/cybersymphony-a-musical-odyssey-through-the-cinematic-universe/'
   },
   {
-    order: 35,
+    order: 45,
     name: 'Discovery: Leyla Romanova',
     created_date: '2024-05-16',
     image: 'Cybersymphony.jpg',
@@ -621,7 +702,7 @@ const PRESS: PressItem[] = [
     href: 'https://yorkcalling.co.uk/2024/05/16/discovery-leyla-romanova/'
   },
   {
-    order: 36,
+    order: 46,
     name: `Leyla Romanova Unveils New Single 'Cybersymphony', a Tribute to Christopher Nolan`,
     created_date: '2024-04-27',
     image: 'Cybersymphony.jpg',
@@ -631,7 +712,7 @@ const PRESS: PressItem[] = [
 
   // LR album
   {
-    order: 37,
+    order: 47,
     name: 'Обзор НАШЕго радио (Андрей Куренков - об альбоме "LR" на НАШЕм в программе "фАнотека" - с 38:24)',
     href: 'https://www.nashe.ru/podcasts/73/1793',
     image: 'Lr.png',
