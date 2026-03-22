@@ -169,14 +169,13 @@ const MUSIC: BaseMusicItem[] = [
     zvuk: 'https://zvuk.com/release/29518203',
     items: [
       {
-        name: "Вернусь",
+        name: "По встречной",
         spotify: 'https://open.spotify.com/track/02EjhMlRPeIIDAXSNp4Gup?si=a820b0fad0bb4b4a',
         apple: 'https://music.apple.com/us/album/%D0%BF%D0%BE-%D0%B2%D1%81%D1%82%D1%80%D0%B5%D1%87%D0%BD%D0%BE%D0%B9/1761763816?i=1761763817',
         vk: 'https://vk.com/audio-2001867647_119867647',
         yandex: 'https://music.yandex.ru/album/25675223/track/113378030',
         youtube: 'https://youtu.be/20gLVQ15v0Y?si=Q_M__XsNH0e5YRwo',
-        zvuk: 'https://zvuk.com/track/131150186',
-        video: 'https://youtu.be/DaGAILITo4Q'
+        zvuk: 'https://zvuk.com/track/131150186'
       },
       {
         name: "Embrace me ",
@@ -194,8 +193,7 @@ const MUSIC: BaseMusicItem[] = [
         vk: 'https://vk.com/audio-2001867645_119867645',
         yandex: 'https://music.yandex.ru/album/25675223/track/113378032',
         youtube: 'https://youtu.be/gXW809TCucA?si=eRHF5fNGUqx2kbFc',
-        zvuk: 'https://zvuk.com/track/131150189',
-        video: 'https://youtu.be/SiucGr6kcTA'
+        zvuk: 'https://zvuk.com/track/131150189'
       },
       {
         name: "Сбежим?",
@@ -204,8 +202,7 @@ const MUSIC: BaseMusicItem[] = [
         vk: 'https://vk.com/audio-2001867643_119867643',
         yandex: 'https://music.yandex.ru/album/25675223/track/113378033',
         youtube: 'https://youtu.be/UB7k1cYIDfY?si=jd6BdtuNZyD1yugW',
-        zvuk: 'https://zvuk.com/track/131150195',
-        video: 'https://youtu.be/ASEf-eSoL1M'
+        zvuk: 'https://zvuk.com/track/131150195'
       },
       {
         name: "Lonely night",
