@@ -5,6 +5,10 @@ import { Social } from "@/components/Social";
 
 export const metadata: Metadata = {
   title: "Contacts",
+  description: "Contact information for composer Leyla Romanova and management.",
+  alternates: {
+    canonical: "/contacts",
+  },
 };
 
 export default function ContactsPage() {

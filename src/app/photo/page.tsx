@@ -3,6 +3,10 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Photo",
+  description: "Official photo gallery of composer Leyla Romanova.",
+  alternates: {
+    canonical: "/photo",
+  },
 };
 
 export default function PhotoPage() {

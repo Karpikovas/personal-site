@@ -17,15 +17,15 @@ export const Navbar = () => {
   };
 
   return (
-    <header>
-      <div className="flex items-center relative justify-between bg-neutral-950 py-4 lg:py-6 px-8 lg:px-8 xl:px-12 shadow-[inset_0_4px_4px_-4px_rgba(255,255,255,0.2),0_8px_8px_-8px_rgba(255,255,255,0.2)] z-10">
-        <div className="hidden text-2xl space-x-4 lg:flex lg:w-72 !text-stone-400">
+    <header className="sticky top-0 z-50">
+      <div className="flex items-center relative justify-between bg-neutral-950/82 backdrop-blur-md py-4 lg:py-6 px-8 lg:px-8 xl:px-12 border-b border-stone-800/70 shadow-[0_18px_35px_-30px_rgba(0,0,0,0.95)]">
+        <div className="hidden text-2xl space-x-4 lg:flex lg:w-72 !text-stone-500">
           {/* <Social /> */}
           <MusicLinks {...links} />
         </div>
         <a
           href={PUBLIC_PAGES.HOME}
-          className="font-display text-center text-xl md:text-xl lg:text-3xl tracking-[.14em] font-semibold !text-stone-100"
+          className="font-display text-center text-xl md:text-xl lg:text-3xl tracking-[.14em] font-semibold !text-stone-100 transition-opacity duration-300 hover:opacity-90"
         >
           LEYLA ROMANOVA
         </a>
@@ -63,13 +63,13 @@ export const Navbar = () => {
                   Listen
                   <MusicLinks {...links} />
                 </li>
-                <li className="border-b border-gray-400 my-8 uppercase !text-stone-400">
+                <li className="border-b border-gray-400 my-8 uppercase !text-stone-400 transition-colors duration-300 hover:!text-stone-200">
                   <a href={PUBLIC_PAGES.PRESS}>Press</a>
                 </li>
-                <li className="border-b border-gray-400 my-8 uppercase !text-stone-400">
+                <li className="border-b border-gray-400 my-8 uppercase !text-stone-400 transition-colors duration-300 hover:!text-stone-200">
                   <a href={PUBLIC_PAGES.PHOTO}>Photo</a>
                 </li>
-                <li className="border-b border-gray-400 my-8 uppercase !text-stone-400">
+                <li className="border-b border-gray-400 my-8 uppercase !text-stone-400 transition-colors duration-300 hover:!text-stone-200">
                   <a href={PUBLIC_PAGES.CONTACTS}>Contacts</a>
                 </li>
 
@@ -80,18 +80,18 @@ export const Navbar = () => {
             </div>
           </section>
 
-          <ul className="DESKTOP-MENU hidden lg:justify-end space-x-8 lg:flex font-medium text-xl !text-stone-400">
+          <ul className="DESKTOP-MENU hidden lg:justify-end space-x-8 lg:flex font-medium text-xl !text-stone-500">
             {/* <li>
               <MusicLinks {...links} />
             </li> */}
             <li>
-              <a href={PUBLIC_PAGES.PRESS}>Press</a>
+              <a href={PUBLIC_PAGES.PRESS} className="transition-colors duration-300 hover:!text-stone-200">Press</a>
             </li>
             <li>
-              <a href={PUBLIC_PAGES.PHOTO}>Photo</a>
+              <a href={PUBLIC_PAGES.PHOTO} className="transition-colors duration-300 hover:!text-stone-200">Photo</a>
             </li>
             <li>
-              <a href={PUBLIC_PAGES.CONTACTS}>Contacts</a>
+              <a href={PUBLIC_PAGES.CONTACTS} className="transition-colors duration-300 hover:!text-stone-200">Contacts</a>
             </li>
             {/* <li>
               <Contacts/>

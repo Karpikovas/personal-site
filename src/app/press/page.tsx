@@ -5,6 +5,11 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Press",
+  description:
+    "Press features, reviews, and interviews about composer Leyla Romanova and her latest releases.",
+  alternates: {
+    canonical: "/press",
+  },
 };
 
 const ITEMS_PER_PAGE = 10;
