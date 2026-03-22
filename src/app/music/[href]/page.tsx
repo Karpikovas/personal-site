@@ -1,8 +1,12 @@
 import {MusicLinks} from "@/components/MusicLinks";
-import {getByHref} from "@/constants/data";
+import {getAllMusicHrefs, getByHref} from "@/constants/data";
 import Image from "next/image";
 import {notFound} from "next/navigation";
 import {siteConfig} from "@/constants/siteMetaData";
+
+export async function generateStaticParams() {
+  return getAllMusicHrefs().map((href) => ({href}));
+}
 
 // or Dynamic metadata
 // @ts-ignore

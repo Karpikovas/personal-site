@@ -1,16 +1,34 @@
 import type { NextConfig } from "next";
 
+const isPagesPreview = process.env.NEXT_PUBLIC_IS_PAGES_PREVIEW === "true";
+const repositoryName = process.env.GITHUB_REPOSITORY?.split("/")[1] || "";
+const isUserPagesRepo = repositoryName.endsWith(".github.io");
+const branchDir = process.env.NEXT_PUBLIC_PAGES_BRANCH_PATH || "";
+
+const normalizePath = (value: string) => {
+  const parts = value.split("/").filter(Boolean);
+  if (!parts.length) return "";
+  return `/${parts.join("/")}`;
+};
+
+const previewBasePath = isPagesPreview
+  ? normalizePath(`${isUserPagesRepo ? "" : repositoryName}/${branchDir}`)
+  : "";
+
 const nextConfig: NextConfig = {
-  // basePath: "/personal-site",
-  // images: {
-  //   unoptimized: true, // Disable default image optimization
-  // },
-  experimental: {    
-    reactCompiler: true,  
+  basePath: previewBasePath || undefined,
+  assetPrefix: previewBasePath || undefined,
+  images: isPagesPreview
+    ? {
+        unoptimized: true,
+      }
+    : undefined,
+  output: isPagesPreview ? "export" : undefined,
+  experimental: {
+    reactCompiler: true,
   },
-  // output: "standalone", 
   reactStrictMode: true,
-  trailingSlash: false,
+  trailingSlash: isPagesPreview,
   eslint: {
     ignoreDuringBuilds: true,
   },
