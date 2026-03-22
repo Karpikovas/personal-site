@@ -31,6 +31,17 @@ export default function ContactsPage() {
                   <TbMailFilled /> contact@leylaromanova.com
                 </Link>
               </div>
+
+              <div className="mt-8 flex flex-col gap-2">
+                <p className="text-sm xl:text-lg uppercase tracking-[0.08em] !text-stone-400">Manager:</p>
+                <p className="font-display text-xl xl:text-3xl font-semibold tracking-tight">Valeria Simon</p>
+                <Link
+                  href="mailto:contact@leylaromanova.com"
+                  className="inline-flex items-center gap-2 text-base xl:text-2xl"
+                >
+                  <TbMailFilled /> contact@leylaromanova.com
+                </Link>
+              </div>
             </div>
           </div>
 
