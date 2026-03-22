@@ -80,3 +80,4 @@ jobs:
           destination_dir: ${{ github.ref_name }}
           keep_files: true
           force_orphan: false
+          enable_jekyll: false
