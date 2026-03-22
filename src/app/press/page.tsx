@@ -45,7 +45,7 @@ export default async function PressPage({
   return (
     <div className="flex flex-col gap-8 container mt-16 mb-8 px-8 md:px-16 xl:px-48">
       <div className="flex flex-col items-start gap-2">
-        <h1 className="text-4xl font-bold !text-stone-300">Press</h1>
+        <h1 className="font-display text-4xl md:text-5xl font-semibold tracking-tight !text-stone-300">Press</h1>
       </div>
       {visiblePress.map((item) => (
         <Link
@@ -56,10 +56,10 @@ export default async function PressPage({
         >
           <div className="flex align-items justify-between gap-8">
             <div className="flex flex-col w-2/3">
-              <h5 className="mb-2 text-m sm:text-l md:text-xl font-bold tracking-tight !text-stone-300 dark:text-white trunc">
+              <h5 className="mb-2 text-base sm:text-lg md:text-xl font-semibold tracking-tight !text-stone-300 dark:text-white trunc">
                 {item.name}
               </h5>
-              <p className="text-sm sm:text-m md:text-xl text-stone-600 font-semibold">
+              <p className="text-sm sm:text-base md:text-lg text-stone-600 font-medium">
                 {item.source}
               </p>
             </div>

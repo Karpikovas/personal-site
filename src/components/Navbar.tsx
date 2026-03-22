@@ -25,7 +25,7 @@ export const Navbar = () => {
         </div>
         <a
           href={PUBLIC_PAGES.HOME}
-          className="text-center text-xl md:text-xl lg:text-3xl tracking-[.15em] font-semibold !text-stone-100"
+          className="font-display text-center text-xl md:text-xl lg:text-3xl tracking-[.14em] font-semibold !text-stone-100"
         >
           LEYLA ROMANOVA
         </a>
@@ -80,7 +80,7 @@ export const Navbar = () => {
             </div>
           </section>
 
-          <ul className="DESKTOP-MENU hidden lg:justify-end space-x-8 lg:flex font-semibold text-xl !text-stone-400">
+          <ul className="DESKTOP-MENU hidden lg:justify-end space-x-8 lg:flex font-medium text-xl !text-stone-400">
             {/* <li>
               <MusicLinks {...links} />
             </li> */}
