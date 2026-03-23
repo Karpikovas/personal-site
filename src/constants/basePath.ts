@@ -6,7 +6,7 @@ const normalizePath = (value: string) => {
 
 const isPagesPreview = process.env.NEXT_PUBLIC_IS_PAGES_PREVIEW === "true";
 const repositoryName =
-  process.env.NEXT_PUBLIC_PAGES_REPOSITORY || process.env.GITHUB_REPOSITORY?.split("/")[1] || "";
+  process.env.NEXT_PUBLIC_PAGES_REPOSITORY || "personal-site";
 const branchDir = process.env.NEXT_PUBLIC_PAGES_BRANCH_PATH || "";
 
 export const publicBasePath = isPagesPreview ? normalizePath(`${repositoryName}/${branchDir}`) : "";
