@@ -71,9 +71,7 @@ export default function Home() {
                   progressive techno, pop-jazz, and pop-rock.
                 </p>
                 <p>
-                  Rooted in the academic tradition of concert halls and handwritten scores, yet constantly evolving,
-                  she fuses orchestral textures with electronic pulses to craft cinematic worlds that evoke vivid
-                  imagery through powerful dramaturgy and atmosphere.
+                  Rooted in the academic tradition of concert halls and handwritten scores, yet constantly evolving, she now fuses orchestral textures with electronic pulses to craft cinematic worlds that evoke vivid imagery through powerful dramaturgy and atmosphere — a vision that has earned her numerous international awards.
                 </p>
               </div>
             </div>
