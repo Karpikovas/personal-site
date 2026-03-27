@@ -28,8 +28,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${fontBody.variable} ${fontDisplay.variable} antialiased`}>
+    <html lang="en" suppressHydrationWarning>
+      <body suppressHydrationWarning className={`${fontBody.variable} ${fontDisplay.variable} antialiased`}>
         <main>
           <div className="overflow-x-hidden text-stone-300 font-[family-name:var(--font-body)]">
             <div className="fixed inset-0 -z-10">

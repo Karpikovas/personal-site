@@ -21,7 +21,7 @@ export const Photo = () => {
         <div className="container mx-auto w-full px-8 lg:px-20 pb-6 md:pb-10 lg:pb-12">
           <div className="hero-enter hero-stagger max-w-[17rem] sm:max-w-2xl md:max-w-3xl text-left">
             <p className="font-display uppercase tracking-[0.2em] text-[11px] md:text-xs !text-stone-300/80">
-              Multi-genre Composer
+              <span className="whitespace-nowrap">Multi-genre Composer</span>
             </p>
             <h1 className="font-display mt-3 text-[1.3rem] sm:text-3xl md:text-4xl lg:text-5xl leading-[0.96] !text-stone-100 tracking-tight uppercase">
               Leyla Romanova
