@@ -3,7 +3,6 @@ name: Deploy Branch Previews to GitHub Pages
 on:
   push:
     branches:
-      - base-updates
       - base-updates-new-design
   workflow_dispatch:
 
