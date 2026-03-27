@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import {useCallback, useEffect, useRef, useState} from "react";
 
 const totalSlides = 3;
 
@@ -46,7 +46,7 @@ export const BioSection = () => {
     };
 
     updateActiveSlide();
-    slider.addEventListener("scroll", updateActiveSlide, { passive: true });
+    slider.addEventListener("scroll", updateActiveSlide, {passive: true});
     window.addEventListener("resize", updateActiveSlide);
 
     return () => {
@@ -66,8 +66,10 @@ export const BioSection = () => {
         <div className="space-y-5 md:space-y-6">
           <p className="bio-kicker">About composer</p>
           <p className="bio-intro text-base md:text-lg xl:text-xl !text-stone-200/95">
-            <span className="font-display font-semibold !text-stone-100 md:text-xl xl:text-3xl">Leyla Romanova</span> is a
-            <span className="whitespace-nowrap">multi-genre composer</span> whose work spans nearly the entire musical spectrum, from{" "}
+            <span className="font-display font-semibold !text-stone-100 md:text-xl xl:text-3xl">Leyla Romanova</span> is
+            a{" "}
+            <span className="whitespace-nowrap">multi-genre composer</span> <span className="whitespace-nowrap">whose work spans</span> nearly
+            the entire musical spectrum, from{" "}
             <span className="whitespace-nowrap">symphonic grandeur</span>
             to <span className="whitespace-nowrap">cutting-edge</span> electronic soundscapes.
           </p>
@@ -79,13 +81,16 @@ export const BioSection = () => {
           </div>
         </div>
 
-        <div className="pt-4 md:pt-10 xl:pt-12 space-y-5 md:space-y-6 text-base md:text-lg xl:text-xl !text-stone-300/95">
+        <div
+          className="pt-4 md:pt-10 xl:pt-12 space-y-5 md:space-y-6 text-base md:text-lg xl:text-xl !text-stone-300/95">
           <p>
             Her portfolio includes orchestral, chamber, and piano works, as well as experimental electronica,
             progressive techno, pop-jazz, and pop-rock.
           </p>
           <p>
-            Rooted in the academic tradition of concert halls and handwritten scores, yet constantly evolving, she now fuses orchestral textures with electronic pulses to craft cinematic worlds that evoke vivid imagery through powerful dramaturgy and atmosphere — a vision that has earned her numerous international awards.
+            Rooted in the academic tradition of concert halls and handwritten scores, yet constantly evolving, she now
+            fuses orchestral textures with electronic pulses to craft cinematic worlds that evoke vivid imagery through
+            powerful dramaturgy and atmosphere — a vision that has earned her numerous international awards.
           </p>
         </div>
       </div>
@@ -106,7 +111,7 @@ export const BioSection = () => {
               <p className="bio-kicker">About composer</p>
               <p className="bio-intro text-base !text-stone-200/95 leading-relaxed whitespace-normal break-words">
                 <span className="font-display font-semibold !text-stone-100">Leyla Romanova</span> is a{" "}
-                <span className="whitespace-nowrap">multi-genre composer</span> whose work spans nearly the entire
+                <span className="whitespace-nowrap">multi-genre composer</span> <span className="whitespace-nowrap">whose work spans</span> nearly the entire
                 <span className="whitespace-nowrap">musical spectrum</span>, from{" "}
                 <span className="whitespace-nowrap">symphonic grandeur</span>
                 to <span className="whitespace-nowrap">cutting-edge</span> electronic soundscapes.
@@ -140,7 +145,8 @@ export const BioSection = () => {
           >
             <p className="text-base !text-stone-300/95 leading-relaxed whitespace-normal break-words">
               Rooted in the academic tradition of concert halls and handwritten scores, yet constantly evolving, she now
-              fuses orchestral textures with electronic pulses to craft cinematic worlds that evoke vivid imagery through
+              fuses orchestral textures with electronic pulses to craft cinematic worlds that evoke vivid imagery
+              through
               powerful dramaturgy and atmosphere — a vision that has earned her numerous international awards.
             </p>
           </article>
