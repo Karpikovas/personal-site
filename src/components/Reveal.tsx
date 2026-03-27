@@ -14,7 +14,7 @@ export const Reveal = ({
   children,
   className = "",
   delay = 0,
-  threshold = 0.18,
+  threshold = 0.02,
   rootMargin = "0px 0px -8% 0px",
 }: RevealProps) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -23,14 +23,22 @@ export const Reveal = ({
     const node = ref.current;
     if (!node) return;
 
+    node.classList.add("reveal-ready");
+
     if (typeof IntersectionObserver === "undefined") {
       node.classList.add("is-visible");
       return;
     }
 
+    // Fallback for mobile browsers where observer callbacks may be delayed or skipped.
+    const fallbackTimer = window.setTimeout(() => {
+      node.classList.add("is-visible");
+    }, 1800);
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
+          window.clearTimeout(fallbackTimer);
           node.classList.add("is-visible");
           observer.unobserve(node);
         }
@@ -43,7 +51,10 @@ export const Reveal = ({
     );
 
     observer.observe(node);
-    return () => observer.disconnect();
+    return () => {
+      window.clearTimeout(fallbackTimer);
+      observer.disconnect();
+    };
   }, [threshold, rootMargin]);
 
   return (

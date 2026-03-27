@@ -54,8 +54,9 @@ export default function Home() {
                 <p className="bio-kicker">About composer</p>
                 <p className="bio-intro text-base md:text-lg xl:text-xl !text-stone-200/95">
                   <span className="font-display font-semibold !text-stone-100 md:text-xl xl:text-3xl">Leyla Romanova</span> is a
-                  multi-genre composer whose work spans nearly the entire musical spectrum, from symphonic grandeur
-                  to cutting-edge electronic soundscapes.
+                  multi-genre composer whose work spans nearly the entire musical spectrum, from{" "}
+                  <span className="whitespace-nowrap">symphonic grandeur</span>
+                  to <span className="whitespace-nowrap">cutting-edge</span> electronic soundscapes.
                 </p>
                 <div className="bio-tags xl:pt-4">
                   <span className="bio-tag">Cinematic</span>

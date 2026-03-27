@@ -2,6 +2,7 @@
 import { PUBLIC_PAGES } from "@/config/pages-url.config";
 import { Social } from "./Social";
 import { MusicLinks } from "./MusicLinks";
+import Link from "next/link";
 
 import { useState } from "react";
 
@@ -23,12 +24,12 @@ export const Navbar = () => {
           {/* <Social /> */}
           <MusicLinks {...links} />
         </div>
-        <a
+        <Link
           href={PUBLIC_PAGES.HOME}
-          className="font-display text-center text-xl md:text-xl lg:text-3xl tracking-[.14em] font-semibold !text-stone-100 transition-opacity duration-300 hover:opacity-90"
+          className="font-display text-center text-sm sm:text-base md:text-xl lg:text-3xl tracking-[.08em] lg:tracking-[.14em] font-semibold !text-stone-100 transition-opacity duration-300 hover:opacity-90"
         >
           LEYLA ROMANOVA
-        </a>
+        </Link>
         <nav className="lg:w-72">
           <section className="MOBILE-MENU flex lg:hidden">
             <div
@@ -64,13 +65,13 @@ export const Navbar = () => {
                   <MusicLinks {...links} />
                 </li>
                 <li className="border-b border-gray-400 my-8 uppercase !text-stone-400 transition-colors duration-300 hover:!text-stone-200">
-                  <a href={PUBLIC_PAGES.PRESS}>Press</a>
+                  <Link href={PUBLIC_PAGES.PRESS}>Press</Link>
                 </li>
                 <li className="border-b border-gray-400 my-8 uppercase !text-stone-400 transition-colors duration-300 hover:!text-stone-200">
-                  <a href={PUBLIC_PAGES.PHOTO}>Photo</a>
+                  <Link href={PUBLIC_PAGES.PHOTO}>Photo</Link>
                 </li>
                 <li className="border-b border-gray-400 my-8 uppercase !text-stone-400 transition-colors duration-300 hover:!text-stone-200">
-                  <a href={PUBLIC_PAGES.CONTACTS}>Contacts</a>
+                  <Link href={PUBLIC_PAGES.CONTACTS}>Contacts</Link>
                 </li>
 
                 <li className="flex items-center justify-end my-8   gap-3 text-xl !text-stone-400">
@@ -85,13 +86,13 @@ export const Navbar = () => {
               <MusicLinks {...links} />
             </li> */}
             <li>
-              <a href={PUBLIC_PAGES.PRESS} className="transition-colors duration-300 hover:!text-stone-200">Press</a>
+              <Link href={PUBLIC_PAGES.PRESS} className="transition-colors duration-300 hover:!text-stone-200">Press</Link>
             </li>
             <li>
-              <a href={PUBLIC_PAGES.PHOTO} className="transition-colors duration-300 hover:!text-stone-200">Photo</a>
+              <Link href={PUBLIC_PAGES.PHOTO} className="transition-colors duration-300 hover:!text-stone-200">Photo</Link>
             </li>
             <li>
-              <a href={PUBLIC_PAGES.CONTACTS} className="transition-colors duration-300 hover:!text-stone-200">Contacts</a>
+              <Link href={PUBLIC_PAGES.CONTACTS} className="transition-colors duration-300 hover:!text-stone-200">Contacts</Link>
             </li>
             {/* <li>
               <Contacts/>

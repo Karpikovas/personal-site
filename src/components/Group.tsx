@@ -35,7 +35,7 @@ export const Group = ({
             <div key={item.name} className="w-full">
               <div
                 className="inline-block w-full p-1 md:p-2 cursor-pointer"
-                onClick={() => router.push("music/" + item.href)}
+                onClick={() => router.push(`/music/${item.href}`)}
               >
                 <h3 className="truncate !text-stone-100 font-[550] text-xl md:text-2xl">
                   {item.name}
@@ -59,7 +59,7 @@ export const Group = ({
                     </div>
                     <div className="absolute bottom-2 right-2">
                       <Link
-                        href={"music/" + item.href}
+                        href={`/music/${item.href}`}
                         className="rounded-full px-3 py-1 text-xs md:text-sm bg-stone-800 border-gray-600 hover:bg-stone-700 font-semibold !text-stone-200"
                         onClick={(event) => event.stopPropagation()}
                       >

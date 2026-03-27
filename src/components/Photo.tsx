@@ -11,7 +11,7 @@ export const Photo = () => {
         fill
         priority
         sizes="100vw"
-        className="object-cover object-[45%_55%] scale-[1.02]"
+        className="object-cover object-[34%_55%] sm:object-[42%_55%] md:object-[45%_55%] scale-[1.02]"
       />
 
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_20%,rgba(59,130,246,0.2),transparent_44%),radial-gradient(circle_at_18%_82%,rgba(148,163,184,0.14),transparent_42%)]" />
@@ -19,15 +19,16 @@ export const Photo = () => {
 
       <div className="absolute inset-0 z-10 flex items-end">
         <div className="container mx-auto w-full px-8 lg:px-20 pb-6 md:pb-10 lg:pb-12">
-          <div className="hero-enter hero-stagger max-w-3xl text-left">
+          <div className="hero-enter hero-stagger max-w-[17rem] sm:max-w-2xl md:max-w-3xl text-left">
             <p className="font-display uppercase tracking-[0.2em] text-[11px] md:text-xs !text-stone-300/80">
-              Composer • Musical Artist
+              Multi-genre Composer
             </p>
-            <h1 className="font-display mt-3 text-4xl md:text-6xl lg:text-7xl leading-[0.94] !text-stone-100 tracking-tight">
+            <h1 className="font-display mt-3 text-[1.3rem] sm:text-3xl md:text-4xl lg:text-5xl leading-[0.96] !text-stone-100 tracking-tight uppercase">
               Leyla Romanova
             </h1>
-            <p className="mt-4 text-sm md:text-lg max-w-2xl !text-stone-300/90">
-              Cinematic orchestral works and contemporary electronic soundscapes with a distinct dramatic voice.
+            <p className="mt-4 text-sm md:text-lg max-w-[17rem] sm:max-w-[30rem] md:max-w-2xl !text-stone-300/90 text-balance">
+              crafting cinematic music: from <span className="whitespace-nowrap">symphonic grandeur</span> to{" "}
+              <span className="whitespace-nowrap">cutting-edge</span> electronic soundscapes.
             </p>
             <Link
               href="#releases"
