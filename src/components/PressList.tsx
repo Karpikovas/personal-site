@@ -3,41 +3,39 @@
 import type { PressItem } from "@/constants/data";
 import Image from "next/image";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { useInView } from "framer-motion";
 import { withBasePath } from "@/constants/basePath";
 
 const ITEMS_PER_PAGE = 10;
-type PaginationItem = number | "...";
-
-const buildPagination = (currentPage: number, totalPages: number): PaginationItem[] => {
-  if (totalPages <= 7) {
-    return Array.from({ length: totalPages }, (_, index) => index + 1);
-  }
-
-  if (currentPage <= 4) {
-    return [1, 2, 3, 4, 5, "...", totalPages];
-  }
-
-  if (currentPage >= totalPages - 3) {
-    return [1, "...", totalPages - 4, totalPages - 3, totalPages - 2, totalPages - 1, totalPages];
-  }
-
-  return [1, "...", currentPage - 1, currentPage, currentPage + 1, "...", totalPages];
-};
-
-const pageHref = (page: number) => (page <= 1 ? "/press" : `/press?page=${page}`);
 
 export const PressList = ({ press }: { press: PressItem[] }) => {
-  const searchParams = useSearchParams();
+  const sentinelRef = useRef<HTMLDivElement>(null);
+  const sentinelInView = useInView(sentinelRef, { margin: "0px 0px 320px 0px", amount: 0 });
+  const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE);
+  const [isLoading, setIsLoading] = useState(false);
 
-  const requestedPage = Number.parseInt(searchParams.get("page") || "1", 10);
-  const safeRequestedPage = Number.isNaN(requestedPage) ? 1 : requestedPage;
-  const totalPages = Math.max(1, Math.ceil(press.length / ITEMS_PER_PAGE));
-  const currentPage = Math.min(Math.max(safeRequestedPage, 1), totalPages);
-  const start = (currentPage - 1) * ITEMS_PER_PAGE;
-  const end = start + ITEMS_PER_PAGE;
-  const visiblePress = press.slice(start, end);
-  const paginationItems = buildPagination(currentPage, totalPages);
+  const hasMore = visibleCount < press.length;
+  const visiblePress = press.slice(0, visibleCount);
+
+  useEffect(() => {
+    setVisibleCount(ITEMS_PER_PAGE);
+    setIsLoading(false);
+  }, [press.length]);
+
+  const handleLoadMore = useCallback(() => {
+    if (!hasMore || isLoading) return;
+    setIsLoading(true);
+    window.setTimeout(() => {
+      setVisibleCount((prev) => Math.min(prev + ITEMS_PER_PAGE, press.length));
+      setIsLoading(false);
+    }, 180);
+  }, [hasMore, isLoading, press.length]);
+
+  useEffect(() => {
+    if (!sentinelInView || !hasMore || isLoading) return;
+    handleLoadMore();
+  }, [sentinelInView, hasMore, isLoading, handleLoadMore]);
 
   return (
     <div className="flex flex-col gap-8 container mt-16 mb-8 px-8 md:px-16 xl:px-48">
@@ -76,53 +74,9 @@ export const PressList = ({ press }: { press: PressItem[] }) => {
         </Link>
       ))}
 
-      {totalPages > 1 && (
-        <nav aria-label="Press pagination" className="inline-flex items-center gap-1 self-start">
-          <Link
-            href={pageHref(Math.max(1, currentPage - 1))}
-            aria-disabled={currentPage === 1}
-            className={`px-2 py-1 text-xs tracking-wide transition ${
-              currentPage === 1
-                ? "pointer-events-none opacity-35 !text-stone-500"
-                : "!text-stone-500 hover:!text-stone-400"
-            }`}
-          >
-            Prev
-          </Link>
+      <div ref={sentinelRef} className="h-10 w-full" aria-hidden />
 
-          {paginationItems.map((item, index) =>
-            item === "..." ? (
-              <span key={`dots-${index}`} className="px-1 text-xs !text-stone-700">
-                ·
-              </span>
-            ) : (
-              <Link
-                key={item}
-                href={pageHref(item)}
-                className={`px-2 py-1 text-xs tracking-wide transition ${
-                  item === currentPage
-                    ? "!text-stone-300 underline underline-offset-4"
-                    : "!text-stone-600 hover:!text-stone-400"
-                }`}
-              >
-                {item}
-              </Link>
-            )
-          )}
-
-          <Link
-            href={pageHref(Math.min(totalPages, currentPage + 1))}
-            aria-disabled={currentPage === totalPages}
-            className={`px-2 py-1 text-xs tracking-wide transition ${
-              currentPage === totalPages
-                ? "pointer-events-none opacity-35 !text-stone-500"
-                : "!text-stone-500 hover:!text-stone-400"
-            }`}
-          >
-            Next
-          </Link>
-        </nav>
-      )}
+      {hasMore && isLoading && <p className="text-sm !text-stone-500">Loading...</p>}
     </div>
   );
 };
