@@ -3,7 +3,7 @@ import {getAllMusicHrefs, getByHref} from "@/constants/data";
 import Image from "next/image";
 import {notFound} from "next/navigation";
 import {siteConfig} from "@/constants/siteMetaData";
-import { withBasePath } from "@/constants/basePath";
+import {withBasePath} from "@/constants/basePath";
 
 export async function generateStaticParams() {
   return getAllMusicHrefs().map((href) => ({href}));
@@ -45,87 +45,103 @@ export default async function PageMusic({
   params: Promise<{ href: string }>;
 }) {
   const {href} = await params;
-  const item = getByHref(decodeURIComponent(href))
+  const item = getByHref(decodeURIComponent(href));
 
   if (!item) {
     return notFound();
   }
 
+  const subtitle = item.cardSubtitle || item.group.trim();
+  const releaseYear = item.releaseYear ? String(item.releaseYear) : null;
+  const releaseType = (item.cardType || item.type || "").toLowerCase();
+  const descriptionParagraphs = item.description
+    ? item.description
+      .split(/\n{2,}/)
+      .map((paragraph) => paragraph.trim())
+      .filter(Boolean)
+    : [];
+
   return (
-    <div
-      className="flex flex-col-reverse md:flex-row gap-2 md:gap-6 xl:gap-16 lg:gap-8 mt-16 mb-8 max-w-screen-2xl px-8 md:px-16 xl:px-48 !text-stone-300">
-      <ul className="md:hidden block mt-8">
-        {item.type === "album" &&
-          item.items &&
-          item.items.map((item, index) => (
-            <li
-              key={item.name}
-              className="text-lg flex justify-between mb-1 font-normal !text-stone-300"
-            >
-              <span>
-                <span className="inline-flex font-medium w-6 !text-stone-300">
-                  {index + 1}.
-                </span>
-                {item.name}
-              </span>
-              <MusicLinks {...item} />
-            </li>
-          ))}
-      </ul>
-      {item.description && (
-        <div className="block mt-8 md:hidden pb-2 tracking-tight lg:text-l text-wrap !text-stone-300 whitespace-pre-wrap">
-          {item.description}
-        </div>
-      )}
-      <div className="md:basis-2/5">
-        <Image
-          className="border border-stone-900 rounded-xl mb-2"
-          src={withBasePath("/covers/" + item.image)}
-          alt={item.name}
-          width={1200}
-          height={1200}
-          sizes="100vw"
-          style={{width: "1200px", height: "auto"}} // optional
-        />
-        <div className="text-4xl mt-5 !text-stone-300">
-          <MusicLinks {...item} />
-        </div>
-      </div>
-      <div className="md:basis-3/5">
-        <h2 className="text-2xl pb-2 xl:pb-6 tracking-tight lg:text-3xl font-semibold text-wrap !text-stone-300s">
-          {item.name}
-        </h2>
-
-        <h3 className="text-sm pb-2 tracking-tight lg:text-l font-semibold text-wrap !text-stone-300">
-          {item.group.toUpperCase()}
-        </h3>
-
-        <hr className="my-4 xl:my-7"/>
-        {item.description && (
-          <div className="hidden md:block pb-2 tracking-tight lg:text-l text-wrap !text-stone-300 whitespace-pre-wrap">
-            {item.description}
+    <div className="mx-auto mt-12 mb-10 max-w-screen-2xl px-6 md:px-12 xl:px-20 !text-stone-200">
+      <section className="grid gap-9 lg:grid-cols-[minmax(320px,560px)_minmax(0,1fr)] lg:gap-14 xl:gap-16">
+        <div className="space-y-5 lg:sticky lg:top-24 lg:self-start">
+          <Image
+            className="w-full rounded-2xl border border-stone-800/80 shadow-[0_24px_80px_-42px_rgba(0,0,0,0.95)]"
+            src={withBasePath("/covers/" + item.image)}
+            alt={item.name}
+            width={1200}
+            height={1200}
+            sizes="(max-width: 1024px) 100vw, 48vw"
+            style={{height: "auto"}}
+            priority
+          />
+          <div className="text-3xl md:text-4xl !text-stone-300">
+            <MusicLinks {...item} />
           </div>
-        )}
+        </div>
 
-        <ul className="hidden md:block !text-stone-300">
-          {item.type === "album" &&
-            item.items &&
-            item.items.map((item, index) => (
-              <li
-                key={item.name}
-                className="text-xl flex justify-between mb-1 font-normal !text-stone-300"
-              >
-                <span>
-                  <span className="inline-flex font-medium w-6 !text-stone-300">
-                    {index + 1}.
+        <div className="space-y-7 md:space-y-8">
+          <header className="space-y-3 md:space-y-4">
+            <h1 className="text-3xl leading-[1.08] tracking-tight font-semibold md:text-4xl xl:text-5xl !text-stone-100">
+              {item.name}
+            </h1>
+            <p className="text-lg tracking-tight md:text-xl !text-stone-400">
+              {subtitle}
+            </p>
+            {(releaseYear || releaseType) && (
+              <div className="flex items-center gap-3 text-base md:text-lg">
+                {releaseYear && (
+                  <span className="font-semibold tracking-tight !text-stone-100">
+                    {releaseYear}
                   </span>
-                  {item.name}
-                </span>
-                <MusicLinks {...item} />
-              </li>
-            ))}
-        </ul>
-      </div>
+                )}
+                {releaseYear && releaseType && (
+                  <span className="!text-stone-500">•</span>
+                )}
+                {releaseType && (
+                  <span className="lowercase tracking-tight !text-stone-400">
+                    {releaseType}
+                  </span>
+                )}
+              </div>
+            )}
+          </header>
+
+          {descriptionParagraphs.length > 0 && (
+            <div className="space-y-4 text-base leading-relaxed tracking-tight md:text-lg md:leading-relaxed xl:text-[1.17rem] !text-stone-300">
+              {descriptionParagraphs.map((paragraph, index) => (
+                <p key={`${item.href}-paragraph-${index}`}>{paragraph}</p>
+              ))}
+            </div>
+          )}
+
+          {item.type === "album" && item.items && item.items.length > 0 && (
+            <section className="space-y-3 md:space-y-4">
+              <p className="text-xs uppercase tracking-[0.18em] !text-stone-500">
+                Tracklist
+              </p>
+              <ul className="space-y-1.5 md:space-y-2">
+                {item.items.map((track, index) => (
+                  <li
+                    key={track.name}
+                    className="group flex items-center justify-between gap-4 rounded-xl border border-stone-800/70 bg-stone-950/45 px-3 py-2.5 transition-colors duration-200 hover:border-stone-700/90 hover:bg-stone-900/55 md:px-4"
+                  >
+                    <div className="min-w-0 text-base md:text-lg !text-stone-200">
+                      <span className="mr-3 inline-flex w-7 justify-end !text-stone-500">
+                        {(index + 1).toString().padStart(2, "0")}
+                      </span>
+                      <span className="tracking-tight">{track.name}</span>
+                    </div>
+                    <div className="shrink-0 text-lg md:text-xl !text-stone-400 transition-colors duration-200 group-hover:!text-stone-200">
+                      <MusicLinks {...track} />
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
+        </div>
+      </section>
     </div>
   );
 }
