@@ -25,16 +25,6 @@ export default function ContactsPage() {
           <div className="mb-10">
             <h1 className="font-display text-4xl md:text-5xl font-semibold tracking-tight mb-10">Contacts</h1>
             <div>
-              <h2 className="font-display text-2xl xl:text-4xl font-semibold tracking-tight">Leyla Romanova</h2>
-
-              <div className="flex flex-col text-base xl:text-2xl mt-4">
-                <Link
-                  href="mailto:contact@leylaromanova.com"
-                  className="inline-flex items-center gap-2 text-base xl:text-2xl"
-                >
-                  <TbMailFilled /> contact@leylaromanova.com
-                </Link>
-              </div>
 
               <div className="mt-8 flex flex-col gap-2">
                 <p className="text-sm xl:text-lg uppercase tracking-[0.08em] !text-stone-400">Manager:</p>
