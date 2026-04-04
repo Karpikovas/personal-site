@@ -30,12 +30,22 @@ export const Group = ({
         {items.map((item) => {
           const metaType = item.cardType || (item.releaseYear ? item.type : "");
           const hasMeta = Boolean(item.releaseYear || metaType);
+          const releaseHref = `/music/${item.href}`;
+          const openRelease = () => router.push(releaseHref);
 
           return (
             <div key={item.name} className="w-full">
               <div
                 className="inline-block w-full p-1 md:p-2 cursor-pointer"
-                onClick={() => router.push(`/music/${item.href}`)}
+                onClick={openRelease}
+                onKeyDown={(event) => {
+                  if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault();
+                    openRelease();
+                  }
+                }}
+                role="link"
+                tabIndex={0}
               >
                 <h3 className="truncate !text-stone-100 font-[550] text-xl md:text-2xl">
                   {item.name}
@@ -44,22 +54,32 @@ export const Group = ({
                   {item.cardSubtitle || item.group.trim()}
                 </p>
 
-                <div className="relative mt-2 aspect-square overflow-hidden rounded-xl border border-stone-900 group/image">
+                <div
+                  className="relative mt-2 aspect-square overflow-hidden rounded-xl border border-stone-900 group/image"
+                  onClick={openRelease}
+                >
+                  <Link
+                    href={releaseHref}
+                    className="absolute inset-0 z-10"
+                    aria-label={`Open ${item.name}`}
+                  />
                   <Image
-                    className="w-full h-full object-cover"
+                    className="h-full w-full object-cover"
                     src={withBasePath("/covers/" + item.image)}
                     alt={item.name}
                     width={1200}
                     height={1200}
                     sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                   />
-                  <div className="hidden lg:group-hover/image:flex flex-col justify-center items-center absolute inset-0 p-4 text-center transition ease-in duration-300 bg-black/[.9]">
-                    <div className="mt-2 !text-stone-300 text-2xl xl:text-3xl">
+                  <div
+                    className="pointer-events-none absolute inset-0 hidden bg-black/[.9] p-4 text-center transition ease-in duration-300 lg:group-hover/image:flex lg:flex-col lg:items-center lg:justify-center"
+                  >
+                    <div className="pointer-events-auto z-20 mt-2 text-2xl !text-stone-300 xl:text-3xl">
                       <MusicLinks {...item} />
                     </div>
-                    <div className="absolute bottom-2 right-2">
+                    <div className="pointer-events-auto absolute bottom-2 right-2 z-20">
                       <Link
-                        href={`/music/${item.href}`}
+                        href={releaseHref}
                         className="rounded-full px-3 py-1 text-xs md:text-sm bg-stone-800 border-gray-600 hover:bg-stone-700 font-semibold !text-stone-200"
                         onClick={(event) => event.stopPropagation()}
                       >
