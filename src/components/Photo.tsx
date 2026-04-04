@@ -20,19 +20,19 @@ export const Photo = () => {
       <div className="absolute inset-0 z-10 flex items-end">
         <div className="container mx-auto w-full px-8 lg:px-20 pb-6 md:pb-10 lg:pb-12">
           <div className="hero-enter hero-stagger max-w-[17rem] sm:max-w-2xl md:max-w-3xl text-left">
-            <p className="font-display uppercase tracking-[0.2em] text-[11px] md:text-xs !text-stone-300/80">
+            <p className="font-display uppercase tracking-[0.2em] text-[11px] md:text-xs lg:text-sm 2xl:text-lg !text-stone-300/80">
               <span className="whitespace-nowrap">Multi-genre Composer</span>
             </p>
             <h1 className="font-display mt-3 text-[1.3rem] sm:text-3xl md:text-4xl lg:text-5xl leading-[0.96] !text-stone-100 tracking-tight uppercase">
               Leyla Romanova
             </h1>
-            <p className="mt-4 text-sm md:text-lg max-w-[17rem] sm:max-w-[30rem] md:max-w-2xl !text-stone-300/90 text-balance">
+            <p className="mt-4 text-sm md:text-lg lg:text-xl max-w-[17rem] sm:max-w-[30rem] md:max-w-2xl 2xl:max-w-[42rem] !text-stone-300/90 text-balance">
               crafting cinematic music: from <span className="whitespace-nowrap">symphonic grandeur</span> to{" "}
               <span className="whitespace-nowrap">cutting-edge</span> electronic soundscapes.
             </p>
             <Link
               href="#releases"
-              className="mt-6 inline-flex items-center gap-2 rounded-full border border-stone-500/50 bg-stone-900/55 px-4 py-2 text-xs md:text-sm uppercase tracking-[0.14em] !text-stone-100 hover:bg-stone-800/70 transition-colors duration-300"
+              className="mt-6 inline-flex items-center gap-2 rounded-full border border-stone-500/50 bg-stone-900/55 px-4 py-2 text-xs md:text-sm lg:text-lg uppercase tracking-[0.14em] !text-stone-100 hover:bg-stone-800/70 transition-colors duration-300"
             >
               Explore Releases
             </Link>
