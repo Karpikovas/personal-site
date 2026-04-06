@@ -227,6 +227,26 @@ main {
   animation-delay: 1820ms;
 }
 
+@keyframes pressCardIn {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 14px, 0);
+    filter: blur(4px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    filter: blur(0);
+  }
+}
+
+.press-card-enter {
+  opacity: 0;
+  animation: pressCardIn 720ms cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+  will-change: opacity, transform, filter;
+}
+
 .reveal {
   opacity: 1;
   transform: none;
@@ -412,6 +432,7 @@ main {
   .hero-image-intro,
   .hero-filter-intro,
   .hero-gradient-intro,
+  .press-card-enter,
   .hero-text-contrast-intro {
     animation: none;
     opacity: 1;
