@@ -91,8 +91,8 @@ main {
 @keyframes heroBlockIn {
   0% {
     opacity: 0;
-    transform: translate3d(0, 34px, 0) scale(0.985);
-    filter: blur(8px);
+    transform: translate3d(0, 18px, 0) scale(0.995);
+    filter: blur(4px);
   }
 
   100% {
@@ -102,12 +102,52 @@ main {
   }
 }
 
+@keyframes heroImageToneIn {
+  0% {
+    transform: scale(1.025);
+  }
+
+  100% {
+    transform: scale(1.01);
+  }
+}
+
+@keyframes heroOverlayInSoft {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0.56;
+  }
+}
+
+@keyframes heroGradientInSoft {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes heroTextShadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0.74;
+  }
+}
+
 @keyframes heroItemIn {
   0% {
     opacity: 0;
-    transform: translate3d(0, 18px, 0);
-    letter-spacing: 0.02em;
-    filter: blur(5px);
+    transform: translate3d(0, 10px, 0);
+    letter-spacing: 0.01em;
+    filter: blur(2.5px);
   }
 
   100% {
@@ -119,13 +159,40 @@ main {
 }
 
 .hero-enter {
-  animation: heroBlockIn 940ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: heroBlockIn 1200ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.hero-image-intro {
+  animation: heroImageToneIn 2200ms cubic-bezier(0.22, 0.61, 0.36, 1) both;
+  will-change: transform;
+}
+
+.hero-filter-intro {
+  opacity: 0;
+  animation: heroOverlayInSoft 1450ms cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+  animation-delay: 240ms;
+}
+
+.hero-gradient-intro {
+  opacity: 0;
+  animation: heroGradientInSoft 1700ms cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+  animation-delay: 300ms;
+}
+
+.hero-text-contrast-intro {
+  opacity: 0;
+  animation: heroTextShadeIn 980ms cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+  animation-delay: 1260ms;
+}
+
+.hero-copy-delayed.hero-enter {
+  animation-delay: 1280ms;
 }
 
 .hero-stagger > * {
   opacity: 0;
   will-change: transform, opacity, filter;
-  animation: heroItemIn 760ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: heroItemIn 980ms cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
 }
 
 .hero-stagger > *:nth-child(1) {
@@ -142,6 +209,22 @@ main {
 
 .hero-stagger > *:nth-child(4) {
   animation-delay: 500ms;
+}
+
+.hero-copy-delayed.hero-stagger > *:nth-child(1) {
+  animation-delay: 1420ms;
+}
+
+.hero-copy-delayed.hero-stagger > *:nth-child(2) {
+  animation-delay: 1540ms;
+}
+
+.hero-copy-delayed.hero-stagger > *:nth-child(3) {
+  animation-delay: 1680ms;
+}
+
+.hero-copy-delayed.hero-stagger > *:nth-child(4) {
+  animation-delay: 1820ms;
 }
 
 .reveal {
@@ -325,7 +408,11 @@ main {
   }
 
   .hero-enter,
-  .hero-stagger > * {
+  .hero-stagger > *,
+  .hero-image-intro,
+  .hero-filter-intro,
+  .hero-gradient-intro,
+  .hero-text-contrast-intro {
     animation: none;
     opacity: 1;
     transform: none;
