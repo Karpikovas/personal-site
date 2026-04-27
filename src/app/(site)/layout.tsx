@@ -1,6 +1,6 @@
 import { Contacts } from "@/components/Contacts";
 import { Montserrat, PT_Serif } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 import { Navbar } from "@/components/Navbar";
 import { metadata } from "@/constants/siteMetaData";
 
