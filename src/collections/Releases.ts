@@ -1,0 +1,105 @@
+import type { CollectionConfig } from 'payload'
+
+export const Releases: CollectionConfig = {
+  slug: 'releases',
+  admin: {
+    useAsTitle: 'name',
+    defaultColumns: ['displayOrder', 'name', 'type', 'releaseYear'],
+  },
+  fields: [
+    {
+      name: 'displayOrder',
+      label: 'Номер отображения в списке',
+      type: 'number',
+      required: true,
+    },
+    {
+      name: 'name',
+      label: 'Название',
+      type: 'text',
+      required: true,
+    },
+    {
+      name: 'type',
+      label: 'Тип',
+      type: 'select',
+      required: true,
+      options: [
+        { label: 'Single', value: 'single' },
+        { label: 'EP', value: 'ep' },
+        { label: 'Album', value: 'album' },
+      ],
+    },
+    {
+      name: 'href',
+      label: 'Slug (href)',
+      type: 'text',
+      required: true,
+      unique: true,
+    },
+    {
+      name: 'group',
+      label: 'Группа (жанровая секция)',
+      type: 'text',
+      required: true,
+    },
+    {
+      name: 'cardSubtitle',
+      label: 'Подзаголовок карточки',
+      type: 'text',
+    },
+    {
+      name: 'cardType',
+      label: 'Тип карточки',
+      type: 'text',
+    },
+    {
+      name: 'releaseYear',
+      label: 'Год релиза',
+      type: 'number',
+      min: 1900,
+      max: 2100,
+    },
+    {
+      name: 'description',
+      label: 'Описание',
+      type: 'textarea',
+    },
+    {
+      name: 'cover',
+      label: 'Обложка',
+      type: 'upload',
+      relationTo: 'media',
+    },
+    {
+      name: 'image',
+      label: 'Legacy image filename (из /public/covers)',
+      type: 'text',
+    },
+    {
+      name: 'items',
+      label: 'Треки альбома',
+      type: 'array',
+      fields: [
+        { name: 'name', label: 'Название трека', type: 'text', required: true },
+        { name: 'youtube', label: 'YouTube', type: 'text' },
+        { name: 'youtube_music', label: 'YouTube Music', type: 'text' },
+        { name: 'spotify', label: 'Spotify', type: 'text' },
+        { name: 'apple', label: 'Apple Music', type: 'text' },
+        { name: 'vk', label: 'VK Music', type: 'text' },
+        { name: 'yandex', label: 'Yandex Music', type: 'text' },
+        { name: 'zvuk', label: 'Zvuk', type: 'text' },
+        { name: 'amazon', label: 'Amazon Music', type: 'text' },
+        { name: 'video', label: 'Video URL', type: 'text' },
+      ],
+    },
+    { name: 'youtube', label: 'YouTube', type: 'text' },
+    { name: 'video', label: 'Video URL', type: 'text' },
+    { name: 'spotify', label: 'Spotify', type: 'text' },
+    { name: 'apple', label: 'Apple Music', type: 'text' },
+    { name: 'vk', label: 'VK Music', type: 'text' },
+    { name: 'yandex', label: 'Yandex Music', type: 'text' },
+    { name: 'zvuk', label: 'Zvuk', type: 'text' },
+    { name: 'amazon', label: 'Amazon Music', type: 'text' },
+  ],
+}

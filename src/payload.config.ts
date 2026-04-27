@@ -5,7 +5,9 @@ import { postgresAdapter } from '@payloadcms/db-postgres'
 import { s3Storage } from '@payloadcms/storage-s3'
 import { buildConfig } from 'payload'
 
+import { LiveOrchestralChamber } from './collections/LiveOrchestralChamber.ts'
 import { Media } from './collections/Media.ts'
+import { Releases } from './collections/Releases.ts'
 import { Users } from './collections/Users.ts'
 
 const filename = fileURLToPath(import.meta.url)
@@ -19,7 +21,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Media],
+  collections: [Users, Media, Releases, LiveOrchestralChamber],
   db: postgresAdapter({
     pool: {
       connectionString:
