@@ -2,7 +2,11 @@
 
 set -eux
 
-pnpm install
+pnpm config set store-dir /app/.pnpm-store --global
+# Remove pre-populated modules (they may be linked to host pnpm store)
+mkdir -p /app/node_modules
+find /app/node_modules -mindepth 1 -maxdepth 1 -exec rm -rf {} +
+pnpm install --include=optional --store-dir /app/.pnpm-store --force
 
 # Docker Desktop/macOS: file watching через bind mount стабильнее в polling
 export CHOKIDAR_USEPOLLING=true

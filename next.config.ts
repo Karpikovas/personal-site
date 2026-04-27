@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import withPayload from "@payloadcms/next/withPayload";
 
 const isPagesPreview = process.env.NEXT_PUBLIC_IS_PAGES_PREVIEW === "true";
 const repositoryName =
@@ -35,4 +36,4 @@ const nextConfig: NextConfig = {
   },
 };
 
-module.exports = nextConfig;
+export default withPayload(nextConfig);
