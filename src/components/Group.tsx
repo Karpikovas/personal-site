@@ -1,18 +1,15 @@
 "use client";
-import { BaseMusicItem } from "@/constants/data";
-import Image from "next/image";
+import type { MusicCardItem } from "@/lib/music-feed";
 import { MusicLinks } from "./MusicLinks";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { withBasePath } from "@/constants/basePath";
 
 export const Group = ({
   name,
   items,
 }: {
   name: string;
-  items: BaseMusicItem[];
-  isMain: boolean;
+  items: MusicCardItem[];
   type?: "single" | "album";
 }) => {
   const router = useRouter();
@@ -32,6 +29,8 @@ export const Group = ({
           const hasMeta = Boolean(item.releaseYear || metaType);
           const releaseHref = `/music/${item.href}`;
           const openRelease = () => router.push(releaseHref);
+          const subtitle = item.cardSubtitle || (item.group ? item.group.trim() : "");
+          const imageSrc = item.imageURL;
 
           return (
             <div key={item.name} className="w-full">
@@ -50,9 +49,11 @@ export const Group = ({
                 <h3 className="truncate !text-stone-100 font-[550] text-xl md:text-2xl">
                   {item.name}
                 </h3>
-                <p className="mt-0.5 truncate !text-stone-400 text-lg md:text-xl">
-                  {item.cardSubtitle || item.group.trim()}
-                </p>
+                {subtitle && (
+                  <p className="mt-0.5 truncate !text-stone-400 text-lg md:text-xl">
+                    {subtitle}
+                  </p>
+                )}
 
                 <div
                   className="relative mt-2 aspect-square overflow-hidden rounded-xl border border-stone-900 group/image"
@@ -63,13 +64,13 @@ export const Group = ({
                     className="absolute inset-0 z-10"
                     aria-label={`Open ${item.name}`}
                   />
-                  <Image
+                  <img
                     className="h-full w-full object-cover"
-                    src={withBasePath("/covers/" + item.image)}
+                    src={imageSrc}
                     alt={item.name}
                     width={1200}
                     height={1200}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                    loading="lazy"
                   />
                   <div
                     className="pointer-events-none absolute inset-0 hidden bg-black/[.9] p-4 text-center transition ease-in duration-300 lg:group-hover/image:flex lg:flex-col lg:items-center lg:justify-center"
