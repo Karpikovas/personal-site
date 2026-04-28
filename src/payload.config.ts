@@ -7,6 +7,7 @@ import { buildConfig } from 'payload'
 
 import { LiveOrchestralChamber } from './collections/LiveOrchestralChamber.ts'
 import { Media } from './collections/Media.ts'
+import { Press } from './collections/Press.ts'
 import { Releases } from './collections/Releases.ts'
 import { Users } from './collections/Users.ts'
 
@@ -21,12 +22,13 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Media, Releases, LiveOrchestralChamber],
+  collections: [Users, Media, Releases, LiveOrchestralChamber, Press],
   db: postgresAdapter({
     pool: {
       connectionString:
         process.env.DATABASE_URI || 'postgres://postgres:postgres@localhost:5432/personal_site',
     },
+    migrationDir: path.resolve(dirname, 'migrations'),
     push: true,
   }),
   plugins: [

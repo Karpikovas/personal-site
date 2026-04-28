@@ -71,6 +71,7 @@ export interface Config {
     media: Media;
     releases: Release;
     'live-orchestral-chamber': LiveOrchestralChamber;
+    press: Press;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -82,6 +83,7 @@ export interface Config {
     media: MediaSelect<false> | MediaSelect<true>;
     releases: ReleasesSelect<false> | ReleasesSelect<true>;
     'live-orchestral-chamber': LiveOrchestralChamberSelect<false> | LiveOrchestralChamberSelect<true>;
+    press: PressSelect<false> | PressSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -251,6 +253,31 @@ export interface LiveOrchestralChamber {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "press".
+ */
+export interface Press {
+  id: number;
+  order: number;
+  name: string;
+  href: string;
+  source?: string | null;
+  createdDate?: string | null;
+  image?: string | null;
+  cover?: (number | null) | Media;
+  relatedTrack?:
+    | ({
+        relationTo: 'releases';
+        value: number | Release;
+      } | null)
+    | ({
+        relationTo: 'live-orchestral-chamber';
+        value: number | LiveOrchestralChamber;
+      } | null);
+  updatedAt: string;
+  createdAt: string;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
 export interface PayloadKv {
@@ -288,6 +315,10 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'live-orchestral-chamber';
         value: number | LiveOrchestralChamber;
+      } | null)
+    | ({
+        relationTo: 'press';
+        value: number | Press;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -454,6 +485,22 @@ export interface LiveOrchestralChamberSelect<T extends boolean = true> {
   yandex?: T;
   zvuk?: T;
   amazon?: T;
+  updatedAt?: T;
+  createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "press_select".
+ */
+export interface PressSelect<T extends boolean = true> {
+  order?: T;
+  name?: T;
+  href?: T;
+  source?: T;
+  createdDate?: T;
+  image?: T;
+  cover?: T;
+  relatedTrack?: T;
   updatedAt?: T;
   createdAt?: T;
 }
