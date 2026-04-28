@@ -1,41 +1,62 @@
 "use client";
 
-import type { PressItem } from "@/constants/data";
-import Image from "next/image";
+import { withBasePath } from "@/constants/basePath";
+import type { PressListItem } from "@/lib/press-feed";
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useInView } from "framer-motion";
-import { withBasePath } from "@/constants/basePath";
 
 const ITEMS_PER_PAGE = 10;
 
-export const PressList = ({ press }: { press: PressItem[] }) => {
+export const PressList = ({
+  initialHasNextPage,
+  initialNextPage,
+  press,
+}: {
+  initialHasNextPage: boolean;
+  initialNextPage: number | null;
+  press: PressListItem[];
+}) => {
   const sentinelRef = useRef<HTMLDivElement>(null);
   const sentinelInView = useInView(sentinelRef, { margin: "0px 0px 320px 0px", amount: 0 });
-  const [visibleCount, setVisibleCount] = useState(ITEMS_PER_PAGE);
+  const [items, setItems] = useState<PressListItem[]>(press);
+  const [hasNextPage, setHasNextPage] = useState(initialHasNextPage);
+  const [nextPage, setNextPage] = useState<number | null>(initialNextPage);
   const [isLoading, setIsLoading] = useState(false);
 
-  const hasMore = visibleCount < press.length;
-  const visiblePress = press.slice(0, visibleCount);
-
   useEffect(() => {
-    setVisibleCount(ITEMS_PER_PAGE);
+    setItems(press);
+    setHasNextPage(initialHasNextPage);
+    setNextPage(initialNextPage);
     setIsLoading(false);
-  }, [press.length]);
+  }, [press, initialHasNextPage, initialNextPage]);
 
   const handleLoadMore = useCallback(() => {
-    if (!hasMore || isLoading) return;
+    if (!hasNextPage || isLoading || !nextPage) return;
     setIsLoading(true);
-    window.setTimeout(() => {
-      setVisibleCount((prev) => Math.min(prev + ITEMS_PER_PAGE, press.length));
-      setIsLoading(false);
-    }, 180);
-  }, [hasMore, isLoading, press.length]);
+
+    fetch(withBasePath(`/api/press-feed?page=${nextPage}&limit=${ITEMS_PER_PAGE}`))
+      .then((response) => {
+        if (!response.ok) throw new Error(`Request failed: ${response.status}`);
+        return response.json();
+      })
+      .then((data: { hasNextPage: boolean; items: PressListItem[]; nextPage: number | null }) => {
+        setItems((prev) => [...prev, ...data.items]);
+        setHasNextPage(Boolean(data.hasNextPage));
+        setNextPage(data.nextPage);
+      })
+      .catch(() => {
+        setHasNextPage(false);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
+  }, [hasNextPage, isLoading, nextPage]);
 
   useEffect(() => {
-    if (!sentinelInView || !hasMore || isLoading) return;
+    if (!sentinelInView || !hasNextPage || isLoading) return;
     handleLoadMore();
-  }, [sentinelInView, hasMore, isLoading, handleLoadMore]);
+  }, [sentinelInView, hasNextPage, isLoading, handleLoadMore]);
 
   return (
     <div className="container mt-16 mb-12 px-8 md:px-16 xl:px-48">
@@ -47,9 +68,9 @@ export const PressList = ({ press }: { press: PressItem[] }) => {
       </div>
 
       <div className="space-y-3 md:space-y-4">
-        {visiblePress.map((item, index) => (
+        {items.map((item, index) => (
           <Link
-            key={item.created_date + item.name}
+            key={`${item.id}-${item.name}`}
             href={item.href}
             target="_blank"
             className="press-card-enter group relative block overflow-hidden rounded-2xl border border-stone-800/85 bg-black/70 px-4 py-4 transition-all duration-300 hover:border-stone-600/90 hover:bg-stone-950/82 md:px-6 md:py-5"
@@ -68,13 +89,13 @@ export const PressList = ({ press }: { press: PressItem[] }) => {
               </div>
 
               <div className="relative h-[84px] w-[84px] shrink-0 overflow-hidden rounded-xl border border-stone-800/90 md:h-[96px] md:w-[96px]">
-                <Image
+                <img
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  src={withBasePath(`/covers/${item.image}`)}
-                  alt={item.image || ""}
-                  width={192}
-                  height={192}
-                  sizes="(max-width: 768px) 84px, 96px"
+                  src={item.imageURL}
+                  alt={item.imageAlt}
+                  width={96}
+                  height={96}
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-black/25" />
               </div>
@@ -87,7 +108,7 @@ export const PressList = ({ press }: { press: PressItem[] }) => {
 
       <div ref={sentinelRef} className="h-10 w-full" aria-hidden />
 
-      {hasMore && isLoading && <p className="text-sm !text-stone-500">Loading...</p>}
+      {hasNextPage && isLoading && <p className="text-sm !text-stone-500">Loading...</p>}
     </div>
   );
 };
