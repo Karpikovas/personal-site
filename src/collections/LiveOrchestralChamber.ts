@@ -1,4 +1,6 @@
 import type { CollectionConfig } from 'payload'
+import { optionalURLField } from '../shared/payload/fields.ts'
+import { validateSlugNoSpaces } from '../shared/payload/validators.ts'
 
 export const LiveOrchestralChamber: CollectionConfig = {
   slug: 'live-orchestral-chamber',
@@ -25,6 +27,7 @@ export const LiveOrchestralChamber: CollectionConfig = {
       type: 'text',
       required: true,
       unique: true,
+      validate: validateSlugNoSpaces,
     },
     {
       name: 'type',
@@ -55,33 +58,13 @@ export const LiveOrchestralChamber: CollectionConfig = {
       type: 'upload',
       relationTo: 'media',
     },
-    {
-      name: 'image',
-      label: 'Legacy image filename (из /public/covers)',
-      type: 'text',
-    },
-    {
-      name: 'youtubeLinks',
-      label: 'Legacy youtube links',
-      type: 'array',
-      admin: {
-        hidden: true,
-      },
-      fields: [
-        {
-          name: 'url',
-          label: 'YouTube URL',
-          type: 'text',
-        },
-      ],
-    },
-    { name: 'youtube', label: 'YouTube', type: 'text' },
-    { name: 'video', label: 'Video URL', type: 'text' },
-    { name: 'spotify', label: 'Spotify', type: 'text' },
-    { name: 'apple', label: 'Apple Music', type: 'text' },
-    { name: 'vk', label: 'VK Music', type: 'text' },
-    { name: 'yandex', label: 'Yandex Music', type: 'text' },
-    { name: 'zvuk', label: 'Zvuk', type: 'text' },
-    { name: 'amazon', label: 'Amazon Music', type: 'text' },
+    optionalURLField('youtube', 'YouTube'),
+    optionalURLField('video', 'Video URL'),
+    optionalURLField('spotify', 'Spotify'),
+    optionalURLField('apple', 'Apple Music'),
+    optionalURLField('vk', 'VK Music'),
+    optionalURLField('yandex', 'Yandex Music'),
+    optionalURLField('zvuk', 'Zvuk'),
+    optionalURLField('amazon', 'Amazon Music'),
   ],
 }

@@ -193,7 +193,6 @@ export interface Release {
   releaseYear?: number | null;
   description?: string | null;
   cover?: (number | null) | Media;
-  image?: string | null;
   items?:
     | {
         name: string;
@@ -233,13 +232,6 @@ export interface LiveOrchestralChamber {
   group?: string | null;
   cardSubtitle?: string | null;
   cover?: (number | null) | Media;
-  image?: string | null;
-  youtubeLinks?:
-    | {
-        url?: string | null;
-        id?: string | null;
-      }[]
-    | null;
   youtube?: string | null;
   video?: string | null;
   spotify?: string | null;
@@ -262,17 +254,15 @@ export interface Press {
   href: string;
   source?: string | null;
   createdDate?: string | null;
-  image?: string | null;
-  cover?: (number | null) | Media;
-  relatedTrack?:
-    | ({
+  relatedTrack:
+    | {
         relationTo: 'releases';
         value: number | Release;
-      } | null)
-    | ({
+      }
+    | {
         relationTo: 'live-orchestral-chamber';
         value: number | LiveOrchestralChamber;
-      } | null);
+      };
   updatedAt: string;
   createdAt: string;
 }
@@ -431,7 +421,6 @@ export interface ReleasesSelect<T extends boolean = true> {
   releaseYear?: T;
   description?: T;
   cover?: T;
-  image?: T;
   items?:
     | T
     | {
@@ -470,13 +459,6 @@ export interface LiveOrchestralChamberSelect<T extends boolean = true> {
   group?: T;
   cardSubtitle?: T;
   cover?: T;
-  image?: T;
-  youtubeLinks?:
-    | T
-    | {
-        url?: T;
-        id?: T;
-      };
   youtube?: T;
   video?: T;
   spotify?: T;
@@ -498,8 +480,6 @@ export interface PressSelect<T extends boolean = true> {
   href?: T;
   source?: T;
   createdDate?: T;
-  image?: T;
-  cover?: T;
   relatedTrack?: T;
   updatedAt?: T;
   createdAt?: T;

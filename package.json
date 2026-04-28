@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "payload": "PAYLOAD_CONFIG_PATH=src/payload.config.ts payload",
-    "payload:seed": "PAYLOAD_CONFIG_PATH=src/payload.config.ts payload run src/scripts/seed-content.ts",
+    "payload:seed": "PAYLOAD_CONFIG_PATH=src/payload.config.ts payload seed",
     "payload:migrate": "PAYLOAD_CONFIG_PATH=src/payload.config.ts payload migrate",
     "payload:migrate:create": "PAYLOAD_CONFIG_PATH=src/payload.config.ts payload migrate:create",
     "payload:migrate:status": "PAYLOAD_CONFIG_PATH=src/payload.config.ts payload migrate:status",

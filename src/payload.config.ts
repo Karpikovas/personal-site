@@ -15,6 +15,12 @@ const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
 
 export default buildConfig({
+  bin: [
+    {
+      key: 'seed',
+      scriptPath: path.resolve(dirname, 'scripts/seed-content.bin.cjs'),
+    },
+  ],
   secret: process.env.PAYLOAD_SECRET || 'dev-only-secret-change-me',
   admin: {
     user: Users.slug,
@@ -29,7 +35,7 @@ export default buildConfig({
         process.env.DATABASE_URI || 'postgres://postgres:postgres@localhost:5432/personal_site',
     },
     migrationDir: path.resolve(dirname, 'migrations'),
-    push: true,
+    push: false,
   }),
   plugins: [
     s3Storage({

@@ -1,4 +1,5 @@
 import type { CollectionConfig } from 'payload'
+import { validateRequiredURL } from '../shared/payload/validators.ts'
 
 export const Press: CollectionConfig = {
   slug: 'press',
@@ -24,6 +25,7 @@ export const Press: CollectionConfig = {
       label: 'Ссылка',
       type: 'text',
       required: true,
+      validate: validateRequiredURL,
     },
     {
       name: 'source',
@@ -41,22 +43,12 @@ export const Press: CollectionConfig = {
       },
     },
     {
-      name: 'image',
-      label: 'Legacy image filename (из /public/covers)',
-      type: 'text',
-    },
-    {
-      name: 'cover',
-      label: 'Изображение (upload)',
-      type: 'upload',
-      relationTo: 'media',
-    },
-    {
       name: 'relatedTrack',
       label: 'Связанный релиз/произведение',
       type: 'relationship',
       relationTo: ['releases', 'live-orchestral-chamber'],
       hasMany: false,
+      required: true,
     },
   ],
 }
