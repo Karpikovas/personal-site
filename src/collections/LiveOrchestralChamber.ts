@@ -4,17 +4,12 @@ import { validateSlugNoSpaces } from '../shared/payload/validators.ts'
 
 export const LiveOrchestralChamber: CollectionConfig = {
   slug: 'live-orchestral-chamber',
+  orderable: true,
   admin: {
     useAsTitle: 'name',
-    defaultColumns: ['displayOrder', 'name', 'group'],
+    defaultColumns: ['name', 'group'],
   },
   fields: [
-    {
-      name: 'displayOrder',
-      label: 'Номер отображения в списке',
-      type: 'number',
-      required: true,
-    },
     {
       name: 'name',
       label: 'Название',

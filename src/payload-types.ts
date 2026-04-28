@@ -183,7 +183,7 @@ export interface Media {
  */
 export interface Release {
   id: number;
-  displayOrder: number;
+  _order?: string | null;
   name: string;
   type: 'single' | 'ep' | 'album';
   href: string;
@@ -225,7 +225,7 @@ export interface Release {
  */
 export interface LiveOrchestralChamber {
   id: number;
-  displayOrder: number;
+  _order?: string | null;
   name: string;
   href: string;
   type: 'single' | 'ep' | 'album';
@@ -249,7 +249,7 @@ export interface LiveOrchestralChamber {
  */
 export interface Press {
   id: number;
-  order: number;
+  _order?: string | null;
   name: string;
   href: string;
   source?: string | null;
@@ -411,7 +411,7 @@ export interface MediaSelect<T extends boolean = true> {
  * via the `definition` "releases_select".
  */
 export interface ReleasesSelect<T extends boolean = true> {
-  displayOrder?: T;
+  _order?: T;
   name?: T;
   type?: T;
   href?: T;
@@ -452,7 +452,7 @@ export interface ReleasesSelect<T extends boolean = true> {
  * via the `definition` "live-orchestral-chamber_select".
  */
 export interface LiveOrchestralChamberSelect<T extends boolean = true> {
-  displayOrder?: T;
+  _order?: T;
   name?: T;
   href?: T;
   type?: T;
@@ -475,7 +475,7 @@ export interface LiveOrchestralChamberSelect<T extends boolean = true> {
  * via the `definition` "press_select".
  */
 export interface PressSelect<T extends boolean = true> {
-  order?: T;
+  _order?: T;
   name?: T;
   href?: T;
   source?: T;

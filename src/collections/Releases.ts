@@ -4,17 +4,12 @@ import { validateSlugNoSpaces } from '../shared/payload/validators.ts'
 
 export const Releases: CollectionConfig = {
   slug: 'releases',
+  orderable: true,
   admin: {
     useAsTitle: 'name',
-    defaultColumns: ['displayOrder', 'name', 'type', 'releaseYear'],
+    defaultColumns: ['name', 'type', 'releaseYear'],
   },
   fields: [
-    {
-      name: 'displayOrder',
-      label: 'Номер отображения в списке',
-      type: 'number',
-      required: true,
-    },
     {
       name: 'name',
       label: 'Название',

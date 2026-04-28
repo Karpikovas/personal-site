@@ -3,17 +3,12 @@ import { validateRequiredURL } from '../shared/payload/validators.ts'
 
 export const Press: CollectionConfig = {
   slug: 'press',
+  orderable: true,
   admin: {
     useAsTitle: 'name',
-    defaultColumns: ['order', 'name', 'source', 'createdDate'],
+    defaultColumns: ['name', 'source', 'createdDate'],
   },
   fields: [
-    {
-      name: 'order',
-      label: 'Порядок отображения',
-      type: 'number',
-      required: true,
-    },
     {
       name: 'name',
       label: 'Название публикации',

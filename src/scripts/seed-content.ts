@@ -147,16 +147,12 @@ export async function script(config: any) {
   const liveByImage = new Map<string, { relationTo: 'live-orchestral-chamber'; value: number }>()
   const mediaByFilename = new Map<string, number>()
 
-  let index = 0
   for (const item of releases) {
-    index += 1
-
     const doc = await upsertByHref({
       payload: p,
       collection: 'releases',
       href: item.href,
       data: {
-        displayOrder: index,
         name: item.name,
         type: item.type,
         href: item.href,
@@ -201,16 +197,12 @@ export async function script(config: any) {
     }
   }
 
-  index = 0
   for (const item of live) {
-    index += 1
-
     const doc = await upsertByHref({
       payload: p,
       collection: 'live-orchestral-chamber',
       href: item.href,
       data: {
-        displayOrder: index,
         name: item.name,
         href: item.href,
         type: item.type,
@@ -260,7 +252,6 @@ export async function script(config: any) {
       payload: p,
       href: item.href,
       data: {
-        order: item.order ?? 0,
         name: item.name,
         href: item.href,
         source: item.source,
