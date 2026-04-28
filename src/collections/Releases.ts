@@ -43,12 +43,7 @@ export const Releases: CollectionConfig = {
     },
     {
       name: 'cardSubtitle',
-      label: 'Подзаголовок карточки',
-      type: 'text',
-    },
-    {
-      name: 'cardType',
-      label: 'Тип карточки',
+      label: 'Жанр',
       type: 'text',
     },
     {

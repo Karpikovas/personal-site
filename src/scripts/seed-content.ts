@@ -158,7 +158,6 @@ export async function script(config: any) {
         href: item.href,
         group: item.group,
         cardSubtitle: item.cardSubtitle,
-        cardType: item.cardType,
         releaseYear: toNumber(item.releaseYear),
         description: item.description,
         cover: await ensureMediaFromLegacyImage({
@@ -205,8 +204,6 @@ export async function script(config: any) {
       data: {
         name: item.name,
         href: item.href,
-        type: item.type,
-        group: item.group,
         cardSubtitle: item.cardSubtitle,
         cover: await ensureMediaFromLegacyImage({
           payload: p,

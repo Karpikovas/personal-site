@@ -7,7 +7,7 @@ export const LiveOrchestralChamber: CollectionConfig = {
   orderable: true,
   admin: {
     useAsTitle: 'name',
-    defaultColumns: ['name', 'group'],
+    defaultColumns: ['name', 'cardSubtitle'],
   },
   fields: [
     {
@@ -25,26 +25,8 @@ export const LiveOrchestralChamber: CollectionConfig = {
       validate: validateSlugNoSpaces,
     },
     {
-      name: 'type',
-      label: 'Тип',
-      type: 'select',
-      required: true,
-      options: [
-        { label: 'Single', value: 'single' },
-        { label: 'EP', value: 'ep' },
-        { label: 'Album', value: 'album' },
-      ],
-      defaultValue: 'single',
-    },
-    {
-      name: 'group',
-      label: 'Группа',
-      type: 'text',
-      defaultValue: 'Orchestral (live) & Chamber',
-    },
-    {
       name: 'cardSubtitle',
-      label: 'Подзаголовок карточки',
+      label: 'Жанр',
       type: 'text',
     },
     {

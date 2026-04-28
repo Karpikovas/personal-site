@@ -189,7 +189,6 @@ export interface Release {
   href: string;
   group: string;
   cardSubtitle?: string | null;
-  cardType?: string | null;
   releaseYear?: number | null;
   description?: string | null;
   cover?: (number | null) | Media;
@@ -228,8 +227,6 @@ export interface LiveOrchestralChamber {
   _order?: string | null;
   name: string;
   href: string;
-  type: 'single' | 'ep' | 'album';
-  group?: string | null;
   cardSubtitle?: string | null;
   cover?: (number | null) | Media;
   youtube?: string | null;
@@ -417,7 +414,6 @@ export interface ReleasesSelect<T extends boolean = true> {
   href?: T;
   group?: T;
   cardSubtitle?: T;
-  cardType?: T;
   releaseYear?: T;
   description?: T;
   cover?: T;
@@ -455,8 +451,6 @@ export interface LiveOrchestralChamberSelect<T extends boolean = true> {
   _order?: T;
   name?: T;
   href?: T;
-  type?: T;
-  group?: T;
   cardSubtitle?: T;
   cover?: T;
   youtube?: T;
