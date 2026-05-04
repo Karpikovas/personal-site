@@ -36,6 +36,7 @@ type MusicPageItem = {
   youtube?: string;
   zvuk?: string;
   items?: TrackLinkItem[];
+  keywords?: string;
 };
 
 const mapTrack = (track: any): TrackLinkItem => ({
@@ -72,6 +73,7 @@ const mapReleaseDoc = (doc: any): MusicPageItem => {
     yandex: doc.yandex ?? undefined,
     youtube: doc.youtube ?? undefined,
     zvuk: doc.zvuk ?? undefined,
+    keywords: doc.keywords ?? undefined,
   };
 };
 
@@ -92,6 +94,7 @@ const mapLiveDoc = (doc: any): MusicPageItem => {
     yandex: doc.yandex ?? undefined,
     youtube: doc.youtube ?? undefined,
     zvuk: doc.zvuk ?? undefined,
+    keywords: doc.keywords ?? undefined,
   };
 };
 
@@ -170,14 +173,19 @@ export async function generateMetadata({ params }) {
   const title = `${item.name} | ${siteConfig.title}`;
   const img = item.imageURL;
   const descr = item.description || siteConfig.description;
+  const canonical = `/music/${item.href}`;
+  const keywords = item.keywords || `${siteConfig.keywords}, ${item.name}`;
 
   return {
     title: item.name,
-    description: item.description,
-    keywords: `${siteConfig.keywords}, ${item.name}`,
+    description: descr,
+    keywords,
+    alternates: {
+      canonical,
+    },
     openGraph: {
       type: "website",
-      url: `/music/${item.href}`,
+      url: canonical,
       title,
       description: descr,
       images: [{ url: img }],

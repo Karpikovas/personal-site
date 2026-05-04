@@ -43,5 +43,10 @@ export const LiveOrchestralChamber: CollectionConfig = {
     optionalURLField('yandex', 'Yandex Music'),
     optionalURLField('zvuk', 'Zvuk'),
     optionalURLField('amazon', 'Amazon Music'),
+    {
+      name: 'keywords',
+      label: 'SEO Keywords',
+      type: 'text',
+    },
   ],
 }

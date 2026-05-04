@@ -17,6 +17,14 @@ export const Releases: CollectionConfig = {
       required: true,
     },
     {
+      name: 'href',
+      label: 'Slug (href)',
+      type: 'text',
+      required: true,
+      unique: true,
+      validate: validateSlugNoSpaces,
+    },
+    {
       name: 'type',
       label: 'Тип',
       type: 'select',
@@ -26,14 +34,6 @@ export const Releases: CollectionConfig = {
         { label: 'EP', value: 'ep' },
         { label: 'Album', value: 'album' },
       ],
-    },
-    {
-      name: 'href',
-      label: 'Slug (href)',
-      type: 'text',
-      required: true,
-      unique: true,
-      validate: validateSlugNoSpaces,
     },
     {
       name: 'group',
@@ -51,7 +51,7 @@ export const Releases: CollectionConfig = {
       label: 'Год релиза',
       type: 'number',
       min: 1900,
-      max: 2100,
+      max: 2200,
     },
     {
       name: 'description',
@@ -89,5 +89,10 @@ export const Releases: CollectionConfig = {
     optionalURLField('yandex', 'Yandex Music'),
     optionalURLField('zvuk', 'Zvuk'),
     optionalURLField('amazon', 'Amazon Music'),
+    {
+      name: 'keywords',
+      label: 'SEO Keywords',
+      type: 'text',
+    },
   ],
 }

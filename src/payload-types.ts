@@ -185,8 +185,8 @@ export interface Release {
   id: number;
   _order?: string | null;
   name: string;
-  type: 'single' | 'ep' | 'album';
   href: string;
+  type: 'single' | 'ep' | 'album';
   group: string;
   cardSubtitle?: string | null;
   releaseYear?: number | null;
@@ -215,6 +215,7 @@ export interface Release {
   yandex?: string | null;
   zvuk?: string | null;
   amazon?: string | null;
+  keywords?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -237,6 +238,7 @@ export interface LiveOrchestralChamber {
   yandex?: string | null;
   zvuk?: string | null;
   amazon?: string | null;
+  keywords?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -410,8 +412,8 @@ export interface MediaSelect<T extends boolean = true> {
 export interface ReleasesSelect<T extends boolean = true> {
   _order?: T;
   name?: T;
-  type?: T;
   href?: T;
+  type?: T;
   group?: T;
   cardSubtitle?: T;
   releaseYear?: T;
@@ -440,6 +442,7 @@ export interface ReleasesSelect<T extends boolean = true> {
   yandex?: T;
   zvuk?: T;
   amazon?: T;
+  keywords?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -461,6 +464,7 @@ export interface LiveOrchestralChamberSelect<T extends boolean = true> {
   yandex?: T;
   zvuk?: T;
   amazon?: T;
+  keywords?: T;
   updatedAt?: T;
   createdAt?: T;
 }

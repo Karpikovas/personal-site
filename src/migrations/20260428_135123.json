@@ -651,6 +651,12 @@
           "primaryKey": false,
           "notNull": false
         },
+        "keywords": {
+          "name": "keywords",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
         "updated_at": {
           "name": "updated_at",
           "type": "timestamp(3) with time zone",
@@ -848,6 +854,12 @@
         },
         "amazon": {
           "name": "amazon",
+          "type": "varchar",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "keywords": {
+          "name": "keywords",
           "type": "varchar",
           "primaryKey": false,
           "notNull": false
@@ -1958,6 +1970,6 @@
     "tables": {},
     "columns": {}
   },
-  "id": "2f93c9e4-3458-430a-b678-bcd0b2ce4585",
+  "id": "48b06c2b-677b-4116-b8e1-61968ff67ad4",
   "prevId": "00000000-0000-0000-0000-000000000000"
 }
