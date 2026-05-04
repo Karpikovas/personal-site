@@ -1,4 +1,5 @@
 import { withBasePath } from '@/constants/basePath'
+import { resolveUploadURL } from '@/lib/media-url'
 
 export type MusicCardItem = {
   amazon?: string
@@ -7,6 +8,7 @@ export type MusicCardItem = {
   cardType?: string
   group?: string
   href: string
+  id?: number
   imageURL: string
   name: string
   releaseYear?: number
@@ -28,8 +30,11 @@ export type MusicGroups = {
   }
 }
 
-const mapDocToMusicCard = (doc: any): MusicCardItem => {
-  const cover = typeof doc.cover === 'object' ? doc.cover : null
+export const mapDocToMusicCard = (doc: any, fallbackDoc?: any): MusicCardItem => {
+  const imageURL =
+    resolveUploadURL(doc?.cover) ||
+    resolveUploadURL(fallbackDoc?.cover) ||
+    withBasePath('/cover.jpg')
 
   return {
     amazon: doc.amazon ?? undefined,
@@ -38,7 +43,8 @@ const mapDocToMusicCard = (doc: any): MusicCardItem => {
     cardType: doc.cardType ?? undefined,
     group: doc.group ?? undefined,
     href: doc.href,
-    imageURL: cover?.url || cover?.thumbnailURL,
+    id: doc.id,
+    imageURL,
     name: doc.name,
     releaseYear: doc.releaseYear ?? undefined,
     spotify: doc.spotify ?? undefined,

@@ -1,4 +1,5 @@
 import { withBasePath } from '@/constants/basePath'
+import { resolveUploadRecord, resolveUploadURL } from '@/lib/media-url'
 
 export type PressListItem = {
   id: number
@@ -19,9 +20,16 @@ export type PressFeedPage = {
 
 export const PRESS_FEED_LIMIT = 10
 
-export const mapPressDocToListItem = (doc: any): PressListItem => {
+export const mapPressDocToListItem = (doc: any, fallbackDoc?: any): PressListItem => {
   const trackValue = typeof doc.relatedTrack?.value === 'object' ? doc.relatedTrack.value : null
-  const cover = trackValue && typeof trackValue.cover === 'object' ? trackValue.cover : null
+  const fallbackTrackValue =
+    typeof fallbackDoc?.relatedTrack?.value === 'object' ? fallbackDoc.relatedTrack.value : null
+  const cover = resolveUploadRecord(trackValue?.cover)
+  const fallbackCover = resolveUploadRecord(fallbackTrackValue?.cover)
+  const imageURL =
+    resolveUploadURL(trackValue?.cover) ||
+    resolveUploadURL(fallbackTrackValue?.cover) ||
+    withBasePath('/cover.jpg')
 
   return {
     id: doc.id,
@@ -29,8 +37,8 @@ export const mapPressDocToListItem = (doc: any): PressListItem => {
     href: doc.href,
     source: doc.source || undefined,
     createdDate: doc.createdDate || undefined,
-    imageURL: cover?.url || cover?.thumbnailURL || withBasePath('/cover.jpg'),
-    imageAlt: cover?.alt || doc.name,
+    imageURL,
+    imageAlt: cover?.alt || fallbackCover?.alt || doc.name,
   }
 }
 

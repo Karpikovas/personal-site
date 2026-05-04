@@ -20,7 +20,19 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Home() {
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: Promise<{ previewCollection?: string; previewId?: string }>;
+}) {
+  const { previewCollection, previewId } = await searchParams;
+  const normalizedPreviewCollection =
+    previewCollection === "releases" || previewCollection === "live-orchestral-chamber"
+      ? previewCollection
+      : undefined;
+  const normalizedPreviewId = previewId ? Number(previewId) : NaN;
+  const previewNumericId = Number.isFinite(normalizedPreviewId) ? normalizedPreviewId : undefined;
+
   const personJsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -49,7 +61,10 @@ export default function Home() {
 
       <div className="container mt-10 xl:mt-16 mb-6 xl:mb-12 mx-auto px-8 lg:px-20">
         <section id="releases" className="scroll-mt-28">
-          <Music />
+          <Music
+            previewCollection={normalizedPreviewCollection}
+            previewId={previewNumericId}
+          />
         </section>
 
         <Reveal className="mt-16 md:mt-20 xl:mt-24">

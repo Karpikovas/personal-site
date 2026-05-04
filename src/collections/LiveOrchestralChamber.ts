@@ -1,5 +1,6 @@
 import type { CollectionConfig } from 'payload'
 import { optionalURLField } from '../shared/payload/fields.ts'
+import { getMusicPreviewPath } from '../shared/payload/preview.ts'
 import { createCrossCollectionSlugValidator } from '../shared/payload/slug-validation.ts'
 
 export const LiveOrchestralChamber: CollectionConfig = {
@@ -8,6 +9,20 @@ export const LiveOrchestralChamber: CollectionConfig = {
   admin: {
     useAsTitle: 'name',
     defaultColumns: ['name', 'cardSubtitle'],
+    preview: (doc) =>
+      getMusicPreviewPath({
+        collection: 'live-orchestral-chamber',
+        href: doc?.href,
+        id: doc?.id,
+      }),
+    livePreview: {
+      url: ({ data }) =>
+        getMusicPreviewPath({
+          collection: 'live-orchestral-chamber',
+          href: data?.href,
+          id: data?.id,
+        }),
+    },
   },
   fields: [
     {

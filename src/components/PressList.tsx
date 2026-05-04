@@ -11,10 +11,12 @@ const ITEMS_PER_PAGE = 10;
 export const PressList = ({
   initialHasNextPage,
   initialNextPage,
+  livePreviewItem,
   press,
 }: {
   initialHasNextPage: boolean;
   initialNextPage: number | null;
+  livePreviewItem?: PressListItem;
   press: PressListItem[];
 }) => {
   const sentinelRef = useRef<HTMLDivElement>(null);
@@ -30,6 +32,21 @@ export const PressList = ({
     setNextPage(initialNextPage);
     setIsLoading(false);
   }, [press, initialHasNextPage, initialNextPage]);
+
+  useEffect(() => {
+    if (!livePreviewItem) return;
+
+    setItems((prev) => {
+      const index = prev.findIndex((item) => item.id === livePreviewItem.id);
+      if (index === -1) {
+        return [livePreviewItem, ...prev];
+      }
+
+      const next = [...prev];
+      next[index] = livePreviewItem;
+      return next;
+    });
+  }, [livePreviewItem]);
 
   const handleLoadMore = useCallback(() => {
     if (!hasNextPage || isLoading || !nextPage) return;

@@ -3,7 +3,7 @@ import { PUBLIC_PAGES } from "@/config/pages-url.config";
 import { MusicLinks } from "./MusicLinks";
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import { withBasePath } from "@/constants/basePath";
 import { SiApplemusic, SiSpotify, SiVk, SiYoutubemusic } from "react-icons/si";
 import { TbBrandYandex } from "react-icons/tb";
@@ -30,7 +30,19 @@ const ZvukIcon = () => (
 
 export const Navbar = () => {
   const pathname = usePathname();
+  const searchParams = useSearchParams();
   const [isNavOpen, setIsNavOpen] = useState(false);
+
+  const withPreviewContext = (path: string) => {
+    const previewCollection = searchParams.get("previewCollection");
+    const previewId = searchParams.get("previewId");
+    if (!previewCollection || !previewId) return path;
+
+    const params = new URLSearchParams();
+    params.set("previewCollection", previewCollection);
+    params.set("previewId", previewId);
+    return `${path}?${params.toString()}`;
+  };
 
   const navItems = useMemo(
     () => [
@@ -76,7 +88,7 @@ export const Navbar = () => {
           <MusicLinks {...links} />
         </div>
         <Link
-          href={withBasePath(PUBLIC_PAGES.HOME)}
+          href={withPreviewContext(withBasePath(PUBLIC_PAGES.HOME))}
           className="font-display text-center text-sm sm:text-base md:text-xl lg:text-3xl tracking-[.08em] lg:tracking-[.14em] font-semibold !text-stone-100 transition-opacity duration-300 hover:opacity-90"
         >
           LEYLA ROMANOVA
@@ -143,7 +155,7 @@ export const Navbar = () => {
                   {navItems.map((item) => (
                     <li key={item.label}>
                       <Link
-                        href={item.href}
+                        href={withPreviewContext(item.href)}
                         className="group inline-flex items-center gap-3 text-2xl tracking-tight !text-stone-200 transition-colors duration-300 hover:!text-stone-100"
                       >
                         <span className="h-[1px] w-0 bg-stone-400 transition-all duration-300 group-hover:w-8" />

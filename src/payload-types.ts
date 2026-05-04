@@ -191,7 +191,7 @@ export interface Release {
   cardSubtitle?: string | null;
   releaseYear?: number | null;
   description?: string | null;
-  cover?: (number | null) | Media;
+  cover: number | Media;
   items?:
     | {
         name: string;
@@ -229,7 +229,7 @@ export interface LiveOrchestralChamber {
   name: string;
   href: string;
   cardSubtitle?: string | null;
-  cover?: (number | null) | Media;
+  cover: number | Media;
   youtube?: string | null;
   video?: string | null;
   spotify?: string | null;

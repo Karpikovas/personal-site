@@ -1,7 +1,7 @@
 "use client";
 import type { MusicCardItem } from "@/lib/music-feed";
 import { MusicLinks } from "./MusicLinks";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 
 export const Group = ({
@@ -13,6 +13,18 @@ export const Group = ({
   type?: "single" | "album";
 }) => {
   const router = useRouter();
+  const searchParams = useSearchParams();
+
+  const buildHrefWithPreview = (path: string) => {
+    const previewCollection = searchParams.get("previewCollection");
+    const previewId = searchParams.get("previewId");
+    if (!previewCollection || !previewId) return path;
+
+    const params = new URLSearchParams();
+    params.set("previewCollection", previewCollection);
+    params.set("previewId", previewId);
+    return `${path}?${params.toString()}`;
+  };
 
   return (
     <div className="mb-14 md:mb-20 xl:mb-24">
@@ -27,7 +39,7 @@ export const Group = ({
         {items.map((item) => {
           const metaType = item.cardType || (item.releaseYear ? item.type : "");
           const hasMeta = Boolean(item.releaseYear || metaType);
-          const releaseHref = `/music/${item.href}`;
+          const releaseHref = buildHrefWithPreview(`/music/${item.href}`);
           const openRelease = () => router.push(releaseHref);
           const subtitle = item.cardSubtitle || (item.group ? item.group.trim() : "");
           const imageSrc = item.imageURL;

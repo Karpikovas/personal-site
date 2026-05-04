@@ -1,4 +1,6 @@
 import { Contacts } from "@/components/Contacts";
+import { PreviewContextKeeper } from "@/components/PreviewContextKeeper";
+import { PreviewLiveStateCache } from "@/components/PreviewLiveStateCache";
 import { Montserrat, PT_Serif } from "next/font/google";
 import "../globals.css";
 import { Navbar } from "@/components/Navbar";
@@ -39,6 +41,8 @@ export default function RootLayout({
             </div>
           </div>
           <Navbar />
+          <PreviewContextKeeper />
+          <PreviewLiveStateCache />
           {children}
 
           <div className="container mt-16 mb-8 mx-auto px-8 xl:px-38"></div>

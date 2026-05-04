@@ -1,5 +1,6 @@
 import type { CollectionConfig } from 'payload'
 import { optionalURLField } from '../shared/payload/fields.ts'
+import { getMusicPreviewPath } from '../shared/payload/preview.ts'
 import { createCrossCollectionSlugValidator } from '../shared/payload/slug-validation.ts'
 
 export const Releases: CollectionConfig = {
@@ -21,6 +22,20 @@ export const Releases: CollectionConfig = {
   admin: {
     useAsTitle: 'name',
     defaultColumns: ['name', 'type', 'releaseYear'],
+    preview: (doc) =>
+      getMusicPreviewPath({
+        collection: 'releases',
+        href: doc?.href,
+        id: doc?.id,
+      }),
+    livePreview: {
+      url: ({ data }) =>
+        getMusicPreviewPath({
+          collection: 'releases',
+          href: data?.href,
+          id: data?.id,
+        }),
+    },
   },
   fields: [
     {

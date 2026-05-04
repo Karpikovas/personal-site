@@ -1,4 +1,5 @@
 import type { CollectionConfig } from 'payload'
+import { getPressPreviewPath } from '../shared/payload/preview.ts'
 import { validateRequiredURL } from '../shared/payload/validators.ts'
 
 export const Press: CollectionConfig = {
@@ -7,6 +8,10 @@ export const Press: CollectionConfig = {
   admin: {
     useAsTitle: 'name',
     defaultColumns: ['name', 'source', 'createdDate'],
+    preview: (doc) => getPressPreviewPath(doc?.id),
+    livePreview: {
+      url: ({ data }) => getPressPreviewPath(data?.id),
+    },
   },
   fields: [
     {
