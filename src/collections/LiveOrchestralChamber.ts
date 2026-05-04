@@ -11,45 +11,65 @@ export const LiveOrchestralChamber: CollectionConfig = {
   },
   fields: [
     {
-      name: 'name',
-      label: 'Название',
-      type: 'text',
-      required: true,
-    },
-    {
-      name: 'href',
-      label: 'Slug (href)',
-      type: 'text',
-      required: true,
-      unique: true,
-      validate: createCrossCollectionSlugValidator({
-        currentCollection: 'live-orchestral-chamber',
-        otherCollection: 'releases',
-      }),
-    },
-    {
-      name: 'cardSubtitle',
-      label: 'Жанр',
-      type: 'text',
-    },
-    {
-      name: 'cover',
-      label: 'Обложка',
-      type: 'upload',
-      relationTo: 'media',
-    },
-    optionalURLField('youtube', 'YouTube'),
-    optionalURLField('video', 'Video URL'),
-    optionalURLField('spotify', 'Spotify'),
-    optionalURLField('apple', 'Apple Music'),
-    optionalURLField('vk', 'VK Music'),
-    optionalURLField('yandex', 'Yandex Music'),
-    optionalURLField('zvuk', 'Zvuk'),
-    optionalURLField('amazon', 'Amazon Music'),
-    {
-      name: 'keywords',
-      label: 'SEO Keywords',
-      type: 'text',
+      type: 'tabs',
+      tabs: [
+        {
+          label: 'Основная информация',
+          fields: [
+            {
+              name: 'name',
+              label: 'Название',
+              type: 'text',
+              required: true,
+            },
+            {
+              name: 'href',
+              label: 'Slug (href)',
+              type: 'text',
+              required: true,
+              unique: true,
+              validate: createCrossCollectionSlugValidator({
+                currentCollection: 'live-orchestral-chamber',
+                otherCollection: 'releases',
+              }),
+            },
+            {
+              name: 'cardSubtitle',
+              label: 'Жанр',
+              type: 'text',
+            },
+            {
+              name: 'cover',
+              label: 'Обложка',
+              type: 'upload',
+              relationTo: 'media',
+            },
+          ],
+        },
+        {
+          label: 'Ссылки',
+          fields: [
+            optionalURLField('youtube', 'YouTube'),
+            optionalURLField('video', 'Video URL'),
+            optionalURLField('spotify', 'Spotify'),
+            optionalURLField('apple', 'Apple Music'),
+            optionalURLField('vk', 'VK Music'),
+            optionalURLField('yandex', 'Yandex Music'),
+            optionalURLField('zvuk', 'Zvuk'),
+            optionalURLField('amazon', 'Amazon Music'),
+          ],
+        },
+        {
+          label: 'SEO',
+          fields: [
+            {
+              name: 'keywords',
+              label: 'SEO Keywords',
+              type: 'text',
+            },
+          ],
+        },
+      ],
     },
   ],
 }
