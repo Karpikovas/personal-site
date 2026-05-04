@@ -5,6 +5,19 @@ import { createCrossCollectionSlugValidator } from '../shared/payload/slug-valid
 export const Releases: CollectionConfig = {
   slug: 'releases',
   orderable: true,
+  hooks: {
+    beforeChange: [
+      ({ data, operation }) => {
+        if (!data) return data
+
+        if (operation === 'create' && data.type !== 'album') {
+          data.items = []
+        }
+
+        return data
+      },
+    ],
+  },
   admin: {
     useAsTitle: 'name',
     defaultColumns: ['name', 'type', 'releaseYear'],
@@ -77,6 +90,9 @@ export const Releases: CollectionConfig = {
               name: 'items',
               label: 'Треки альбома',
               type: 'array',
+              admin: {
+                condition: (_, siblingData) => siblingData?.type === 'album',
+              },
               fields: [
                 { name: 'name', label: 'Название трека', type: 'text', required: true },
                 { name: 'youtube', label: 'YouTube', type: 'text' },
