@@ -1,6 +1,6 @@
 import type { CollectionConfig } from 'payload'
 import { optionalURLField } from '../shared/payload/fields.ts'
-import { validateSlugNoSpaces } from '../shared/payload/validators.ts'
+import { createCrossCollectionSlugValidator } from '../shared/payload/slug-validation.ts'
 
 export const LiveOrchestralChamber: CollectionConfig = {
   slug: 'live-orchestral-chamber',
@@ -22,7 +22,10 @@ export const LiveOrchestralChamber: CollectionConfig = {
       type: 'text',
       required: true,
       unique: true,
-      validate: validateSlugNoSpaces,
+      validate: createCrossCollectionSlugValidator({
+        currentCollection: 'live-orchestral-chamber',
+        otherCollection: 'releases',
+      }),
     },
     {
       name: 'cardSubtitle',
