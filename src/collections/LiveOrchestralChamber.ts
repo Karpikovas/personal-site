@@ -43,6 +43,7 @@ export const LiveOrchestralChamber: CollectionConfig = {
               label: 'Обложка',
               type: 'upload',
               relationTo: 'media',
+              required: true,
             },
           ],
         },
