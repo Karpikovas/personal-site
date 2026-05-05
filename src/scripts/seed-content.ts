@@ -156,7 +156,6 @@ export async function script(config: any) {
         name: item.name,
         type: item.type,
         href: item.href,
-        group: item.group,
         cardSubtitle: item.cardSubtitle,
         releaseYear: toNumber(item.releaseYear),
         description: item.description,

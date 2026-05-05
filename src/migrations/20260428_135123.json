@@ -573,12 +573,6 @@
           "primaryKey": false,
           "notNull": true
         },
-        "group": {
-          "name": "group",
-          "type": "varchar",
-          "primaryKey": false,
-          "notNull": true
-        },
         "card_subtitle": {
           "name": "card_subtitle",
           "type": "varchar",

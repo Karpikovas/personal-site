@@ -69,7 +69,6 @@ export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   	"name" varchar NOT NULL,
   	"type" "enum_releases_type" NOT NULL,
   	"href" varchar NOT NULL,
-  	"group" varchar NOT NULL,
   	"card_subtitle" varchar,
   	"release_year" numeric,
   	"description" varchar,

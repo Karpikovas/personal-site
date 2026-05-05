@@ -73,12 +73,6 @@ export const Releases: CollectionConfig = {
               ],
             },
             {
-              name: 'group',
-              label: 'Группа (жанровая секция)',
-              type: 'text',
-              required: true,
-            },
-            {
               name: 'cardSubtitle',
               label: 'Жанр',
               type: 'text',

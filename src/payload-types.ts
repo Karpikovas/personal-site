@@ -187,7 +187,6 @@ export interface Release {
   name: string;
   href: string;
   type: 'single' | 'ep' | 'album';
-  group: string;
   cardSubtitle?: string | null;
   releaseYear?: number | null;
   description?: string | null;
@@ -414,7 +413,6 @@ export interface ReleasesSelect<T extends boolean = true> {
   name?: T;
   href?: T;
   type?: T;
-  group?: T;
   cardSubtitle?: T;
   releaseYear?: T;
   description?: T;
