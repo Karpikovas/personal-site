@@ -1,6 +1,7 @@
 import { Contacts } from "@/components/Contacts";
 import { PreviewContextKeeper } from "@/components/PreviewContextKeeper";
 import { PreviewLiveStateCache } from "@/components/PreviewLiveStateCache";
+import { Suspense } from "react";
 import { Montserrat, PT_Serif } from "next/font/google";
 import "../globals.css";
 import { Navbar } from "@/components/Navbar";
@@ -40,9 +41,13 @@ export default function RootLayout({
               </div>
             </div>
           </div>
-          <Navbar />
-          <PreviewContextKeeper />
-          <PreviewLiveStateCache />
+          <Suspense fallback={null}>
+            <Navbar />
+          </Suspense>
+          <Suspense fallback={null}>
+            <PreviewContextKeeper />
+            <PreviewLiveStateCache />
+          </Suspense>
           {children}
 
           <div className="container mt-16 mb-8 mx-auto px-8 xl:px-38"></div>

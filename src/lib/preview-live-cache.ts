@@ -1,3 +1,4 @@
+import { mergePreviewData } from "@/lib/preview-data-merge";
 const PREVIEW_LIVE_CACHE_KEY = "payload-live-preview-cache-v1";
 
 type PreviewCacheMap = Record<string, any>;
@@ -34,7 +35,9 @@ export const putPreviewLiveData = ({
   id: number | string;
 }) => {
   const cache = readCacheMap();
-  cache[getDocKey(collection, id)] = data;
+  const key = getDocKey(collection, id);
+  const existing = cache[key];
+  cache[key] = existing ? mergePreviewData(existing, data) : data;
   writeCacheMap(cache);
 };
 

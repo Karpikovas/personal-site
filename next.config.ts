@@ -26,14 +26,8 @@ const nextConfig: NextConfig = {
       }
     : undefined,
   output: isPagesPreview ? "export" : undefined,
-  experimental: {
-    reactCompiler: true,
-  },
   reactStrictMode: true,
   trailingSlash: isPagesPreview,
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
 };
 
 export default withPayload(nextConfig);

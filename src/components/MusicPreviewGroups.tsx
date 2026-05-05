@@ -5,6 +5,7 @@ import { useLivePreview } from "@payloadcms/live-preview-react";
 
 import { Group } from "@/components/Group";
 import { Reveal } from "@/components/Reveal";
+import { mergePreviewData } from "@/lib/preview-data-merge";
 import { getPreviewLiveData } from "@/lib/preview-live-cache";
 import { mapDocToMusicCard, type MusicGroups } from "@/lib/music-feed";
 
@@ -44,7 +45,7 @@ const MusicPreviewGroupsWithLive = ({
     const id = previewDoc?.id as number | undefined;
     const cached = getPreviewLiveData({ collection: previewCollection, id });
     if (!cached) return previewDoc;
-    return { ...previewDoc, ...cached };
+    return mergePreviewData(previewDoc, cached);
   }, [previewCollection, previewDoc]);
 
   const { data } = useLivePreview({

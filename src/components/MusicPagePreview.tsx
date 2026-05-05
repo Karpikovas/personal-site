@@ -4,6 +4,7 @@ import { useMemo } from "react";
 import { useLivePreview } from "@payloadcms/live-preview-react";
 
 import { MusicLinks } from "@/components/MusicLinks";
+import { mergePreviewData } from "@/lib/preview-data-merge";
 import { getPreviewLiveData } from "@/lib/preview-live-cache";
 import { mapMusicDoc, type MusicCollectionSlug } from "@/lib/music-page";
 
@@ -30,7 +31,7 @@ export const MusicPagePreview = ({
   const seededInitialData = useMemo(() => {
     const cached = getPreviewLiveData({ collection, id });
     if (!cached) return initialDoc;
-    return { ...initialDoc, ...cached };
+    return mergePreviewData(initialDoc, cached);
   }, [collection, id, initialDoc]);
 
   const { data } = useLivePreview({

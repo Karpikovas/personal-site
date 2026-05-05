@@ -3,6 +3,7 @@
 import { withBasePath } from "@/constants/basePath";
 import type { PressListItem } from "@/lib/press-feed";
 import Link from "next/link";
+import type { RefObject } from "react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useInView } from "framer-motion";
 
@@ -20,7 +21,10 @@ export const PressList = ({
   press: PressListItem[];
 }) => {
   const sentinelRef = useRef<HTMLDivElement>(null);
-  const sentinelInView = useInView(sentinelRef, { margin: "0px 0px 320px 0px", amount: 0 });
+  const sentinelInView = useInView(sentinelRef as unknown as RefObject<Element>, {
+    margin: "0px 0px 320px 0px",
+    amount: 0,
+  });
   const [items, setItems] = useState<PressListItem[]>(press);
   const [hasNextPage, setHasNextPage] = useState(initialHasNextPage);
   const [nextPage, setNextPage] = useState<number | null>(initialNextPage);
