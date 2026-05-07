@@ -8,11 +8,12 @@ mkdir -p /app/node_modules
 find /app/node_modules -mindepth 1 -maxdepth 1 -exec rm -rf {} +
 pnpm install --include=optional --store-dir /app/.pnpm-store --force
 
-## Docker Desktop/macOS: file watching через bind mount стабильнее в polling
+# Docker Desktop/macOS: file watching через bind mount стабильнее в polling
 #export CHOKIDAR_USEPOLLING=true
 #export CHOKIDAR_INTERVAL=300
 #export WATCHPACK_POLLING=true
+#
+#pnpm run dev
 
-pnpm run payload:migrate && pnpm run payload:seed
+#pnpm run payload:migrate && pnpm run payload:seed
 pnpm run build && pnpm run start
-

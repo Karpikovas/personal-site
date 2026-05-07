@@ -1,7 +1,5 @@
 FROM node:22-bookworm-slim
 
-ENV NODE_ENV=development
-
 EXPOSE 3000
 WORKDIR /app
 

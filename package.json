@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "NODE_ENV=production next build",
-    "start": "next start",
+    "dev": "next dev --webpack",
+    "prebuild": "rm -rf .next",
+    "build": "NODE_ENV=production next build --webpack",
+    "start": "NODE_ENV=production next start",
     "lint": "next lint",
     "payload": "PAYLOAD_CONFIG_PATH=src/payload.config.ts payload",
     "payload:seed": "PAYLOAD_CONFIG_PATH=src/payload.config.ts payload seed",
