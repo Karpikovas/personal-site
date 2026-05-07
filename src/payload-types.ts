@@ -189,10 +189,13 @@ export interface Release {
   id: number;
   _order?: string | null;
   name: string;
+  /**
+   * Часть ссылки страницы. Должна быть уникальной среди RELEASES и LIVE Orchestral & Chamber.
+   */
   href: string;
   type: 'single' | 'ep' | 'album';
   cardSubtitle?: string | null;
-  releaseYear?: number | null;
+  releaseYear: number;
   description?: string | null;
   cover: number | Media;
   isVisible?: boolean | null;
@@ -242,6 +245,9 @@ export interface LiveOrchestralChamber {
   id: number;
   _order?: string | null;
   name: string;
+  /**
+   * Часть ссылки страницы. Должна быть уникальной среди RELEASES и LIVE Orchestral & Chamber.
+   */
   href: string;
   cardSubtitle?: string | null;
   cover: number | Media;
@@ -279,6 +285,9 @@ export interface Press {
   name: string;
   href: string;
   source?: string | null;
+  /**
+   * Формат даты: дд.мм.гггг
+   */
   createdDate?: string | null;
   isVisible?: boolean | null;
   relatedTrack:

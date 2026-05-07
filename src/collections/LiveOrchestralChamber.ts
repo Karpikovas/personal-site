@@ -1,14 +1,22 @@
 import type { CollectionConfig } from 'payload'
 import { optionalURLField } from '../shared/payload/fields.ts'
+import { setOrderableToTopOnCreate } from '../shared/payload/orderable.ts'
 import { getMusicPreviewPath } from '../shared/payload/preview.ts'
 import { createCrossCollectionSlugValidator } from '../shared/payload/slug-validation.ts'
 
 export const LiveOrchestralChamber: CollectionConfig = {
   slug: 'live-orchestral-chamber',
   orderable: true,
+  hooks: {
+    beforeChange: [setOrderableToTopOnCreate({ collection: 'live-orchestral-chamber' })],
+  },
   admin: {
     useAsTitle: 'name',
-    defaultColumns: ['name', 'cardSubtitle'],
+    defaultColumns: ['name', 'cardSubtitle', 'isVisible'],
+    pagination: {
+      defaultLimit: 50,
+      limits: [25, 50, 100],
+    },
     preview: (doc) =>
       getMusicPreviewPath({
         collection: 'live-orchestral-chamber',
@@ -43,6 +51,10 @@ export const LiveOrchestralChamber: CollectionConfig = {
               type: 'text',
               required: true,
               unique: true,
+              admin: {
+                description:
+                  'Часть ссылки страницы. Должна быть уникальной среди RELEASES и LIVE Orchestral & Chamber.',
+              },
               validate: createCrossCollectionSlugValidator({
                 currentCollection: 'live-orchestral-chamber',
                 otherCollection: 'releases',

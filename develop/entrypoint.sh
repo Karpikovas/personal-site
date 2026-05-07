@@ -13,7 +13,7 @@ pnpm install --include=optional --store-dir /app/.pnpm-store --force
 #export CHOKIDAR_INTERVAL=300
 #export WATCHPACK_POLLING=true
 #
-#pnpm run dev
+pnpm run dev
 
-pnpm run payload:migrate && pnpm run payload:seed
-pnpm run build && pnpm run start
+#pnpm run payload:migrate && pnpm run payload:seed
+#pnpm run build && pnpm run start

@@ -1,13 +1,21 @@
 import type { CollectionConfig } from 'payload'
+import { setOrderableToTopOnCreate } from '../shared/payload/orderable.ts'
 import { getPressPreviewPath } from '../shared/payload/preview.ts'
 import { validateRequiredURL } from '../shared/payload/validators.ts'
 
 export const Press: CollectionConfig = {
   slug: 'press',
   orderable: true,
+  hooks: {
+    beforeChange: [setOrderableToTopOnCreate({ collection: 'press' })],
+  },
   admin: {
     useAsTitle: 'name',
     defaultColumns: ['name', 'source', 'createdDate'],
+    pagination: {
+      defaultLimit: 50,
+      limits: [25, 50, 100],
+    },
     preview: (doc) => getPressPreviewPath(doc?.id),
     livePreview: {
       url: ({ data }) => getPressPreviewPath(data?.id),
@@ -37,8 +45,10 @@ export const Press: CollectionConfig = {
       label: 'Дата публикации',
       type: 'date',
       admin: {
+        description: 'Формат даты: дд.мм.гггг',
         date: {
           pickerAppearance: 'dayOnly',
+          displayFormat: 'dd.MM.yyyy',
         },
       },
     },

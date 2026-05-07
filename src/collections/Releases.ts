@@ -1,5 +1,6 @@
 import type { CollectionConfig } from 'payload'
 import { optionalURLField } from '../shared/payload/fields.ts'
+import { setOrderableToTopOnCreate } from '../shared/payload/orderable.ts'
 import { getMusicPreviewPath } from '../shared/payload/preview.ts'
 import { createCrossCollectionSlugValidator } from '../shared/payload/slug-validation.ts'
 
@@ -21,6 +22,7 @@ export const Releases: CollectionConfig = {
   orderable: true,
   hooks: {
     beforeChange: [
+      setOrderableToTopOnCreate({ collection: 'releases' }),
       ({ data, operation }) => {
         if (!data) return data
 
@@ -34,7 +36,11 @@ export const Releases: CollectionConfig = {
   },
   admin: {
     useAsTitle: 'name',
-    defaultColumns: ['name', 'type', 'releaseYear'],
+    defaultColumns: ['name', 'type', 'releaseYear', 'isVisible'],
+    pagination: {
+      defaultLimit: 50,
+      limits: [25, 50, 100],
+    },
     preview: (doc) =>
       getMusicPreviewPath({
         collection: 'releases',
@@ -69,6 +75,10 @@ export const Releases: CollectionConfig = {
               type: 'text',
               required: true,
               unique: true,
+              admin: {
+                description:
+                  'Часть ссылки страницы. Должна быть уникальной среди RELEASES и LIVE Orchestral & Chamber.',
+              },
               validate: createCrossCollectionSlugValidator({
                 currentCollection: 'releases',
                 otherCollection: 'live-orchestral-chamber',
@@ -94,6 +104,7 @@ export const Releases: CollectionConfig = {
               name: 'releaseYear',
               label: 'Год релиза',
               type: 'number',
+              required: true,
               min: 1900,
               max: 2200,
             },
