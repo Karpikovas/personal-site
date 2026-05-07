@@ -3,6 +3,19 @@ import { optionalURLField } from '../shared/payload/fields.ts'
 import { getMusicPreviewPath } from '../shared/payload/preview.ts'
 import { createCrossCollectionSlugValidator } from '../shared/payload/slug-validation.ts'
 
+const getReleaseTypeValue = (value: unknown): string | undefined => {
+  if (typeof value === 'string') return value
+
+  if (value && typeof value === 'object' && 'value' in value) {
+    const innerValue = (value as { value?: unknown }).value
+    if (typeof innerValue === 'string') return innerValue
+  }
+
+  return undefined
+}
+
+const isAlbumType = (value: unknown): boolean => getReleaseTypeValue(value)?.toLowerCase() === 'album'
+
 export const Releases: CollectionConfig = {
   slug: 'releases',
   orderable: true,
@@ -11,7 +24,7 @@ export const Releases: CollectionConfig = {
       ({ data, operation }) => {
         if (!data) return data
 
-        if (operation === 'create' && data.type !== 'album') {
+        if (operation === 'create' && !isAlbumType(data.type)) {
           data.items = []
         }
 
@@ -106,23 +119,28 @@ export const Releases: CollectionConfig = {
               },
             },
             {
-              name: 'items',
-              label: 'Треки альбома',
-              type: 'array',
+              type: 'row',
               admin: {
-                condition: (_, siblingData) => siblingData?.type === 'album',
+                condition: (data, siblingData) => isAlbumType(siblingData?.type ?? data?.type),
               },
               fields: [
-                { name: 'name', label: 'Название трека', type: 'text', required: true },
-                { name: 'youtube', label: 'YouTube', type: 'text' },
-                { name: 'youtube_music', label: 'YouTube Music', type: 'text' },
-                { name: 'spotify', label: 'Spotify', type: 'text' },
-                { name: 'apple', label: 'Apple Music', type: 'text' },
-                { name: 'vk', label: 'VK Music', type: 'text' },
-                { name: 'yandex', label: 'Yandex Music', type: 'text' },
-                { name: 'zvuk', label: 'Zvuk', type: 'text' },
-                { name: 'amazon', label: 'Amazon Music', type: 'text' },
-                { name: 'video', label: 'Video URL', type: 'text' },
+                {
+                  name: 'items',
+                  label: 'Треки альбома',
+                  type: 'array',
+                  fields: [
+                    { name: 'name', label: 'Название трека', type: 'text', required: true },
+                    { name: 'youtube', label: 'YouTube', type: 'text' },
+                    { name: 'youtube_music', label: 'YouTube Music', type: 'text' },
+                    { name: 'spotify', label: 'Spotify', type: 'text' },
+                    { name: 'apple', label: 'Apple Music', type: 'text' },
+                    { name: 'vk', label: 'VK Music', type: 'text' },
+                    { name: 'yandex', label: 'Yandex Music', type: 'text' },
+                    { name: 'zvuk', label: 'Zvuk', type: 'text' },
+                    { name: 'amazon', label: 'Amazon Music', type: 'text' },
+                    { name: 'video', label: 'Video URL', type: 'text' },
+                  ],
+                },
               ],
             },
           ],
