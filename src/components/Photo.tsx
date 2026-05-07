@@ -20,7 +20,7 @@ export const Photo = () => {
       <div className="hero-text-contrast-intro absolute inset-0 bg-[linear-gradient(to_top,rgba(0,0,0,0.96)_0%,rgba(0,0,0,0.86)_23%,rgba(0,0,0,0.42)_41%,rgba(0,0,0,0)_63%)]" />
 
       <div className="absolute inset-0 z-10 flex items-end">
-        <div className="container mx-auto w-full px-8 lg:px-20 pb-[max(env(safe-area-inset-bottom),4.1rem)] md:pb-[5.5rem] lg:pb-[6.5rem]">
+        <div className="container mx-auto w-full px-5 sm:px-6 md:px-8 lg:px-14 xl:px-20 pb-[max(env(safe-area-inset-bottom),1.75rem)] sm:pb-[max(env(safe-area-inset-bottom),2.1rem)] md:pb-[3.1rem] lg:pb-[4rem]">
           <div className="hero-copy-delayed hero-enter hero-stagger max-w-[17rem] sm:max-w-2xl md:max-w-3xl text-left">
             <p className="font-display uppercase tracking-[0.2em] text-[11px] md:text-xs lg:text-sm 2xl:text-lg !text-stone-300/80">
               <span className="whitespace-nowrap">Multi-genre Composer</span>

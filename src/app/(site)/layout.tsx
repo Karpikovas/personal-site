@@ -2,7 +2,7 @@ import { Contacts } from "@/components/Contacts";
 import { PreviewContextKeeper } from "@/components/PreviewContextKeeper";
 import { PreviewLiveStateCache } from "@/components/PreviewLiveStateCache";
 import { Suspense } from "react";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Montserrat, PT_Serif } from "next/font/google";
 import "../globals.css";
 import { Navbar } from "@/components/Navbar";
@@ -29,6 +29,11 @@ export async function generateMetadata(): Promise<Metadata> {
   const siteConfig = await getSiteConfig();
   return buildSiteMetadata(siteConfig);
 }
+
+export const viewport: Viewport = {
+  themeColor: "#000000",
+  colorScheme: "dark",
+};
 
 export default function RootLayout({
   children,

@@ -83,17 +83,17 @@ export const Navbar = () => {
 
   return (
     <header className="sticky top-0 z-[90]">
-      <div className="flex items-center relative justify-between bg-neutral-950/82 backdrop-blur-md py-4 lg:py-6 px-8 lg:px-8 xl:px-12 border-b border-stone-800/70 shadow-[0_18px_35px_-30px_rgba(0,0,0,0.95)]">
-        <div className="hidden text-2xl space-x-4 lg:flex lg:w-72 !text-stone-500">
+      <div className="flex items-center relative justify-between bg-neutral-950/82 backdrop-blur-md py-4 lg:py-6 px-5 sm:px-6 lg:px-8 xl:px-12 border-b border-stone-800/70 shadow-[0_18px_35px_-30px_rgba(0,0,0,0.95)]">
+        <div className="hidden text-2xl space-x-4 lg:flex lg:w-72 !text-stone-100">
           <MusicLinks {...links} />
         </div>
         <Link
           href={withPreviewContext(withBasePath(PUBLIC_PAGES.HOME))}
-          className="font-display text-center text-sm sm:text-base md:text-xl lg:text-3xl tracking-[.08em] lg:tracking-[.14em] font-semibold !text-stone-100 transition-opacity duration-300 hover:opacity-90"
+          className="font-display flex-1 text-left text-sm sm:text-base md:text-xl lg:flex-none lg:text-center lg:text-3xl tracking-[.08em] lg:tracking-[.14em] font-semibold !text-stone-100 transition-opacity duration-300 hover:opacity-90"
         >
           LEYLA ROMANOVA
         </Link>
-        <div className="relative z-[95] flex w-32 justify-end lg:w-72">
+        <div className="relative z-[95] ml-4 flex w-auto justify-end lg:w-72">
           <button
             type="button"
             aria-expanded={isNavOpen}
@@ -105,7 +105,7 @@ export const Navbar = () => {
             }}
             className="group inline-flex min-h-9 min-w-[5.5rem] items-center justify-center gap-2 rounded-full border border-stone-600/90 bg-stone-900/80 px-3 py-1.5 transition-colors duration-300 hover:border-stone-400/95 hover:bg-stone-800/85 md:min-h-10 md:min-w-[6.2rem] md:px-3.5 md:py-2"
           >
-            <span className="text-[11px] font-semibold uppercase tracking-[0.17em] !text-stone-100 md:text-[13px] md:tracking-[0.2em]">
+            <span className="font-display text-[11px] font-semibold uppercase tracking-[0.17em] !text-stone-100 md:text-[13px] md:tracking-[0.2em]">
               Menu
             </span>
             <span className="relative h-4 w-4 md:h-5 md:w-5">

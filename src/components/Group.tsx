@@ -29,13 +29,13 @@ export const Group = ({
   return (
     <div className="mb-14 md:mb-20 xl:mb-24">
       <div className="flex flex-row gap-4 lg:gap-10 items-baseline mb-6 lg:mb-10">
-        <h2 className="w-auto pb-2 tracking-tight text-lg md:text-2xl lg:text-3xl font-semibold text-nowrap !text-stone-300">
+        <h2 className="font-display w-auto pb-2 tracking-tight text-lg md:text-2xl lg:text-3xl font-semibold text-nowrap !text-stone-300">
           {name}
         </h2>
         <hr className="w-full" />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-x-12 md:gap-x-14 xl:gap-x-20 gap-y-14 md:gap-y-16">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 md:gap-x-14 xl:gap-x-20 gap-y-14 md:gap-y-16">
         {items.map((item) => {
           const metaType = item.cardType || (item.releaseYear ? item.type : "");
           const hasMeta = Boolean(item.releaseYear || metaType);

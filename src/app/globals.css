@@ -3,11 +3,12 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #000000;
+  --foreground: #ededed;
   --surface-soft: rgba(28, 25, 23, 0.62);
   --surface-strong: rgba(28, 25, 23, 0.82);
   --card-shadow: 0 20px 45px -28px rgba(0, 0, 0, 0.75);
+  color-scheme: dark;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,6 +20,7 @@
 
 html {
   scroll-behavior: smooth;
+  background: #000;
 }
 
 body {

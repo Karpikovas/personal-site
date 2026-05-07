@@ -70,14 +70,12 @@ export const BioSection = () => {
             a{" "}
             <span className="whitespace-nowrap">multi-genre composer</span> <span className="whitespace-nowrap">whose work spans</span> nearly
             the entire musical spectrum, from{" "}
-            <span className="whitespace-nowrap">symphonic grandeur</span>
+            <span className="whitespace-nowrap">symphonic grandeur</span>{" "}
             to <span className="whitespace-nowrap">cutting-edge</span> electronic soundscapes.
           </p>
           <div className="bio-tags xl:pt-4">
             <span className="bio-tag">Cinematic</span>
-            <span className="bio-tag">Electronic</span>
-            <span className="bio-tag">Chamber</span>
-            <span className="bio-tag">Orchestral</span>
+            <span className="bio-tag">Multi-genre</span>
           </div>
         </div>
 
@@ -113,14 +111,12 @@ export const BioSection = () => {
                 <span className="font-display font-semibold !text-stone-100">Leyla Romanova</span> is a{" "}
                 <span className="whitespace-nowrap">multi-genre composer</span> <span className="whitespace-nowrap">whose work spans</span> nearly the entire
                 <span className="whitespace-nowrap">musical spectrum</span>, from{" "}
-                <span className="whitespace-nowrap">symphonic grandeur</span>
+                <span className="whitespace-nowrap">symphonic grandeur</span>{" "}
                 to <span className="whitespace-nowrap">cutting-edge</span> electronic soundscapes.
               </p>
               <div className="bio-tags">
                 <span className="bio-tag">Cinematic</span>
-                <span className="bio-tag">Electronic</span>
-                <span className="bio-tag">Chamber</span>
-                <span className="bio-tag">Orchestral</span>
+                <span className="bio-tag">Multi-genre</span>
               </div>
             </div>
           </article>

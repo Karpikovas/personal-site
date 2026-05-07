@@ -15,5 +15,5 @@ pnpm install --include=optional --store-dir /app/.pnpm-store --force
 #
 #pnpm run dev
 
-#pnpm run payload:migrate && pnpm run payload:seed
+pnpm run payload:migrate && pnpm run payload:seed
 pnpm run build && pnpm run start

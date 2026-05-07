@@ -6,11 +6,17 @@ import path from 'path'
 const INITIAL_SITE_SEO = {
   title: 'Leyla Romanova',
   description:
-    'Official website of composer Leyla Romanova who creates music of different genres – from orchestral, chamber and neoclassical piano music to trance-techno.',
+    'Official website of composer Leyla Romanova who creates cinematic music across multiple genres: symphonic, electronic, jazz and beyond.',
   keywords:
-    'Leyla Romanova, official website, composer, orchestral, chamber, neoclassical piano music, trance-techno, композитор, Лейла Романова, фортепианная неоклассика, оркестровые произведения, техно',
+    'Leyla Romanova, official website, composer, cinematic music, multi-genre, symphonic music, electronic music, jazz, композитор, Лейла Романова',
   title_meta: 'Leyla Romanova - composer - musical artist',
   url: '/',
+  image: '/cover-new.jpg',
+}
+
+const LEGACY_SITE_SEO = {
+  description:
+    'Official website of composer Leyla Romanova who creates music of different genres – from orchestral, chamber and neoclassical piano music to trance-techno.',
   image: '/preview.jpg',
 }
 
@@ -155,12 +161,14 @@ export async function script(config: any) {
   })
 
   const shouldSeedSiteSEO =
-    !existingSiteSEO?.title &&
-    !existingSiteSEO?.title_meta &&
-    !existingSiteSEO?.description &&
-    !existingSiteSEO?.keywords &&
-    !existingSiteSEO?.url &&
-    !existingSiteSEO?.image
+    (!existingSiteSEO?.title &&
+      !existingSiteSEO?.title_meta &&
+      !existingSiteSEO?.description &&
+      !existingSiteSEO?.keywords &&
+      !existingSiteSEO?.url &&
+      !existingSiteSEO?.image) ||
+    existingSiteSEO?.description === LEGACY_SITE_SEO.description ||
+    existingSiteSEO?.image === LEGACY_SITE_SEO.image
 
   if (shouldSeedSiteSEO) {
     await p.updateGlobal({
