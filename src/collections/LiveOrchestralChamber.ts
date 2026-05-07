@@ -60,6 +60,15 @@ export const LiveOrchestralChamber: CollectionConfig = {
               relationTo: 'media',
               required: true,
             },
+            {
+              name: 'isVisible',
+              label: 'Показывать на сайте',
+              type: 'checkbox',
+              defaultValue: true,
+              access: {
+                read: ({ req }) => Boolean(req.user),
+              },
+            },
           ],
         },
         {
@@ -79,9 +88,28 @@ export const LiveOrchestralChamber: CollectionConfig = {
           label: 'SEO',
           fields: [
             {
+              name: 'seoTitle',
+              label: 'SEO Title',
+              type: 'text',
+              admin: {
+                description: 'По умолчанию используется название произведения. Заполняйте только если нужно переопределить.',
+              },
+            },
+            {
+              name: 'seoDescription',
+              label: 'SEO Description',
+              type: 'textarea',
+              admin: {
+                description: 'По умолчанию используется описание страницы. Заполняйте только если нужно переопределить.',
+              },
+            },
+            {
               name: 'keywords',
               label: 'SEO Keywords',
               type: 'text',
+              admin: {
+                description: 'К этим ключевым словам автоматически добавятся базовые ключевые слова из глобальных SEO-настроек.',
+              },
             },
           ],
         },

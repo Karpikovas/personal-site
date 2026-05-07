@@ -21,13 +21,14 @@ export type MusicPageItem = {
   cardSubtitle?: string;
   cardType?: string;
   description?: string;
-  group?: string;
   href: string;
   imageURL: string;
   items?: TrackLinkItem[];
   keywords?: string;
   name: string;
   releaseYear?: number;
+  seoDescription?: string;
+  seoTitle?: string;
   spotify?: string;
   type?: string;
   video?: string;
@@ -71,13 +72,14 @@ export const mapReleaseDoc = (doc: any, fallbackDoc?: any): MusicPageItem => {
     cardSubtitle: doc?.cardSubtitle ?? undefined,
     cardType: doc?.cardType ?? undefined,
     description: doc?.description ?? undefined,
-    group: doc?.group ?? undefined,
     href: doc?.href,
     imageURL,
     items: Array.isArray(doc?.items) ? doc.items.map(mapTrack) : undefined,
     keywords: doc?.keywords ?? undefined,
     name: doc?.name,
     releaseYear: doc?.releaseYear ?? undefined,
+    seoDescription: doc?.seoDescription ?? undefined,
+    seoTitle: doc?.seoTitle ?? undefined,
     spotify: getDocLink(doc, "spotify"),
     type: doc?.type ?? undefined,
     video: getDocLink(doc, "video"),
@@ -103,6 +105,8 @@ export const mapLiveDoc = (doc: any, fallbackDoc?: any): MusicPageItem => {
     imageURL,
     keywords: doc?.keywords ?? undefined,
     name: doc?.name,
+    seoDescription: doc?.seoDescription ?? undefined,
+    seoTitle: doc?.seoTitle ?? undefined,
     spotify: getDocLink(doc, "spotify"),
     video: getDocLink(doc, "video"),
     vk: getDocLink(doc, "vk"),

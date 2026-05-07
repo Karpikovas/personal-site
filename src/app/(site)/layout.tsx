@@ -2,10 +2,12 @@ import { Contacts } from "@/components/Contacts";
 import { PreviewContextKeeper } from "@/components/PreviewContextKeeper";
 import { PreviewLiveStateCache } from "@/components/PreviewLiveStateCache";
 import { Suspense } from "react";
+import type { Metadata } from "next";
 import { Montserrat, PT_Serif } from "next/font/google";
 import "../globals.css";
 import { Navbar } from "@/components/Navbar";
-import { metadata } from "@/constants/siteMetaData";
+import { buildSiteMetadata } from "@/constants/siteMetaData";
+import { getSiteConfig } from "@/lib/site-seo";
 
 import "yet-another-react-lightbox/plugins/captions.css";
 import "yet-another-react-lightbox/styles.css";
@@ -23,7 +25,10 @@ const fontDisplay = Montserrat({
   weight: ["500", "600", "700", "800"],
 });
 
-export { metadata };
+export async function generateMetadata(): Promise<Metadata> {
+  const siteConfig = await getSiteConfig();
+  return buildSiteMetadata(siteConfig);
+}
 
 export default function RootLayout({
   children,

@@ -3,6 +3,17 @@ import { getPayload } from 'payload'
 import fs from 'fs'
 import path from 'path'
 
+const INITIAL_SITE_SEO = {
+  title: 'Leyla Romanova',
+  description:
+    'Official website of composer Leyla Romanova who creates music of different genres – from orchestral, chamber and neoclassical piano music to trance-techno.',
+  keywords:
+    'Leyla Romanova, official website, composer, orchestral, chamber, neoclassical piano music, trance-techno, композитор, Лейла Романова, фортепианная неоклассика, оркестровые произведения, техно',
+  title_meta: 'Leyla Romanova - composer - musical artist',
+  url: '/',
+  image: '/preview.jpg',
+}
+
 const toNumber = (value: number | null | undefined): number | null => {
   if (typeof value !== 'number' || Number.isNaN(value)) return null
   return value
@@ -139,6 +150,32 @@ export async function script(config: any) {
   const payload = await getPayload({ config })
   const p: any = payload
 
+  const existingSiteSEO = await p.findGlobal({
+    slug: 'site-seo',
+  })
+
+  const shouldSeedSiteSEO =
+    !existingSiteSEO?.title &&
+    !existingSiteSEO?.title_meta &&
+    !existingSiteSEO?.description &&
+    !existingSiteSEO?.keywords &&
+    !existingSiteSEO?.url &&
+    !existingSiteSEO?.image
+
+  if (shouldSeedSiteSEO) {
+    await p.updateGlobal({
+      slug: 'site-seo',
+      data: {
+        title: INITIAL_SITE_SEO.title,
+        title_meta: INITIAL_SITE_SEO.title_meta,
+        description: INITIAL_SITE_SEO.description,
+        keywords: INITIAL_SITE_SEO.keywords,
+        url: INITIAL_SITE_SEO.url,
+        image: INITIAL_SITE_SEO.image,
+      },
+    })
+  }
+
   const groups = getGroups()
   const releases = groups.RELEASES.items.filter(Boolean) as any[]
   const live = groups['LIVE Orchestral & Chamber'].items.filter(Boolean) as any[]
@@ -159,6 +196,7 @@ export async function script(config: any) {
         cardSubtitle: item.cardSubtitle,
         releaseYear: toNumber(item.releaseYear),
         description: item.description,
+        isVisible: true,
         cover: await ensureMediaFromLegacyImage({
           payload: p,
           imageFilename: item.image,
@@ -204,6 +242,7 @@ export async function script(config: any) {
         name: item.name,
         href: item.href,
         cardSubtitle: item.cardSubtitle,
+        isVisible: true,
         cover: await ensureMediaFromLegacyImage({
           payload: p,
           imageFilename: item.image,
@@ -252,6 +291,7 @@ export async function script(config: any) {
         href: item.href,
         source: item.source,
         createdDate: toDateOrNull(item.created_date),
+        isVisible: true,
         relatedTrack,
       },
     })

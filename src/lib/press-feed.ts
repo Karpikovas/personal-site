@@ -57,6 +57,11 @@ export const getPressFeedPage = async ({
     limit,
     page,
     sort: '_order',
+    where: {
+      isVisible: {
+        not_equals: false,
+      },
+    },
   })
 
   return {

@@ -97,6 +97,15 @@ export const Releases: CollectionConfig = {
               required: true,
             },
             {
+              name: 'isVisible',
+              label: 'Показывать на сайте',
+              type: 'checkbox',
+              defaultValue: true,
+              access: {
+                read: ({ req }) => Boolean(req.user),
+              },
+            },
+            {
               name: 'items',
               label: 'Треки альбома',
               type: 'array',
@@ -135,9 +144,28 @@ export const Releases: CollectionConfig = {
           label: 'SEO',
           fields: [
             {
+              name: 'seoTitle',
+              label: 'SEO Title',
+              type: 'text',
+              admin: {
+                description: 'По умолчанию используется название релиза. Заполняйте только если нужно переопределить.',
+              },
+            },
+            {
+              name: 'seoDescription',
+              label: 'SEO Description',
+              type: 'textarea',
+              admin: {
+                description: 'По умолчанию используется поле "Описание". Заполняйте только если нужно переопределить.',
+              },
+            },
+            {
               name: 'keywords',
               label: 'SEO Keywords',
               type: 'text',
+              admin: {
+                description: 'К этим ключевым словам автоматически добавятся базовые ключевые слова из глобальных SEO-настроек.',
+              },
             },
           ],
         },

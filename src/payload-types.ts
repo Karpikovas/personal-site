@@ -93,8 +93,12 @@ export interface Config {
     defaultIDType: number;
   };
   fallbackLocale: null;
-  globals: {};
-  globalsSelect: {};
+  globals: {
+    'site-seo': SiteSeo;
+  };
+  globalsSelect: {
+    'site-seo': SiteSeoSelect<false> | SiteSeoSelect<true>;
+  };
   locale: null;
   widgets: {
     collections: CollectionsWidget;
@@ -191,6 +195,7 @@ export interface Release {
   releaseYear?: number | null;
   description?: string | null;
   cover: number | Media;
+  isVisible?: boolean | null;
   items?:
     | {
         name: string;
@@ -214,6 +219,17 @@ export interface Release {
   yandex?: string | null;
   zvuk?: string | null;
   amazon?: string | null;
+  /**
+   * По умолчанию используется название релиза. Заполняйте только если нужно переопределить.
+   */
+  seoTitle?: string | null;
+  /**
+   * По умолчанию используется поле "Описание". Заполняйте только если нужно переопределить.
+   */
+  seoDescription?: string | null;
+  /**
+   * К этим ключевым словам автоматически добавятся базовые ключевые слова из глобальных SEO-настроек.
+   */
   keywords?: string | null;
   updatedAt: string;
   createdAt: string;
@@ -229,6 +245,7 @@ export interface LiveOrchestralChamber {
   href: string;
   cardSubtitle?: string | null;
   cover: number | Media;
+  isVisible?: boolean | null;
   youtube?: string | null;
   video?: string | null;
   spotify?: string | null;
@@ -237,6 +254,17 @@ export interface LiveOrchestralChamber {
   yandex?: string | null;
   zvuk?: string | null;
   amazon?: string | null;
+  /**
+   * По умолчанию используется название произведения. Заполняйте только если нужно переопределить.
+   */
+  seoTitle?: string | null;
+  /**
+   * По умолчанию используется описание страницы. Заполняйте только если нужно переопределить.
+   */
+  seoDescription?: string | null;
+  /**
+   * К этим ключевым словам автоматически добавятся базовые ключевые слова из глобальных SEO-настроек.
+   */
   keywords?: string | null;
   updatedAt: string;
   createdAt: string;
@@ -252,6 +280,7 @@ export interface Press {
   href: string;
   source?: string | null;
   createdDate?: string | null;
+  isVisible?: boolean | null;
   relatedTrack:
     | {
         relationTo: 'releases';
@@ -417,6 +446,7 @@ export interface ReleasesSelect<T extends boolean = true> {
   releaseYear?: T;
   description?: T;
   cover?: T;
+  isVisible?: T;
   items?:
     | T
     | {
@@ -440,6 +470,8 @@ export interface ReleasesSelect<T extends boolean = true> {
   yandex?: T;
   zvuk?: T;
   amazon?: T;
+  seoTitle?: T;
+  seoDescription?: T;
   keywords?: T;
   updatedAt?: T;
   createdAt?: T;
@@ -454,6 +486,7 @@ export interface LiveOrchestralChamberSelect<T extends boolean = true> {
   href?: T;
   cardSubtitle?: T;
   cover?: T;
+  isVisible?: T;
   youtube?: T;
   video?: T;
   spotify?: T;
@@ -462,6 +495,8 @@ export interface LiveOrchestralChamberSelect<T extends boolean = true> {
   yandex?: T;
   zvuk?: T;
   amazon?: T;
+  seoTitle?: T;
+  seoDescription?: T;
   keywords?: T;
   updatedAt?: T;
   createdAt?: T;
@@ -476,6 +511,7 @@ export interface PressSelect<T extends boolean = true> {
   href?: T;
   source?: T;
   createdDate?: T;
+  isVisible?: T;
   relatedTrack?: T;
   updatedAt?: T;
   createdAt?: T;
@@ -519,6 +555,36 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
   batch?: T;
   updatedAt?: T;
   createdAt?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "site-seo".
+ */
+export interface SiteSeo {
+  id: number;
+  title?: string | null;
+  title_meta?: string | null;
+  description?: string | null;
+  keywords?: string | null;
+  url?: string | null;
+  image?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "site-seo_select".
+ */
+export interface SiteSeoSelect<T extends boolean = true> {
+  title?: T;
+  title_meta?: T;
+  description?: T;
+  keywords?: T;
+  url?: T;
+  image?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

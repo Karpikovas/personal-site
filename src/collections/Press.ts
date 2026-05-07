@@ -43,6 +43,15 @@ export const Press: CollectionConfig = {
       },
     },
     {
+      name: 'isVisible',
+      label: 'Показывать на сайте',
+      type: 'checkbox',
+      defaultValue: true,
+      access: {
+        read: ({ req }) => Boolean(req.user),
+      },
+    },
+    {
       name: 'relatedTrack',
       label: 'Связанный релиз/произведение',
       type: 'relationship',

@@ -6,7 +6,6 @@ export type MusicCardItem = {
   apple?: string
   cardSubtitle?: string
   cardType?: string
-  group?: string
   href: string
   id?: number
   imageURL: string
@@ -41,7 +40,6 @@ export const mapDocToMusicCard = (doc: any, fallbackDoc?: any): MusicCardItem =>
     apple: doc.apple ?? undefined,
     cardSubtitle: doc.cardSubtitle ?? undefined,
     cardType: doc.cardType ?? undefined,
-    group: doc.group ?? undefined,
     href: doc.href,
     id: doc.id,
     imageURL,
@@ -64,12 +62,22 @@ export const getMusicGroups = async (payload: any): Promise<MusicGroups> => {
       depth: 1,
       limit: 1000,
       sort: '_order',
+      where: {
+        isVisible: {
+          not_equals: false,
+        },
+      },
     }),
     payload.find({
       collection: 'live-orchestral-chamber',
       depth: 1,
       limit: 1000,
       sort: '_order',
+      where: {
+        isVisible: {
+          not_equals: false,
+        },
+      },
     }),
   ])
 

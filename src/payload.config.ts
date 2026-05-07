@@ -10,6 +10,7 @@ import { Media } from './collections/Media.ts'
 import { Press } from './collections/Press.ts'
 import { Releases } from './collections/Releases.ts'
 import { Users } from './collections/Users.ts'
+import { SiteSEO } from './globals/SiteSEO.ts'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -29,6 +30,7 @@ export default buildConfig({
     },
   },
   collections: [Users, Media, Releases, LiveOrchestralChamber, Press],
+  globals: [SiteSEO],
   db: postgresAdapter({
     pool: {
       connectionString:

@@ -3,28 +3,34 @@ import { BioSection } from "@/components/BioSection";
 import { Music } from "@/components/Music";
 import { Photo } from "@/components/Photo";
 import { Reveal } from "@/components/Reveal";
-import { siteConfig } from "@/constants/siteMetaData";
+import { getSiteConfig } from "@/lib/site-seo";
 
-export const metadata: Metadata = {
-  title: siteConfig.title_meta,
-  description: siteConfig.description,
-  alternates: {
-    canonical: "/",
-  },
-  openGraph: {
-    type: "website",
-    url: "/",
+export async function generateMetadata(): Promise<Metadata> {
+  const siteConfig = await getSiteConfig();
+
+  return {
     title: siteConfig.title_meta,
     description: siteConfig.description,
-    images: [{ url: siteConfig.image }],
-  },
-};
+    keywords: siteConfig.keywords,
+    alternates: {
+      canonical: "/",
+    },
+    openGraph: {
+      type: "website",
+      url: siteConfig.url,
+      title: siteConfig.title_meta,
+      description: siteConfig.description,
+      images: [{ url: siteConfig.image }],
+    },
+  };
+}
 
 export default async function Home({
   searchParams,
 }: {
   searchParams: Promise<{ previewCollection?: string; previewId?: string }>;
 }) {
+  const siteConfig = await getSiteConfig();
   const { previewCollection, previewId } = await searchParams;
   const normalizedPreviewCollection =
     previewCollection === "releases" || previewCollection === "live-orchestral-chamber"

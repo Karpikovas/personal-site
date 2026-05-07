@@ -41,7 +41,7 @@ export const MusicPagePreview = ({
   });
 
   const item = mapMusicDoc(collection, data ?? seededInitialData, seededInitialData);
-  const subtitle = item.cardSubtitle || item.group?.trim() || "";
+  const subtitle = item.cardSubtitle || "";
   const releaseYear = item.releaseYear ? String(item.releaseYear) : null;
   const releaseType = (item.cardType || item.type || "").toLowerCase();
   const descriptionParagraphs = item.description

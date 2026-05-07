@@ -1,6 +1,6 @@
 import { MusicPagePreview } from "@/components/MusicPagePreview";
-import { siteConfig } from "@/constants/siteMetaData";
 import { mapMusicDoc, type MusicCollectionSlug } from "@/lib/music-page";
+import { getSiteConfig, mergeKeywords } from "@/lib/site-seo";
 import config from "@/payload.config";
 import { getPayload } from "payload";
 import { notFound } from "next/navigation";
@@ -53,9 +53,18 @@ const getMusicDocByHref = async (href: string): Promise<MusicDocByHrefResult | n
     depth: 2,
     limit: 1,
     where: {
-      href: {
-        equals: href,
-      },
+      and: [
+        {
+          href: {
+            equals: href,
+          },
+        },
+        {
+          isVisible: {
+            not_equals: false,
+          },
+        },
+      ],
     },
   });
 
@@ -71,9 +80,18 @@ const getMusicDocByHref = async (href: string): Promise<MusicDocByHrefResult | n
     depth: 2,
     limit: 1,
     where: {
-      href: {
-        equals: href,
-      },
+      and: [
+        {
+          href: {
+            equals: href,
+          },
+        },
+        {
+          isVisible: {
+            not_equals: false,
+          },
+        },
+      ],
     },
   });
 
@@ -97,12 +115,22 @@ export async function generateStaticParams() {
       select: {
         href: true,
       },
+      where: {
+        isVisible: {
+          not_equals: false,
+        },
+      },
     }),
     payload.find({
       collection: "live-orchestral-chamber",
       pagination: false,
       select: {
         href: true,
+      },
+      where: {
+        isVisible: {
+          not_equals: false,
+        },
       },
     }),
   ]);
@@ -114,6 +142,7 @@ export async function generateStaticParams() {
 // @ts-ignore
 export async function generateMetadata({ params }) {
   const { href } = await params;
+  const siteConfig = await getSiteConfig();
   const musicDoc = await getMusicDocByHref(decodeURIComponent(href));
 
   if (!musicDoc) {
@@ -125,14 +154,18 @@ export async function generateMetadata({ params }) {
 
   const item = mapMusicDoc(musicDoc.collection, musicDoc.doc);
 
-  const title = `${item.name} | ${siteConfig.title}`;
+  const pageTitle = item.seoTitle || item.name;
+  const title = `${pageTitle} | ${siteConfig.title}`;
   const img = item.imageURL;
-  const descr = item.description || siteConfig.description;
+  const descr = item.seoDescription || item.description || siteConfig.description;
   const canonical = `/music/${item.href}`;
-  const keywords = item.keywords || `${siteConfig.keywords}, ${item.name}`;
+  const keywords = mergeKeywords({
+    globalKeywords: siteConfig.keywords,
+    pageKeywords: item.keywords || item.name,
+  });
 
   return {
-    title: item.name,
+    title: pageTitle,
     description: descr,
     keywords,
     alternates: {

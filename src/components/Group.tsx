@@ -41,7 +41,7 @@ export const Group = ({
           const hasMeta = Boolean(item.releaseYear || metaType);
           const releaseHref = buildHrefWithPreview(`/music/${item.href}`);
           const openRelease = () => router.push(releaseHref);
-          const subtitle = item.cardSubtitle || (item.group ? item.group.trim() : "");
+          const subtitle = item.cardSubtitle || "";
           const imageSrc = item.imageURL;
 
           return (
