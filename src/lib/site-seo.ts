@@ -11,8 +11,6 @@ const FALLBACK_SITE_CONFIG: SiteConfig = {
   keywords:
     "Leyla Romanova, official website, composer, cinematic music, multi-genre, symphonic music, electronic music, jazz, композитор, Лейла Романова",
   title_meta: "Leyla Romanova - composer - musical artist",
-  url: "/",
-  image: "/cover-new.jpg",
 };
 
 const normalizeString = (value: unknown, fallback: string): string => {
@@ -26,8 +24,6 @@ const toSiteConfig = (value: any): SiteConfig => ({
   description: normalizeString(value?.description, FALLBACK_SITE_CONFIG.description),
   keywords: normalizeString(value?.keywords, FALLBACK_SITE_CONFIG.keywords),
   title_meta: normalizeString(value?.title_meta, FALLBACK_SITE_CONFIG.title_meta),
-  url: normalizeString(value?.url, FALLBACK_SITE_CONFIG.url),
-  image: normalizeString(value?.image, FALLBACK_SITE_CONFIG.image),
 });
 
 export const getSiteConfig = cache(async (): Promise<SiteConfig> => {

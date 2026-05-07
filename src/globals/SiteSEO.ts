@@ -27,15 +27,5 @@ export const SiteSEO: GlobalConfig = {
       label: 'Базовые SEO Keywords',
       type: 'textarea',
     },
-    {
-      name: 'url',
-      label: 'Canonical URL',
-      type: 'text',
-    },
-    {
-      name: 'image',
-      label: 'OpenGraph image URL',
-      type: 'text',
-    },
   ],
 }

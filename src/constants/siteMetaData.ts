@@ -7,9 +7,10 @@ export type SiteConfig = {
   description: string
   keywords: string
   title_meta: string
-  url: string
-  image: string
 }
+
+export const SITE_CANONICAL_URL = '/'
+export const SITE_OG_IMAGE = '/cover-new.jpg'
 
 export const buildSiteMetadata = (config: SiteConfig): Metadata => ({
   metadataBase: new URL(`https://${DOMAIN}`),
@@ -50,10 +51,10 @@ export const buildSiteMetadata = (config: SiteConfig): Metadata => ({
     ? undefined
     : {
         type: 'website',
-        url: config.url,
+        url: SITE_CANONICAL_URL,
         title: config.title,
         description: config.description,
-        images: [{ url: config.image }],
+        images: [{ url: SITE_OG_IMAGE }],
       },
   twitter: isSeoDisabled
     ? undefined
@@ -61,6 +62,6 @@ export const buildSiteMetadata = (config: SiteConfig): Metadata => ({
         card: 'summary_large_image',
         title: config.title,
         description: config.description,
-        images: [config.image],
+        images: [SITE_OG_IMAGE],
       },
 })

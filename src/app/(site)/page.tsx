@@ -3,6 +3,7 @@ import { BioSection } from "@/components/BioSection";
 import { Music } from "@/components/Music";
 import { Photo } from "@/components/Photo";
 import { Reveal } from "@/components/Reveal";
+import { SITE_CANONICAL_URL, SITE_OG_IMAGE } from "@/constants/siteMetaData";
 import { getSiteConfig } from "@/lib/site-seo";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -17,10 +18,10 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     openGraph: {
       type: "website",
-      url: siteConfig.url,
+      url: SITE_CANONICAL_URL,
       title: siteConfig.title_meta,
       description: siteConfig.description,
-      images: [{ url: siteConfig.image }],
+      images: [{ url: SITE_OG_IMAGE }],
     },
   };
 }

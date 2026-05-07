@@ -575,8 +575,6 @@ export interface SiteSeo {
   title_meta?: string | null;
   description?: string | null;
   keywords?: string | null;
-  url?: string | null;
-  image?: string | null;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -589,8 +587,6 @@ export interface SiteSeoSelect<T extends boolean = true> {
   title_meta?: T;
   description?: T;
   keywords?: T;
-  url?: T;
-  image?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;

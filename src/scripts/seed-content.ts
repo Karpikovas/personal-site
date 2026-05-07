@@ -10,14 +10,11 @@ const INITIAL_SITE_SEO = {
   keywords:
     'Leyla Romanova, official website, composer, cinematic music, multi-genre, symphonic music, electronic music, jazz, композитор, Лейла Романова',
   title_meta: 'Leyla Romanova - composer - musical artist',
-  url: '/',
-  image: '/cover-new.jpg',
 }
 
 const LEGACY_SITE_SEO = {
   description:
     'Official website of composer Leyla Romanova who creates music of different genres – from orchestral, chamber and neoclassical piano music to trance-techno.',
-  image: '/preview.jpg',
 }
 
 const toNumber = (value: number | null | undefined): number | null => {
@@ -164,11 +161,8 @@ export async function script(config: any) {
     (!existingSiteSEO?.title &&
       !existingSiteSEO?.title_meta &&
       !existingSiteSEO?.description &&
-      !existingSiteSEO?.keywords &&
-      !existingSiteSEO?.url &&
-      !existingSiteSEO?.image) ||
-    existingSiteSEO?.description === LEGACY_SITE_SEO.description ||
-    existingSiteSEO?.image === LEGACY_SITE_SEO.image
+      !existingSiteSEO?.keywords) ||
+    existingSiteSEO?.description === LEGACY_SITE_SEO.description
 
   if (shouldSeedSiteSEO) {
     await p.updateGlobal({
@@ -178,8 +172,6 @@ export async function script(config: any) {
         title_meta: INITIAL_SITE_SEO.title_meta,
         description: INITIAL_SITE_SEO.description,
         keywords: INITIAL_SITE_SEO.keywords,
-        url: INITIAL_SITE_SEO.url,
-        image: INITIAL_SITE_SEO.image,
       },
     })
   }
