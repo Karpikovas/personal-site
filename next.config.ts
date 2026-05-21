@@ -20,6 +20,7 @@ const previewBasePath = isPagesPreview
 const nextConfig: NextConfig = {
   basePath: previewBasePath || undefined,
   assetPrefix: previewBasePath || undefined,
+  deploymentId: process.env.NEXT_DEPLOYMENT_ID || undefined,
   images: isPagesPreview
     ? {
         unoptimized: true,

@@ -2,6 +2,9 @@
 
 set -eux
 
+node /app/deploy/validate-env.mjs
+export NEXT_DEPLOYMENT_ID="${NEXT_DEPLOYMENT_ID:-$(date -u +%Y%m%d%H%M%S)}"
+
 pnpm config set store-dir /app/.pnpm-store --global
 # Remove pre-populated modules (they may be linked to host pnpm store)
 mkdir -p /app/node_modules
