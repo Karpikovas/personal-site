@@ -6,3 +6,6 @@ out
 pnpm-store
 *.log
 .DS_Store
+
+.env
+.env.local
