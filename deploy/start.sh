@@ -10,5 +10,6 @@ docker run -d \
   --network shared \
   --env-file .env \
   -e NODE_OPTIONS=--max-old-space-size=1536 \
+  -v site_next_data:/app/.next \
   --log-opt max-size=100m \
   site:latest
