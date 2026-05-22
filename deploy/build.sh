@@ -1,7 +1,6 @@
 #!/bin/bash
 set -eux
 
-# Берём ключ из .env (убедитесь, что .env существует)
 ENCRYPTION_KEY=$(grep NEXT_SERVER_ACTIONS_ENCRYPTION_KEY .env | cut -d '=' -f2)
 
 docker build \
