@@ -1,8 +1,9 @@
 #!/bin/bash
-
 set -eu
 
 cd "$(dirname "$0")/.."
+
+ENCRYPTION_KEY=$(grep NEXT_SERVER_ACTIONS_ENCRYPTION_KEY .env | cut -d '=' -f2)
 
 docker run -d \
   --name site_next \
@@ -10,6 +11,7 @@ docker run -d \
   --network shared \
   --env-file .env \
   -e NODE_OPTIONS=--max-old-space-size=1536 \
+  -e "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY=$ENCRYPTION_KEY" \
   -v site_next_data:/app/.next \
   --log-opt max-size=100m \
   site:latest
