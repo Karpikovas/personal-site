@@ -14,14 +14,7 @@ pnpm run payload:migrate
 
 echo "=== Building Next.js (production) ==="
 
-if [ -d "/app/.next/cache" ]; then
-  rm -rf /app/.next/cache
-fi
-
-if ! pnpm exec next build; then
-  echo "❌ NEXT BUILD FAILED"
-  exit 1
-fi
+pnpm run build
 
 echo "✅ Build completed. Starting server..."
 
