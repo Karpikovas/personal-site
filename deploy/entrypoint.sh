@@ -1,5 +1,4 @@
 #!/bin/sh
-
 set -eux
 
 node /app/deploy/validate-env.mjs
