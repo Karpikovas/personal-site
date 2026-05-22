@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --webpack",
-    "prebuild": "rm -rf .next",
+    "prebuild": "find .next -mindepth 1 -delete 2>/dev/null || true",
     "build": "NODE_ENV=production next build --webpack",
     "start": "NODE_ENV=production next start",
     "lint": "next lint",
